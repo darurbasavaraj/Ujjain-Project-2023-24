@@ -95,13 +95,13 @@
             <img class="hotelimg" src="../icons/image 2.PNG" alt="">
         </div>
         <div class="text-section">
-            <p class="namehotel">${hotel.name}</p>
+            <p class="namehotel">${hotel.hotelName}</p>
             <div class="type-member" style="width: 100%; display: flex;">
                 <div class="member" style="float: left; width: 30%;">
-                    <p class="number"> <img class="memberimg" src="../icons/members.png" alt=""> ${hotel.totalMember}</p>
+                    <p class="number"> <img class="memberimg" src="../icons/members.png" alt=""> ${hotel.occupancy}</p>
                 </div>
                 <div class="hoteltype" style="float: right; width: 70%;">
-                    <p class="hotelprice">₹ <p class="amount"> ${hotel.totalPrice}</p></p>
+                    <p class="hotelprice">₹ <p class="amount"> ${hotel.pricing}</p></p>
                 </div>
             </div>
         </div>
@@ -148,20 +148,52 @@
 }
 
 // Function to fetch and display booked hotels (if needed)
+// Function to fetch and display booked hotels (if needed)
 function fetchBookedHotels(bookedHotels) {
+    // Initialize a variable to store the total count of hotels
+    let totalHotelCount = 0;
+
     // Check if bookedHotels is an array
     if (Array.isArray(bookedHotels)) {
         // Iterate over each booked hotel
-        bookedHotels.forEach(hotel => {
-            console.log('hotels_are', hotel.hotels);
-            
-            addHotelCard(hotel);
+        bookedHotels.forEach(booking => {
+            // Check if the booking contains an array of hotels
+            if (Array.isArray(booking.hotels)) {
+                // Add the count of hotels in this booking to the total count
+                totalHotelCount += booking.hotels.length;
 
+                // Iterate over each hotel in the booking
+                booking.hotels.forEach(hotel => {
+                    console.log('Hotel:', hotel);
+                    // Call a function to add the hotel card
+                    addHotelCard(hotel);
+                });
+            } else {
+                console.error('Error: "hotels" property is not an array in the booking.');
+            }
         });
     } else {
         console.error('Error: bookedHotels is not an array.');
     }
+
+    // Return the total count of hotels booked
+    return totalHotelCount;
 }
+
+// function fetchBookedHotels(bookedHotels) {
+//     // Check if bookedHotels is an array
+//     if (Array.isArray(bookedHotels)) {
+//         // Iterate over each booked hotel
+//         bookedHotels.forEach(hotel => {
+//             console.log('hotels_are', hotel.hotels);
+            
+//             addHotelCard(hotel);
+
+//         });
+//     } else {
+//         console.error('Error: bookedHotels is not an array.');
+//     }
+// }
 
         // function fetchHotels() {
         //     var hotelCountElement = document.getElementById('hotelCount');
