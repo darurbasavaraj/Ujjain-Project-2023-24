@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/ujjain-user-project.css">
+    <link rel="stylesheet" href="../CSS/about.css">
+    <script src="../JAVASCRIPT/date&time.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <!-- Include Slick Slider CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+  <!-- Include Slick Slider JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script  src="../JAVASCRIPT/about.js"></script>
+    <title>Ujjain</title>
+</head>
+<body>
+    <div class="snb">
+    <!------------------------------------header part------------------------------------------------------->
+    <header class="header" style="float: right;">
+      <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+      <div class="userprofile">
+          <div class="username" id="userName">Rojameenamanjappa</div>
+          <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff; "><div class="view"> View profile ></div></a> 
+      </div>
+      <div class="date-time" id="datetime">
+          <div class="date" id="date">   </div>
+          <div class="time" id="time">   </div>
+      </div> 
+     </header>
+     <script>
+      document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+     </script>
+
+ <!-----------------------------------------sidebar--------------------------------------------------------------->
+<nav class="side-bar">
+    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+    <ul>
+        <li><a href="../HOME/">Home</a></li>
+            <li><a href="../HotelBooking/">Hotel Booking</a></li>
+            <li><a href="../PujaBooking/">Puja Booking</a></li>
+            <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
+            <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+            <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+            <li><a href="../TaxiServices/">Taxi Services</a></li>
+            <li><a href="../AirportRides/">Airport Rides</a></li>
+            <li><a href="../Shooping/">Shopping</a></li>
+            <li><a href="../AboutUjjain/" class="active">About Ujjain</a></li>
+    </ul>
+</nav>
+<!---------------------------------------------main------------------------------------------------------------------>
+<div class="main">
+    <h2 class="titel">Our History</h2>
+    <div class="aboutcard">
+        <p class="abouthistory">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p class="abouthistory">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p class="abouthistory">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    <h2 class="titel1">Photos & Gallery</h2>
+    <div class="about-container1">
+        <div class="about1" id="about1">
+        </div>
+        <button class="prev-about1">&lt;</button>
+        <button class="next-about1">&gt;</button>
+    </div>
+    <h2 class="titel3">Testimonials</h2>
+    <div class="slider-container">
+        <div class="testimonial-slider">
+          <div class="testimonial">
+            <img src="../icons/Bhanu-prakash.png" alt="Person 1">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec turpis vel odio posuere fermentum."</p>
+          <div><h4>Sai Gopinath</h4></div>
+          <div><p>CEO of the Revolusys</p></div>
+        </div>
+    
+          <div class="testimonial">
+            <img src="../icons/ujjain-darshan@3x.png" alt="Person 2">
+            <p>"Sed ullamcorper orci ac justo hendrerit, id rhoncus ligula convallis. Nulla facilisi. Nam nec lectus vel augue pharetra feugiat."</p>
+            <div><h4>Raviteja</h4></div>
+            <div><p>Financial Management of the Revolusys</p></div>
+        </div>
+    
+          <div class="testimonial">
+            <img src="../icons/profile.png" alt="Person 3">
+            <p>"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst."</p>
+            <div><h4>Basavaraj Shivamurti Darur </h4></div>
+            <div><p>Junior Software Engineer of the Revolusys</p></div>
+        </div>
+
+        <div class="testimonial">
+          <img src="../icons/profile.png" alt="Person 3">
+          <p>"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In hac habitasse platea dictumst."</p>
+          <div><h4>Roja B M </h4></div>
+          <div><p>Junior Software Engineer of the Revolusys</p></div>
+      </div>
+    
+        </div>
+      </div>
+    
+
+</div>
+
+    </div>
+    </body>
+    <script defer src="../JAVASCRIPT/SLIDER/about.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.testimonial-slider').slick({
+            autoplay: true,
+            autoplaySpeed: 3000, // Set the autoplay speed in milliseconds
+            dots: true, // Display dots for navigation
+            prevArrow: false, // Hide the default previous arrow
+            nextArrow: false // Hide the default next arrow
+          });
+        });
+      </script>
+    
+</html>

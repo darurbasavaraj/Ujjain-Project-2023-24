@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/ujjain-user-project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/ujjainpuja.css">
+        <script  src="../JAVASCRIPT/ujjainpujam.js"></script>
+        <script src="../JAVASCRIPT/date&time.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Ujjain</title>
+</head>
+<body>
+    <div class="snb">
+    <!------------------------------------header part------------------------------------------------------->
+    <header class="header" style="float: right;">
+        <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+        <div class="userprofile">
+            <div class="username" id="userName">Rojameenamanjappa</div>
+            <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
+        </div>
+        <div class="date-time" id="datetime">
+            <div class="date" id="date">   </div>
+            <div class="time" id="time">   </div>
+        </div> 
+       </header>
+       <script>
+        document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+       </script>
+
+ <!-----------------------------------------sidebar--------------------------------------------------------------->
+<nav class="side-bar">
+    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+    <ul>
+        <li><a href="../HOME/">Home</a></li>
+            <li><a href="../HotelBooking/">Hotel Booking</a></li>
+            <li><a href="../PujaBooking/" class="active">Puja Booking</a></li>
+            <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
+            <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+            <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+            <li><a href="../TaxiServices/">Taxi Services</a></li>
+            <li><a href="../AirportRides/">Airport Rides</a></li>
+            <li><a href="../Shooping/">Shopping</a></li>
+            <li><a href="../AboutUjjain/">About Ujjain</a></li>
+    </ul>
+</nav>
+<!---------------------------------------------main------------------------------------------------------------------>
+<div class="main">
+    <div> <p class="titel">Traditional Pujas</p></div>
+    <div class="ujjainpuja-container">
+        <div class="slider-wrapper" id="slider-wrapper">                    
+        <!-- Add more product cards as needed -->
+        </div>
+        <button class="prev-ujjainpuja">&lt;</button>
+        <button class="next-ujjainpuja">&gt;</button>
+        </div>
+   <div> <p class="titel1">Ujjain Famous Pujas</p></div>
+   <div class="puja-container1">
+    <div class="slider-wrapper1" id="slider-wrapper1">
+
+    <!-- Add more product cards as needed -->
+    </div>
+    <button class="prev-puja1">&lt;</button>
+    <button class="next-puja1">&gt;</button>
+    </div>
+</div>
+
+    </div>
+    </body>
+    <script defer src="../JAVASCRIPT/SLIDER/ujjainpuja.js"></script>
+</html>

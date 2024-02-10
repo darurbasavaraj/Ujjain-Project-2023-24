@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/ujjain-user-project.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/airports.css">
+        <script src="../JAVASCRIPT/date&time.js"></script>
+    <title>Ujjain</title>
+</head>
+<body>
+    <div class="snb">
+    <!------------------------------------header part------------------------------------------------------->
+    <header class="header" style="float: right;">
+        <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+        <div class="userprofile">
+            <div class="username" id="userName">Rojameenamanjappa</div>
+            <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
+        </div>
+        <div class="date-time" id="datetime">
+            <div class="date" id="date">   </div>
+            <div class="time" id="time">   </div>
+        </div> 
+       </header>
+       <script>
+        document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+       </script>
+
+ <!-----------------------------------------sidebar--------------------------------------------------------------->
+<nav class="side-bar">
+    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+    <ul>
+        <li><a href="../HOME/" >Home</a></li>
+        <li><a href="../HotelBooking/">Hotel Booking</a></li>
+        <li><a href="../PujaBooking/">Puja Booking</a></li>
+        <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
+        <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+        <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+        <li><a href="../TaxiServices/">Taxi Services</a></li>
+        <li><a href="../AirportRides/" class="active">Airport Rides</a></li>
+        <li><a href="../Shooping/">Shopping</a></li>
+        <li><a href="../AboutUjjain/">About Ujjain</a></li>
+    </ul>
+</nav>
+<!---------------------------------------------main------------------------------------------------------------------>
+<div class="main">
+    <div class="book_airpot_container">
+        <h3 class="book_ariport_taxi">Book Airport Ride</h3>
+        <form class="book_airport_form">
+          <div class="from_to_location">
+            <div class="from_Loction">
+              <label class="from_city ">From / To Location</label> <br>
+              <input type="text" class="from_location_inputbox" placeholder="Ujjain Airport" disabled>
+            </div>
+            <div class="to_location">
+              <label class="travelling_city">Travelling City</label> <br>
+              <input type="text" class="to_location_inputbox" placeholder="Enter Travelling City">
+            </div>
+          </div>
+
+          <div class="flightName_departureTime_div">
+            <div class="flightName_number_div">
+              <label class="flightName_number_label ">  Flight Name & Number </label> <br>
+              <input type="text" class="flight_name_inputbox" placeholder="Flight Name & Number">
+            </div>
+            <div class="to_location">
+              <label class="travelling_city">  Arrival / Departure Date & Time</label> <br>
+              <input type="datetime-local " class="arival_departure_inputbox" placeholder="  DD - MM - YYYY  HH : MM : AM ">
+            </div>
+          </div>
+
+          <div class="no_people_vehicle_div">
+            <div class="no_persons_div">
+              <label class="no_persons_label ">No of People</label> <br>
+              <input type="number" class="no_persons_inputbox" placeholder="Enter No Of People" maxlength="2">
+            </div>
+            <div class="vehicle_div">
+              <label class="vehicle_type" for="vehicles">Vehicle Type</label> <br>
+              <!-- <input type="dropdown" class="to_location_inputbox" placeholder="Enter Travelling City"> -->
+             <select name="vehicles" id="" class="vehicle_dropdwon">
+              <option value="" class="choose_vehicle">Choose Vehicle Type</option>
+              <option value="Prime" class="cars_options">Prime</option>
+              <option value="Mini" class="cars_options">Mini</option>
+              <option value="SUV" class="cars_options">SUV</option>
+              <option value="Sedan" class="cars_options">Sedan</option>
+             </select> 
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="booking_instruction_div">
+        <h4 class="booking_instruction">Booking Instructions :</h4>
+        <ol class="Instructions">
+          <li class="instructions_list">Cash Payment only allowed.</li>
+          <li class="instructions_list">Concerned person will pickup you from the Airport or Bustop and Drop you at the Hotel by himself.</li>
+          <li class="instructions_list">You can check-in to the hotel and Pay if you like the hotel.</li>
+          <li class="instructions_list">You can change your Hotel at the same time to the best one.</li>
+        </ol>
+        <div class="airport_ride_total_fair">
+          <span class="ride_price">Total Fare</span>
+          <span class="price">₹ 0</span>
+        </div>
+        <button id="airport_btn" onclick="airportBookingConformation()">Book Now</button>
+      </div>
+
+</div>
+
+    </div>
+    </body>
+</html>

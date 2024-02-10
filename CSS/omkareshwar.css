@@ -1,0 +1,272 @@
+.omkareshwar-container, .omkareshwar-container1{
+    position: relative;
+    max-width: 1060px;
+    width: 100%;
+    margin-left: -10px;
+    overflow: hidden;
+  }
+  .card-container1{
+    margin-left: -5px;
+  }
+  .omkareshwar{
+    display: flex;
+    gap: 30px;
+  }
+  .omkareshwar1{
+    display: flex;
+    gap: 10px;
+  }
+  .prev-omkareshwar,
+  .next-omkareshwar, .prev-omkareshwar1, .next-omkareshwar1 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+  
+  .prev-omkareshwar, .prev-omkareshwar1 {
+      left: 0;
+  
+  }
+  
+  .next-omkareshwar, .next-omkareshwar1 {
+      right: 0;
+  
+  }
+  .prev-omkareshwar{
+    width: 40px;
+    height: 45px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #ff5c02;
+    border-width: 3px;
+    background-color: white;
+    color: #ff5c02;
+    font-size: 13px;
+  }
+  .prev-omkareshwar:hover{
+    background-color: #ff5c02;
+    color: white;
+  }
+  .next-omkareshwar{
+    width: 40px;
+    height: 45px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #ff5c02;
+    border-width: 3px;
+    background-color: white;
+    color: #ff5c02;
+    font-size: 13px;
+  
+  }
+  .next-omkareshwar:hover{
+    background-color: #ff5c02;
+    color: white;
+  }
+  .prev-omkareshwar1{
+  
+          width: 40px;
+          height: 45px;
+          border-radius: 30px;
+          border-style: solid;
+          border-color: #ff5c02;
+          border-width: 3px;
+          background-color: white;
+          color: #ff5c02;
+          font-size: 13px;
+      
+        }
+        .prev-omkareshwar1:hover{
+          background-color: #ff5c02;
+          color: white;
+      }
+      
+        .next-omkareshwar1{
+          width: 40px;
+          height: 45px;
+          border-radius: 30px;
+          border-style: solid;
+          border-color: #ff5c02;
+          border-width: 3px;
+          background-color: white;
+          color: #ff5c02;
+          font-size: 13px;
+        }
+        .next-omkareshwar1:hover{
+          background-color: #ff5c02;
+          color: white;
+      }
+  
+  .card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    height: 280px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 14.8px;
+  }
+  .card1{
+    width: 170px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    border-radius: 11.1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .ujjainimage{
+    width: 200px;
+    height: 160px;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-top: 10px;  
+  }
+  .ujjainimg1{
+    width: 150px;
+    height: 120px;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-top: 10px; 
+  }
+  .rectangle{
+    width: 48px;
+    height: 20px;
+  padding-left: 5px;
+    border-radius: 15.4px;
+    background-color: white;
+    position: absolute;
+    margin-top: -160px;
+    margin-left: 150px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 800px;
+  }
+  .rectangle1{
+    width: 42px;
+    height: 18px;
+  padding-left: 5px;
+    border-radius: 15.4px;
+    background-color: white;
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 110px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 800px;
+  }
+  .star{
+    color: #f7b114;
+  }
+  .hotelname{
+    font-family: Roboto;
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #ff5c02;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+    height: 28px;
+  }
+  .hotelname1{
+    font-family: Roboto;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #ff5c02;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    height: 25px;
+  }
+  
+  .titel{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .titel1{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  
+  .toprate{
+    font-family: Roboto;
+      font-size: 28px;
+      font-weight: bold;
+  margin-left: 10px;
+  margin-top: 10px;   
+  }
+  .toprate1{
+    font-family: Roboto;
+      font-size: 22px;
+      font-weight: bold;
+  margin-left: 10px;
+  margin-top: 0px;   
+  }
+  .Booknow{
+              font-family: Roboto;
+              font-size: 14px;
+              font-weight: bold;
+              color: #ff5c02;
+              background-color: white;
+              width: 90px;
+              height: 35px;
+              border-radius: 3px;
+              border-color: #ff5c02;
+              border-width: 10px;
+              cursor: pointer;
+              border-radius: 10px;
+              border: solid 2px;
+              margin-right: 10px;      
+           margin-left: 120px;
+  }
+  .Booknow1{
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: bold;
+    color: #ff5c02;
+    background-color: white;
+    width: 70px;
+    height: 28px;
+    border-radius: 1px;
+    border-color: #ff5c02;
+    border-width: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: solid 2px;      
+  margin-left: 90px;
+  }
+  
+  
+  .Booknow:hover,
+  .Booknow.active
+  {
+    background-color: #ff5c02;
+    color: #fff;
+  }
+  .btn{
+    margin-top: -35px;
+  }
+  .btn1{
+    margin-top: -30px;
+  }

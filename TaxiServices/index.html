@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/ujjain-user-project.css">
+    <link rel="stylesheet" href="../CSS/taxiservice.css">
+    <script src="../JAVASCRIPT/taxiservice1.js"></script>
+    <link rel="stylesheet" href="../CSS/taxiservice.css">
+    <script  src="../JAVASCRIPT/taxiservice.js"></script>
+    <script src="../JAVASCRIPT/date&time.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+        rel="stylesheet">
+    <title>Ujjain</title>
+</head>
+<body>
+    <div class="snb">
+    <!------------------------------------header part------------------------------------------------------->
+    <header class="header" style="float: right;">
+        <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+        <div class="userprofile">
+            <div class="username" id="userName">Rojameenamanjappa</div>
+            <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
+        </div>
+        <div class="date-time" id="datetime">
+            <div class="date" id="date">   </div>
+            <div class="time" id="time">   </div>
+        </div> 
+       </header>
+       <script>
+        document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+       </script>
+
+
+ <!-----------------------------------------sidebar--------------------------------------------------------------->
+<nav class="side-bar">
+    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+    <ul>
+        <li><a href="../HOME/">Home</a></li>
+            <li><a href="../HotelBooking/">Hotel Booking</a></li>
+            <li><a href="../PujaBooking/">Puja Booking</a></li>
+            <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
+            <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+            <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+            <li><a href="../TaxiServices/" class="active">Taxi Services</a></li>
+            <li><a href="../AirportRides/">Airport Rides</a></li>
+            <li><a href="../Shooping/">Shopping</a></li>
+            <li><a href="../AboutUjjain/">About Ujjain</a></li>
+    </ul>
+</nav>
+<!---------------------------------------------main------------------------------------------------------------------>
+<div class="main">
+    <div class="hotels"> Book a Taxi </div>
+    <div class="taxi-inputs-div" >
+        <form style="width: 75%; float: left; display: flex;">
+            <div class="taxi-inputs">
+                <input class="pickup-input" type="text" placeholder="Pick up from" id="taxi-pickup" onclick="showDropdown('pickupDropdown')" required>
+                <img class="taxi-loctaion-img"  src="../icons/Location icon.png" alt="" />
+            </div> 
+            <div id="pickupDropdown" class="dropdown-content1">
+                <a href="#">Use My Current Location</a>
+                <a href="#">Suggestions</a>
+                <a href="#">Ramghat</a>
+                <a href="#">Shivalaya Temple</a>
+                <a href="#">Ram Mandhir</a>
+            </div>
+            
+            <div class="taxi-inputs" style="margin-left: 40px;">
+                <input class="destination-input" type="text" placeholder="Search for Destination" id="taxi-destination" onclick="showDropdown('destinationDropdown')" required>
+                <img class="taxi-loctaion-img"  src="../icons/searchl_icon.png" alt="" />
+            </div> 
+            <div id="destinationDropdown" class="dropdown-content2">
+                <a href="#">Suggestions</a>
+                <a href="#">Ramghat</a>
+                <a href="#">Shivalaya Temple</a>
+                <a href="#">Ram Mandhir</a>
+            </div>
+            <div class="taxi-inputs"style="margin-left: 40px;">
+                <input class="dropdown-input1" type="text" placeholder="Vehical Type" id="taxi-vehicaltype" onclick="showDropdown('vehicleTypeDropdown')" required>       
+            </div> 
+            <div id="vehicleTypeDropdown" class="dropdown-content3">
+                <a href="#">Suggestions</a>
+                <a href="#">Prime</a>
+                <a href="#">Mini</a>
+                <a href="#">SUV</a>
+                <a href="#">Sedan</a>
+
+            </div>
+        </form>
+        <div style="width: 25%; float: right;display: flex; flex-direction: column; margin-left: 60px;">
+            <button class="taxi-book" id="taxi-book">Book Taxi</button>
+            <button class="taxi-fare">Total Fare <span class="taxt-cost">&#8377; 360</span> </button>
+            <img class="instruction-img" src="../icons/instruction icon.png" onclick="taxi()" />
+        </div>
+        <div class="instruction-popup" id="pop-inst">
+            <p class="inst">Booking Instructions:</p>
+            <ol class="taxi_ol">
+                <li class="li">Cash Payment only allowed. </li>
+                <li class="li">Concerned person will pickup you from the Airport or Bustop and Drop
+                                 you at the Hotel by himself.</li>
+                <li class="li">You can check-in to the hotel and Pay if you like the hotel.</li>
+                <li class="li">You can change your Hotel at the same time to the best one.</li>
+            </ol>
+        </div>
+        
+    </div>
+    <div class="titel1">Nearby  Visiting Places</div>
+    <div class="taxiservice1-container1">
+        <div class="taxiservice1" id="taxiservice1">
+        </div>
+        <button class="prev-taxiservice1">&lt;</button>
+        <button class="next-taxiservice1">&gt;</button>
+    </div>
+</div>
+
+    </div>
+    </body>
+    <script defer src="../JAVASCRIPT/SLIDER/taxiserviceslider.js"></script>
+</html>

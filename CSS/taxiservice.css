@@ -1,0 +1,327 @@
+/* ------------------------Taxi services CSS----------------------------- */
+.taxi-inputs-div {
+    width: 98%;
+    height: 290px;
+    display: flex;
+    margin-left: 20px;
+}
+.taxi-inputs {
+    width: 250px;
+    height: 50px;
+    margin: 10px 0 10px 0;   
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    border: none;
+    justify-content: space-between;
+}
+.pickup-input,
+.destination-input,
+.dropdown-input,
+.dropdown-input1 {
+    width: 80%;
+    height: 40px;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    text-align: left;
+    padding: 24px 15px;
+}
+.dropdown-input1 {
+  width: 100%;
+  background-image: url('../icons/dropdown.PNG');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position:195px;
+}
+.taxi-loctaion-img {
+    width: 20px;
+    padding-top: 10px;
+}
+.taxi-book {
+    width: 120px;
+    height: 50px;
+    margin: 10px 0 10px 80px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #ff5c02;   
+    border: 2px solid #ff5c02;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+}
+.taxi-book:hover {
+    color: #fff;
+    background-color: #ff5c02;
+}
+.taxi-fare {
+    width: 150px;
+    height: 50px;
+    margin: 10px 0 10px 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+.taxt-cost {
+    padding-left: 10px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+}
+.instruction-img {
+    width: 30px;
+    height: 30px;
+    margin-left: 170px;
+    cursor: pointer;
+}
+.instruction-popup {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    display: none;
+    width: 350px;
+    height: 160px;
+    margin-left: 730px;
+    margin-top: 170px;
+    padding: 10px 20px;
+    position: absolute;
+    font-family: Roboto;
+    color: #000;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    background-color: #fff;
+    
+}
+.inst {
+  font-size: 14px;
+  font-weight: bold;
+ 
+}
+.taxi_ol {
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.83;
+}
+.dropdown-content1,
+.dropdown-content2,
+.dropdown-content3
+ {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    margin-top: 70px;
+    width: 250px;
+    height: 200px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+    z-index: 1;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+    background-color: #fff;
+}
+.dropdown-content1.show,
+.dropdown-content2.show,
+.dropdown-content3.show  {
+    display: block;
+}
+.dropdown-content1 a,
+.dropdown-content2 a,
+.dropdown-content3 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover */
+.dropdown-content1 a:hover
+.dropdown-content2 a:hover,
+.dropdown-content3 a:hover {
+    background-color: #f1f1f1;
+    
+}
+.dropdown-content2 {
+    margin-left: 290px;
+}
+.dropdown-content3 {
+    margin-left: 580px;
+}
+
+
+
+.titel{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .titel1{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  .titel3{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .aboutcard {
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 1100px;
+      height: 320px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      margin-left: 0px;
+      border-radius: 14.8px;
+    }
+    .abouthistory{
+      font-family: Roboto;
+      font-size: 16px;
+      margin-left: 15px;
+      margin-top: 10px;
+      padding-top: 10px;
+      line-height: 24px;
+    }
+  
+    .taxiservice1-container1{
+      position: relative;
+      max-width: 1060px;
+      width: 100%;
+      margin-left: -2px;
+      overflow: hidden;
+    }
+    .card-container1{
+      margin-left: -5px;
+    }
+   
+    .taxiservice1{
+      display: flex;
+      gap: 10px;
+    }
+    
+    .prev-taxiservice1, .next-taxiservice1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    
+    .prev-taxiservice1 {
+        left: 0;
+    
+    }
+    
+    .next-taxiservice1 {
+        right: 0;
+    
+    }
+   
+    .prev-taxiservice1{
+    
+            width: 40px;
+            height: 45px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: #ff5c02;
+            border-width: 3px;
+            background-color: white;
+            color: #ff5c02;
+            font-size: 13px;
+        
+          }
+          .prev-taxiservice1:hover{
+            background-color: #ff5c02;
+            color: white;
+        }
+        
+          .next-taxiservice1{
+            width: 40px;
+            height: 45px;
+            border-radius: 30px;
+            border-style: solid;
+            border-color: #ff5c02;
+            border-width: 3px;
+            background-color: white;
+            color: #ff5c02;
+            font-size: 13px;
+          }
+          .next-taxiservice1:hover{
+            background-color: #ff5c02;
+            color: white;
+        }
+    
+  
+    .card1{
+      width: 170px;
+      height: 200px;
+      margin-top: 10px;
+      margin-bottom: 2px;
+      margin-left: 5px;
+      border-radius: 11.1px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    
+   
+    .ujjainimg1{
+      width: 150px;
+      height: 120px;
+      border-radius: 12px;
+      margin-left: 10px;
+      margin-top: 10px; 
+    }
+      .hotelname1{
+      font-family: Roboto;
+      font-size: 14px;
+      margin-left: 10px;
+      font-weight: bold;
+      color: #ff5c02;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 160px;
+      height: 25px;
+    }
+  
+
+
+

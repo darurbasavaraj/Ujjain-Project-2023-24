@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/registration.css">
+</head>
+<body>
+
+    <section id="main-sec">
+        <section id="image-sec">    
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img class="Big_imgs" src="../icons/image 1.PNG" alt="" srcset="">
+              <div class="div_smallimg">
+                <img class="Small_images" src="../icons/image 1.PNG">
+                <div class="text">Ram Ghat</div>
+              </div>
+            </div>
+    
+            <div class="mySlides fade">
+              <img class="Big_imgs" src="../icons/image 2.PNG" alt="" srcset="">
+              <div class="div_smallimg">
+                <img class="Small_images" src="../icons/image 2.PNG">
+                <div class="text">Mahakaleshwar Temple</div>
+              </div>
+            </div>
+    
+            <div class="mySlides fade">
+              <img class="Big_imgs" src="../icons/image 3.PNG" alt="" srcset="">
+              <div class="div_smallimg">
+                <img class="Small_images" src="../icons/image 3.PNG">
+                <div class="text">Kaliadeh Palace</div>
+              </div>
+            </div>
+    
+            <div class="mySlides fade">
+              <img class="Big_imgs" src="../icons/image 4.PNG" alt="" srcset="">
+              <div class="div_smallimg">
+                <img class="Small_images" src="../icons/image 4.PNG">
+                <div class="text">Shree Kal Bhairav Temple</div>
+              </div>
+            </div>
+    
+            <div class="mySlides fade">
+              <img class="Big_imgs" src="../icons/image 5.PNG" alt="" srcset="">
+              <div class="div_smallimg">
+                <img class="Small_images" src="../icons/image 5.PNG">
+                <div class="text">Ved Shala</div>
+              </div>
+            </div>
+    
+            <div id="dots_div">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </section>
+
+        <section id="login-sec">
+            <img id="logo" src="../icons/ujjain-darshan@3x.png" alt="">
+            <h1 id="welcome">Welcome to</h1>
+            <p id="ujjain">Ujjain Darshan</p>
+            <h2 id="Account">Please Login into your Account</h2>
+
+
+            <form id="form" method="post">
+                <input type="text" id="name" placeholder="Your Name">
+                <input type="text" id="email" placeholder="Email Address">
+                <input type="text" id="mobile" placeholder="Mobile Number" min="1000000000"  maxlength="10" required>
+                <input type="text" id="password" placeholder="Password">
+                <button id="submit">Register</button> 
+                <p id="p-already">Already have an account ? <a id="a-login" href="../index.html"> Login </a> Here </p>
+            </form>
+           </section>
+    </section>
+
+</body>
+<script>
+    var form = document.getElementById('form')
+
+    form.addEventListener('submit',function(e){
+        e.preventDefault()
+
+        var name = document.getElementById('name').value
+        var email = document.getElementById('email').value
+        var mobile = document.getElementById('mobile').value
+        var password = document.getElementById('password').value
+        
+
+
+        //fetch post request
+
+        fetch("http://13.200.156.231:8097/user/registration",{
+            method:'POST',
+            body:JSON.stringify({
+                userName:name,
+                email:email,
+                mobileNo:mobile,
+                password:password
+                
+            }),
+            headers:{
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        })
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data)
+
+            if(data.statuscode === 200)
+                {
+                    alert("successfully Registered ");
+                    window.location.href = "../index.html";
+                }else{
+                    alert("Failed Data try Again");
+                } 
+            })
+
+
+        })
+        let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000);                        // Change image every 2 seconds
+    }
+</script>
+</html>

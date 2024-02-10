@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../JAVASCRIPT/date&time.js"></script>
+    <link rel="stylesheet" href="../CSS/ujjain-user-project.css">
+    <!-- <link rel="stylesheet" href="../CSS/hotel.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/hotel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+     <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/plugins/rangePlugin.min.js"></script>
+    <script src="../JAVASCRIPT/hotel.js"></script>
+    <title>Ujjain</title>
+    <style>
+          .hotelbooking-img{
+               margin-right: 10px;
+               margin-top: 10px;
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            transition: transform 2s;
+            cursor: pointer;
+        }
+        .popup-hotel-img {
+           margin-right: 10px;
+            width: 160px;
+            height: 150px;
+            border-radius: 10px;
+            transition: transform 2s;
+            cursor: pointer;  
+        }
+        .hotelname-popup{
+            width: 390px;
+  height: 35px;
+  margin-top: 10px;
+  margin-left: -3px;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ff5c02;
+        }
+        .instructions{
+            width: 198px;
+  height: 24px;
+  margin-top: 10px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000;
+        }
+
+        .titel{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  .titel1{
+    font-family: Roboto;
+    margin-top: 60px;
+    font-size: 17px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+.Hotel-Booking{
+   
+  font-family: Roboto;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 10px;
+}
+.members{
+    font-family: Roboto;
+    margin-top: 3px;
+    padding-left: 3px;
+}
+.rooms{
+    font-family: Roboto;
+    margin-top: 3px;
+    font-size: 15px;
+    padding-left: 3px; 
+}
+.pop-diamond{
+    width: 13px;
+    height: 13px;
+    margin-left: 50px;
+}
+.pop-member{
+    width: 13px;
+    height: 13px;
+}
+.total-fare{
+    width: 107px;
+  height: 28px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.pricing1{
+    margin-left: 110px;
+    font-weight: bold;
+  letter-spacing: normal;
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+.book-hotel{
+    width: 310px;
+  height: 40px;
+  color: #fff;
+  font-family: Roboto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff5c02;
+}
+
+.close-button{
+    margin-left: 160px;
+    color: #ff5c02;
+    
+}
+
+        .RoomDetails{
+            display: flex;
+            flex-direction: row;
+        }
+        .hotelnames{
+        font-family: Roboto;
+        font-size: 30px;
+        width: 520px;
+        height: 47px;
+        font-weight: bold;
+        color: #ff5c02;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        margin-right: 5px;
+        }
+    
+ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+li {
+    width: 300px;
+ 
+  font-size: 11px;
+  font-family: sans-serif;
+  line-height: 1.63;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.63;
+  letter-spacing: normal;
+  color: #000;
+}
+        .roomcategroy{
+            color: #000;
+            margin-left: -140px;
+            width: 200px;
+            display: flex;
+  height: 35px;
+  font-family: Roboto;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding-left: 15px;
+    border-right: 3px solid #ff5c02;
+    border-left: 3px solid #ff5c02;
+        }
+        .pricing{
+        font-family: Roboto;
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        margin-left: 20px;
+        margin-right: 5px;
+        }
+        
+        .Booknowp{
+            position: absolute;
+        width: 150px;
+        height: 50px;
+        border-radius: 6px;
+        background-color: #ff5c02;
+        border: none;
+        font-family: Roboto;
+        font-size: 17px;
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        cursor: pointer
+        
+        }
+        .btn12{
+            position: relative;
+            margin-left: 800px;
+            margin-top: -70px;
+        }
+        .popup {
+        width: 350px;
+        height: 540px;
+       
+        padding: 24px 20px 20px;
+        border-radius: 20px;
+    position: absolute;
+    border-radius: 10px;
+    top: 30px;
+    margin-top: 60px;
+   margin-left: 900px;
+    z-index: 5;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    
+    }
+
+    input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* ---------------------------------------newpopup------------------------------------- */
+        #name{
+    width: 310px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #ff5c02;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#mobileNo{
+    width: 310px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #ff5c02;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+ 
+}
+#noOfAdults{
+    width: 310px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #ff5c02;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+   
+}
+#noOfChildren{
+    width: 310px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #ff5c02;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#localTime{
+    width: 310px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #ff5c02;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#datepicker{
+    width: 310px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid 1px #ff5c02;
+    background-color: #fff;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;  
+}
+
+.hotel-books{
+    width: 310px;
+  height: 40px;
+  color: #fff;
+  font-family: Roboto;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff5c02;
+}
+#selectedDates{
+  font-family: Roboto;
+}
+#amount{
+  margin-top: 10px;
+  width: 100%;
+      display: flex;
+      justify-content: space-between;
+      color: #000;
+      font-family: Roboto;
+}
+
+.total-fare {
+      width: 30%;
+      float: left;
+      font-size: 20px;
+      color: #000;
+      font-family: Roboto;
+  }
+
+  .rate-per-day {
+      width: 30%;
+      float: right;
+      text-align: right;
+      font-size: 28px;
+      color: #000;
+      font-family: Roboto;
+  }
+
+.amenitieslist{
+    display: flex;
+    flex-direction: row;
+}
+.wifi{
+    width: 20px;
+    height: 17px;
+    margin-left: -10px;
+}
+.amenities1{
+width: 130px;
+  margin: 0 10px 20px 10px;
+  opacity: 0.4;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+.image123{
+    margin-right: 10px;
+    width: 160px;
+    height: 150px;
+    border-radius: 10px;
+    transition: transform 2s;
+    cursor: pointer; 
+}
+.totalfares{
+font-family: Roboto;
+font-size: 20px;
+color: #ff5c02; 
+}
+
+.Confirmation{
+    width: 236px;
+    font-family: Roboto;
+    font-size: 13.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+
+}
+/* .hotelok{
+    margin-left: 25%;
+} */
+.HotelBookingConfirmed{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #00b11a;
+}
+.our_Agent{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+}
+
+.totalfares123{
+    font-family: Roboto;
+    font-size: 18px;
+}
+
+
+       
+        </style>
+</head>
+<body>
+    <div class="snb">
+    <!------------------------------------header part------------------------------------------------------->
+    <header class="header" style="float: right;">
+        <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+        <div class="userprofile">
+            <div class="username" id="userName"></div>
+           <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
+        </div>
+        <div class="date-time" id="datetime">
+            <div class="date" id="date">   </div>
+            <div class="time" id="time">   </div>
+        </div> 
+       </header>
+
+       <script>
+        document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+       </script>
+
+ <!-----------------------------------------sidebar--------------------------------------------------------------->
+<nav class="side-bar">
+    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+    <ul>
+        <li><a href="../HOME/">Home</a></li>
+            <li><a href="../HotelBooking/" class="active">Hotel Booking</a></li>
+            <li><a href="../PujaBooking/">Puja Booking</a></li>
+            <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
+            <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+            <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+            <li><a href="../TaxiServices/">Taxi Services</a></li>
+            <li><a href="../AirportRides/">Airport Rides</a></li>
+            <li><a href="../Shooping/">Shopping</a></li>
+            <li><a href="../AboutUjjain/">About Ujjain</a></li>
+    </ul>
+</nav>
+<!---------------------------------------------main------------------------------------------------------------------>
+<div class="main">
+    <div class="titel">Book Hotel</div>
+    <div id="hotelDetails"></div>
+    <div class="titel1">Top Rated Hotels</div>
+    <div class="ujjainhome-container">
+     <div class="ujjainhome" id="ujjainhome">
+         <!-- Add more product cards as needed -->   
+     </div>
+     <button class="prev-ujjainhome">&lt;</button>
+     <button class="next-ujjainhome">&gt;</button>
+</div> 
+</div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the hotel ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const hotelId = urlParams.get('hotelId');
+     
+            // Fetch detailed information about the selected hotel
+            const apiUrl = `http://13.200.156.231:8097/hotels/getHotelById/${hotelId}`;
+            console.log(apiUrl);
+     
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+
+                 const hotelData = data.data;
+
+            // Assuming hotelData is an object containing details about the hotel
+            const imageUrl = `http://13.200.156.231:8097/hotels/displayHotelImage/${hotelData.id}`;
+            const hotelImages = Array.isArray(hotelData.images) ? hotelData.images.map(image => `<img src="http://13.200.156.231:8097${image}" alt="" class="hotelbooking-img">`).join('') : '';
+
+            document.getElementById('hotelDetails').innerHTML = `
+                <div>
+                    ${hotelImages}
+                </div>
+    <div class="RoomDetails">
+    <div><p class="hotelnames">${data.data.hotelName}</p></div> 
+    <div class="Rectangle"></div>
+    <div><p class="roomcategroy">${data.data.roomCategory}</p></div>
+    <div class="Rectangle"></div>
+    <div><p class="pricing">₹ ${data.data.pricing}</p></div> 
+    </div>
+    <div class="amenitieslist">
+        <div style="margin-left:10px"> <img src="../icons/wifi.png" alt=""></div>
+        <p class="amenities1">${data.data.amenities[0]}</p>
+        <div style="margin-left:10px"> <img src="../icons/ac-icon.png" alt=""></div>
+        <p class="amenities1">${data.data.amenities[1]}</p>
+        <div style="margin-left:10px"> <img src="../icons/tv.png" alt=""></div>
+        <p class="amenities1">${data.data.amenities[2]}</p>
+        <div style="margin-left:10px"> <img src="../icons/parking.png" alt=""></div>
+        <p class="amenities1">${data.data.amenities[3]}</p>
+    </div>
+        <div class="amenitieslist">
+        <div style="margin-left:10px"> <img src="../icons/key-card.png" alt=""></div>
+        <p class="amenities1">${data.data.amenities[4]}</p>
+        <div style="margin-left:10px"> <img src="../icons/bathroom.png" alt=""></div>
+        <p class="amenities1">${data.data.amenities[5]}</p>
+        <div style="margin-left:10px"> <img src="../icons/helpdesk.png" alt=""></div>
+        <p class="amenities1">${data.data.amenities[6]}</p>
+        
+    </div>
+    
+    <div class="btn12">
+    <button class="Booknowp" onclick="showPopup('${data.data.hotelName}', '${data.data.roomCategory}', ${data.data.pricing}, 'http://13.200.156.231:8097/hotels/displayHotelImage/${data.data.id}','${data.data.occupancy}')">Book Now</button>
+    </div>
+                    `;
+                })
+                .catch(error => {
+                    console.error("Error fetching hotel details:", error);
+                });
+        });
+     
+        // Function to show the popup
+        function showPopup(hotelName, roomCategory,  pricing, imageUrl,occupancy) {
+            // Create the popup element
+            const popup = document.createElement('div');
+            popup.className = 'popup';
+            popup.innerHTML = `
+    <div class=hotel-close style="display:flex">
+        <p class="Hotel-Booking">Hotel Booking</p>
+        <p class="close-button" onclick="closePopup()"><i class="fa-regular fa-circle-xmark"></i></p>
+        </div>
+    <div style="display:flex;">
+        <img src="${imageUrl}" alt="" class="popup-hotel-img">
+        <img src="${imageUrl}" alt="" class="popup-hotel-img">
+        </div>
+    <p class="hotelname-popup"> ${hotelName}</p>
+    <div style="display:flex; margin-top:10px;">
+     <p><img class="pop-member" src="../icons/members.png" alt=""><p class="members">${occupancy}</p></p>
+        <p> <img class="pop-diamond" src="../icons/diamond.png" alt=""> <p class="rooms">${roomCategory}</p></p>
+        </div>
+
+    <div class="instructions">Booking Instruction:</div>
+    <div class="book-instructions">
+    <ol>
+      <li>Cash Payment only allowed.</li>
+      <li>Concerned person will pickup you from the Airport or Bustop and Drop you at the Hotel by himself.</li>
+      <li>You can check-in to the hotel and Pay if you like the hotel.</li>
+      <li>You can change your Hotel at the same time to the best one.</li>
+    </ol>
+  </div>
+  <div style="display:flex; margin-top:20px" >
+    <p class="total-fare">Total Fare</p>
+    <p class="pricing1"> ₹ ${pricing}</p></div>
+   <button class="book-hotel" onclick="showNewPopup()">Book Hotel</button>
+    `;
+     
+            // Append the popup to the body
+            document.body.appendChild(popup);
+        }
+     
+        // Function to close the popup
+        function closePopup() {
+            // Remove the popup element
+            const popup = document.querySelector('.popup');
+            if (popup) {
+                document.body.removeChild(popup);
+            }
+        }
+
+
+
+function showNewPopup() {
+    // Create the new popup element
+    const newPopup = document.createElement('div');
+    newPopup.className = 'popup';
+    newPopup.innerHTML = `
+        <div class=hotel-close style="display:flex">
+            <p class="Hotel-Booking">Hotel Booking</p>
+            <p class="close-button" onclick="closePopup()"><i class="fa-regular fa-circle-xmark"></i></p>
+        </div>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Your Name" ><br>
+            <input type="text" id="mobileNo" name="mobileNo" placeholder="Mobile Number" ><br>
+            <input type="number" id="noOfAdults" name="noOfAdults" placeholder="No. of Adults" ><br>
+            <input type="number" id="noOfChildren" name="noOfChildren" placeholder="No. of Children " ><br>
+            <input type="text" id="datepicker" placeholder="Choose Date"><br>
+            <input type="text" id="localTime" name="localTime" placeholder="Time" ><br><br>
+            <div id="selectedDates"></div>
+            <div id="amount"></div>
+            <button type="button" class="hotel-books" onclick="bookHotel()">Book Hotel</button><br>
+        </form>
+    `;
+
+    // Append the new popup to the body
+    document.body.appendChild(newPopup);
+
+    // Get today's date
+    const today = new Date();
+    const datePicker = flatpickr("#datepicker", {
+    mode: 'range',
+    dateFormat: 'Y-m-d',
+    minDate: today,
+    onChange: async function (selectedDates, dateStr, instance) {
+        if (selectedDates.length === 2) {
+            const fromDate = selectedDates[0];
+            const toDate = selectedDates[1];
+
+            const daysCount = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+
+            // Replace 'YOUR_HOTEL_ID' with the actual hotelId value
+            
+        
+
+            // Make API request to fetch pricing information
+            try {
+                // Get the hotel ID from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const hotelId = urlParams.get('hotelId');
+     
+            // Fetch detailed information about the selected hotel
+                const apiUrl = `http://13.200.156.231:8097/hotels/getHotelById/${hotelId}?fromDate=${fromDate.toISOString()}&toDate=${toDate.toISOString()}`;
+                console.log(apiUrl);
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                console.log(data);
+
+                // Assuming the API response contains a 'pricing' field
+                const ratePerDay = data.data.pricing; // Replace 'baseRate' with the actual attribute name
+                console.log('Rate Per Day:', ratePerDay);
+
+               const amount = daysCount * ratePerDay;
+                //const amount = daysCount * ratePerDay * 1.1; // Adding 10% to the calculated amount
+
+                const formattedFromDate = formatDate(fromDate);
+                const formattedToDate = formatDate(toDate);
+
+                document.getElementById('selectedDates').innerHTML = `From: ${formattedFromDate} To: ${formattedToDate}`;
+                document.getElementById('amount').innerHTML = `Total: ₹${amount}`;
+            } catch (error) {
+                console.error('Error fetching pricing information:', error);
+            }
+        }
+    }
+});
+function formatDate(date) {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    return `${day}-${month < 10 ? '0' : ''}${month}-${year}`;
+}
+}
+
+function closePopup() {
+    // Remove the current popup
+    const popup = document.querySelector('.popup');
+    if (popup) {
+        popup.parentNode.removeChild(popup);
+    }
+}
+
+function bookHotel() {
+    // Retrieve form values
+    const yourName = document.getElementById('name').value;
+    const mobileNumber = document.getElementById('mobileNo').value;
+    const adults = document.getElementById('noOfAdults').value;
+    const children = document.getElementById('noOfChildren').value;
+    const chooseDate = document.getElementById('datepicker').value;
+    console.log("....."+chooseDate.split('to')[0].trim());
+    const chooseTime = document.getElementById('localTime').value;
+
+    // Prepare the data to be sent in the request body
+    const requestData = {
+        name: yourName,
+        mobileNo: mobileNumber,
+        noOfAdults: adults,
+        noOfChildren: children,
+        fromDate: chooseDate.split('to')[0].trim(),
+        toDate: chooseDate.split('to')[1].trim(),
+        localTime: chooseTime
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('hotelId');
+            const userId =sessionStorage.getItem('userid');
+            const apiUrl = `http://13.200.156.231:8097/hotelbookings/booking/${id}/${userId}`;
+            console.log(apiUrl);
+             
+    // Make a POST request using fetch
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Handle the response from the server
+        console.log('Booking response:', data);
+
+        // Display success or failure popup based on the response
+        if (data.statuscode === 200) {
+
+const fromDate = selectedDates[0];
+            const toDate = selectedDates[1];
+            const daysCount = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
+           
+            const ratePerDay = data.data.totalPrice; // Replace 'baseRate' with the actual attribute name
+            console.log('Rate Per Day: Basavaraj Darur', ratePerDay);
+            const amount = daysCount * ratePerDay;
+          console.log("Basavaaaaaaaaaaaa"+amount)
+  const successContent = `
+    <div style="display:flex">
+        <p class="Confirmation">Booking Confirmation </p>
+        <p class="close-button" onclick="closePopup()"><i class="fa-regular fa-circle-xmark"></i></p>
+    </div>
+    </br>
+    <div>
+        <img class="hotelok" src="../icons/confirmation.png" alt="Success Image">
+    </div>
+    </br>
+    <div class="HotelBookingConfirmed1">
+        <p class="HotelBookingConfirmed">Your Hotel Booking </p>
+    </div>
+    </br>
+    <div>
+        <p class=success>Confirmed Successfully</p>
+    </div>
+    <div class="our_Agent">
+        <p class="our_Agent">Our Agent will pickup you from the Airport or Bustop and Drop you at the Hotel by himself.</p>
+    </div>
+    <div>
+        <p class="instruction">Instructions :</p>
+    </div>
+    <div>
+        <p class="instruction1"> 1.Cash Payment only allowed.</br> 2. Concerned person will pickup you from the Airport or Bustop and Drop you at the Hotel by himself.</br> 3.You can check-in to the hotel and Pay if you like the hotel.</br> 4.You can change your Hotel at the same time to the best one.</p>
+    </div>
+    <div id="amount">
+    <div class="total-fare">Total Fare</div>
+    <div class="rate-per-day">₹${ratePerDay}</div>
+</div>`;
+showPopup1(successContent);
+            //showPopup1('Booking Successful', 'green', true);
+        } else {
+            const message = data.data;
+                showPopup1('Booking Failed: ' + message, '#ff5c02');
+}
+        // Close the booking popup after handling the response
+        closePopup();
+    })
+    .catch(error => {
+        // Handle any errors that occurred during the fetch
+        console.error('Error during booking:', error);
+
+        // Display failure popup
+        showPopup1('Booking Failed', '#ff5c02', data.data);
+
+        // Close the booking popup after handling the error
+        closePopup();
+    });
+}
+
+function showPopup1(message, color) {
+    // Create the popup element
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.style.backgroundColor = color; // Set the background color
+    popup.innerHTML = `<p>${message}</p>`;
+
+    // Append the popup to the body
+    document.body.appendChild(popup);
+
+    // Remove the popup after a certain duration (e.g., 3 seconds)
+    setTimeout(() => {
+        document.body.removeChild(popup);
+    }, 1000000);
+}
+
+// function showPopup1(message, color) {
+//     // Create the popup element
+//     const popup = document.createElement('div');
+//     popup.className = 'popup';
+//     popup.style.backgroundColor = color; // Set the background color
+//     popup.innerHTML = `<p>${message}</p>`;
+
+//     // Append the popup to the body
+//     document.body.appendChild(popup);
+
+//     // Remove the popup after a certain duration (e.g., 3 seconds)
+//     setTimeout(() => {
+//         document.body.removeChild(popup);
+//     }, 8000);
+// }
+
+
+
+function closeResultPopup() {
+    // Remove the result popup
+    const resultPopup = document.querySelector('.result-popup');
+    if (resultPopup) {
+        resultPopup.parentNode.removeChild(resultPopup);
+    }
+}
+
+
+
+
+    </script>
+
+    </body>
+    <script src="../JAVASCRIPT/SLIDER/hotelslider.js"></script>
+</html>

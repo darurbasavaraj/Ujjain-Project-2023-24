@@ -1,0 +1,194 @@
+#image-sec {
+    /* width: flex; */
+    position: center;
+    height: 600px;
+  }
+  
+  
+.mySlides {
+    display: none;
+    width: 650px;
+    height: auto;
+  }
+  
+  .Big_imgs {
+    width: 650px;
+    height: 640px;
+    background-size: cover;
+    filter: blur(3px);
+  }
+  
+  .Small_images {
+    width: 340px;
+    height: 340px;
+    border-radius: 15px;
+    margin-left: 20px;
+  }
+  
+  /* Slideshow container */
+  .slideshow-container {
+    width: 650px;
+    height: auto;
+    position: relative;
+  
+  
+  }
+  
+  .div_smallimg {
+    position: absolute;
+    top: 160px;
+    left: 140px;
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 30px;
+    font-weight: 900;
+    /* padding: 8px 12px; */
+    font-family: 'Roboto';
+    /* font-weight: bold; */
+    font-family: Roboto;
+    color: white;
+    width: 100%;
+    margin-top: 39px;
+    text-align: center;
+  
+  }
+  
+  /* The dots/bullets/indicators */
+  
+  #dots_div {
+    position: absolute;
+    bottom: 122px;
+    left: 256px;
+  }
+  
+  .dot {
+    display: inline-flex;
+    width: 10px;
+    height: 10px;
+    margin-right: 15px;
+    border-radius: 10px;
+    border: solid 2px white;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active {
+    background-color: white;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+  
+    to {
+      opacity: 1
+    }
+  }
+/* ------------------login---------------------------------- */
+#main-sec {
+    display: flex;
+}
+
+#login-sec {
+    width: 600px;
+    height: 580px;
+    margin-top: 40px;
+    margin-left: 120px;
+}
+
+#logo {
+    width: 250px;
+}
+
+#welcome {
+
+    font-family: sans-serif;
+    font-size: 29px;
+    margin-top: 5px;
+    font-family: Roboto;
+    margin-bottom: 0px;
+}
+
+#ujjain {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #FF5F1F;
+    font-family: Roboto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#Account {
+    margin-top: 0px;
+    font-size: 18px;
+    font-family: Roboto;
+}
+
+#mobile {
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border: solid 1px #FF5F1F;
+    border-radius: 5px;
+    color: #FF5F1F;
+    height: 20px;
+    margin-top: 15px;
+    font-family: Roboto;
+}
+
+#Password {
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border: solid 1px #FF5F1F;
+    border-radius: 5px;
+    color: #FF5F1F;
+    height: 20px;
+    margin-top: 17px;
+    font-family: Roboto;
+}
+
+#submit {
+    width: 320px;
+    height: 43px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #FF5F1F;
+    color: white;
+    border: solid 1px #FF5F1F;
+    border-radius: 9px;
+    font-family: Roboto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.refer {
+
+    color: #FF5F1F;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: Roboto;
+}
+.pass{
+    font-family: Roboto;
+    font-size: 12px;
+}
+.account{
+    font-family: Roboto;
+    font-size: 12px;
+}
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }

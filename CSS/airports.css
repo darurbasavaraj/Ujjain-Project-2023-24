@@ -1,0 +1,405 @@
+.book_airpot_container{
+    position: relative;
+    display: grid;
+    margin-left: 0px;
+    width: 1100px;
+    height: 330px;
+    overflow: hidden;
+}
+.book_ariport_taxi{
+    width: 187px;
+    height: 28px;
+    /* margin: 0 643px 16px 0; */
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+
+  }
+  .book_airport_form{
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .from_to_location{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+  }
+  .from_Loction{
+    width: 100%;
+    
+  }
+  .from_city{
+    width: 135px;
+    height: 19px;
+    /* margin: 0 265px 15px 0; */
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+    
+  }
+  .from_location_inputbox{
+    width: 300px;
+    height: 40px;
+    margin: 15px 0 0;
+    padding: 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gray;
+    background-color: #fff;
+    border: none;
+    background-image: url('../images/search icon.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position:265px;
+  
+
+  }
+  .from_location_inputbox::placeholder{
+    color: #ff5c02;
+    width: 150px;
+    height: 16px;
+    /* margin: 2px 256px 2px 0; */
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal
+  }
+  .to_location{
+    margin-left: 20px;
+  }
+  .travelling_city{
+    width: 135px;
+    height: 19px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+  }
+  .to_location_inputbox{
+    width: 300px;
+    height: 40px;
+    margin: 15px 0 0;
+    padding: 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gray;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    color: #ff5c02;
+  
+  }
+  .to_location_inputbox::placeholder{
+    width: 153px;
+    height: 16px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffcc99;
+
+  }
+  .flightName_departureTime_div{
+    display: flex;
+    margin-top: 20px;
+  }
+  .flightName_number_div{
+    width: 100%;
+  }
+  .flightName_number_label{
+    width: 200px;
+    height: 19px;
+    /* margin: 0 237px 15px 0; */
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+  }
+  .flight_name_inputbox{
+    width: 300px;
+    height: 40px;
+    margin: 15px 0 0;
+    padding: 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gray;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    color: #ff5c02;
+  }
+  .flight_name_inputbox::placeholder{
+    /* width: 300px; */
+    height: 16px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffcc99;
+  }
+  .arival_departure_inputbox{
+    width: 300px;
+    height: 40px;
+    margin: 15px 0 0;
+    padding: 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gray;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    color: #ff5c02;
+
+  }
+  .arival_departure_inputbox::placeholder{
+    height: 16px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffcc99;
+  }
+  .no_people_vehicle_div{
+    display: flex;
+    margin-top: 20px;
+  }
+  .no_persons_div{
+    width: 100%;
+
+  }
+  .no_persons_label{
+    width: 130px;
+    height: 19px;
+    /* margin: 0 270px 15px 0; */
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+  }
+  .no_persons_inputbox{
+    width: 300px;
+    height: 40px;
+    margin: 15px 0 0;
+    padding: 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gray;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    color: #ff5c02;
+
+  }
+  /* .no_persons_inputbox{
+    outline: none;
+  } */
+  .no_persons_inputbox::placeholder{
+    height: 16px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffcc99;
+  }
+  .vehicle_div{
+    margin-left: 20px;
+  }
+  .vehicle_type{
+    width: 130px;
+    height: 19px;
+    /* margin: 0 270px 15px 0; */
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+  }
+  .vehicle_dropdwon{
+    width: 300px;
+    height: 40px;
+    margin: 15px 0 0;
+    /* font-size: 14px; */
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: medium;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    padding: 0px 0px 0px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gray;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    color: #ff5c02;
+  }
+  .cars_options{
+    color: #000;
+  }
+  .choose_vehicle{
+    height: 14px;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffcc99;
+  }
+
+  .booking_instruction_div{
+    width: 320px;
+    margin-top: 10px;
+  }
+  .Instructions{
+    width: 350px;
+  }
+  .instructions_list{
+    /* width: 380px; */
+  /* height: 110px; */
+  margin: 11px 0 0 10px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #000;
+  }
+  .airport_ride_total_fair{
+    /* float: left; */
+    margin-top: 20px;
+  }
+  .ride_price{
+    float: left;
+    width: 68px;
+    height: 18px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+  }
+  .price{
+    float: right;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #000;
+  }
+  #airport_btn{
+    width: 320px;
+    height: 50px;
+  /* margin: 20px 430px 0 0; */
+    /* padding: 21px 163px 20px; */
+    opacity: 0.3;
+    border-radius: 10px;
+    background-color: #ff5c02;
+    margin-top: 10px;
+    color: #fff;
+    border: none;
+  }
+  #airport_ride_cnfpopup{
+    position: relative;
+    left: 850px;
+    top: -300px;
+    width: 330px;
+    height: 250px;
+    /* border: solid 1px black; */
+    border-radius: 10px;
+    text-align: center;
+    /* padding-top: 30px; */
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 gray;
+
+  }
+  #conformation_img{
+    width: 100px;
+    height: 80px;
+    /* margin-left: 100px;
+    margin-top: 30px; */
+  }
+  #airport_closeIcon{
+    position: relative;
+    top: 20px;
+    left: 130px;
+    width: 30px;
+    height: 30px;
+  }
+  #confirm_txt{
+    width: 276px;
+  height: 56px;
+  /* margin: 20px 62px; */
+  margin-left: 20px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #00b11a;
+  }
+  #content{
+    /* width: 400px; */
+    height: 52px;
+    /* margin: 20px 0 0; */
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    /* line-height: 1.63; */
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+  }

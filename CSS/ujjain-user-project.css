@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    margin: auto;
+    width: 1340px;
+    height: 600px;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.snb{
+    height: 650px;
+    width: 1260px;
+    display: grid;
+    grid-template-columns: 200px 1020px;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+    "side header"
+    "side main";
+}
+.main{
+    grid-area: main;
+
+}
+/* ----------------------------headbar------------------------------------------ */
+.header{
+    background-color: #ff5c02;
+    grid-area: header;
+    height: 50px;
+    margin-left: -34px;
+    width: 1182px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.profile-img {
+    background-color: #ff5c02;
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-color: #fff;
+    border-radius: 50%;
+}
+.date-time {
+    margin-right: 10px;
+    width: 100px;
+    height: 40px;
+    margin-top: 5px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;border-right: solid 2px #ffffff;
+    border-left: solid 2px #ffffff;
+    color: #fff;
+}
+.date {
+    margin-top: 6px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;    
+    font-family: Roboto;
+}
+.time {
+    font-size: 12px;
+    font-family: Roboto;
+}
+.userprofile {
+    margin-right: 10px;
+    width: 80px;
+    height: 40px;
+    margin-top: 15px;
+    font-family: Roboto;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: end;
+    color: #fff;
+}
+.username {
+    max-width: 80px;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-top: -5px;
+    font-family: Roboto;
+}
+.view {
+    text-align: end;
+    font-size: 10px;
+    padding-top: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: Roboto;
+}
+
+
+
+/* --------------------------------------sidebar------------------------------ */
+.side-bar{
+    font-size: 12px;
+    font-weight: bold;
+    /* padding-left: 10px; */
+    width: 165px !important;
+    /* height: 715px; */
+    height: 650px;
+    position: absolute;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .img{
+    width: 122.1px;
+     height: 50.2px;
+     margin-left: 18px;
+     margin-top: 20px;
+     margin-bottom: 30px;
+ }
+
+ nav ul{
+    list-style: none;
+ }
+ 
+nav ul li{
+    line-height: 50px;
+    
+}
+
+nav ul li a{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    padding-left: 22px;
+    display: block;
+   border-left: 3px solid transparent;
+    border-radius: 20px;
+width: 160px;
+height: 50px;
+font-weight: 600;
+  cursor: pointer;
+  font-family: Roboto; 
+}
+nav ul li a:hover,
+nav ul li a.active
+{
+    border-radius: 0px;
+    background: #ff5c02;
+    width: 165px;
+    height: 50px;
+    color: #fff;
+    
+}
+nav ul ul{
+    position: static;
+   display: none;
+}
+
+nav ul ul li{
+   line-height: 38px;
+   border-bottom: none;
+}
+nav ul ul li a{
+    font-size: 13px;
+    margin-bottom: -15px;
+    color: #888888;
+    padding-left: 50px;
+    border-left: 3px solid transparent;
+    border-radius: 20px;
+ }
+ nav ul ul li a:hover{
+    border-radius: 0px 6px 6px 0px;
+    background: linear-gradient(86deg, #012194 0%, rgba(1, 33, 148, 0.25) 99.18%);
+    height: 40px;
+    box-shadow: 0px 0px 12px 0px rgba(1, 33, 148, 0.30);
+    color: #fff;
+ }
+ .logout{
+    color: #fff;
+    margin-top: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+ }

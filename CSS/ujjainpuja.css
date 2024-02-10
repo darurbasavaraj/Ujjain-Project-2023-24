@@ -1,0 +1,448 @@
+
+
+.ujjainpuja-container{
+    position: relative;
+    display: grid;
+    margin-left: 0px;
+    width: 1100px;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .puja-container1{
+    position: relative;
+    display: grid;
+    margin-left: 0px;
+    width: 1100px;
+    height: 220px;
+    overflow: hidden;
+  }
+  .card-container1{
+    margin-left: -5px;
+  }
+  .ujjainpuja{
+    display: flex;
+    gap: 30px;
+  }
+  .ujjainpuja1{
+    display: flex;
+    gap: 10px;
+  }
+  .prev-ujjainpuja,
+  .next-ujjainpuja {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+  .prev-puja1, .next-puja1{
+    position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+
+  }
+  
+  .prev-ujjainpuja, .prev-puja1 {
+      left: 0;
+  
+  }
+  
+  .next-ujjainpuja, .next-puja1 {
+      right: 0;
+  
+  }
+  .prev-ujjainpuja{
+    width: 40px;
+    height: 45px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #ff5c02;
+    border-width: 3px;
+    background-color: white;
+    color: #ff5c02;
+    font-size: 13px;
+  }
+  .prev-ujjainpuja:hover{
+    background-color: #ff5c02;
+    color: white;
+  }
+  .next-ujjainpuja{
+    width: 40px;
+    height: 45px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #ff5c02;
+    border-width: 3px;
+    background-color: white;
+    color: #ff5c02;
+    font-size: 13px;
+  
+  }
+  .next-ujjainpuja:hover{
+    background-color: #ff5c02;
+    color: white;
+  }
+  .prev-puja1{
+  
+          width: 40px;
+          height: 45px;
+          border-radius: 30px;
+          border-style: solid;
+          border-color: #ff5c02;
+          border-width: 3px;
+          background-color: white;
+          color: #ff5c02;
+          font-size: 13px;
+      
+        }
+        .prev-puja1:hover{
+          background-color: #ff5c02;
+          color: white;
+      }
+      
+        .next-puja1{
+          width: 40px;
+          height: 45px;
+          border-radius: 30px;
+          border-style: solid;
+          border-color: #ff5c02;
+          border-width: 3px;
+          background-color: white;
+          color: #ff5c02;
+          font-size: 13px;
+        }
+        .next-puja1:hover{
+          background-color: #ff5c02;
+          color: white;
+      }
+  
+  
+  
+  .ujjainimage{
+    width: 200px;
+    height: 160px;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-top: 10px;  
+  }
+  
+
+  .hotelname{
+    font-family: Roboto;
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #ff5c02;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+    height: 28px;
+  }
+  .hotelname1{
+    font-family: Roboto;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #ff5c02;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    height: 25px;
+  }
+  
+  .titel{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .titel1{
+    font-family: Roboto;
+    font-size: 17px;
+    margin-top: 0px;
+    margin-left: 0px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  
+  .toprate{
+    font-family: Roboto;
+      font-size: 28px;
+      font-weight: bold;
+  margin-left: 10px;
+  margin-top: 10px;   
+  }
+  .toprate1{
+    font-family: Roboto;
+      font-size: 16px;
+      font-weight: bold;
+  margin-left: 10px;
+  margin-top: 0px;   
+  }
+  .Booknow{
+              font-family: Roboto;
+              font-size: 14px;
+              font-weight: bold;
+              color: #ff5c02;
+              background-color: white;
+              width: 90px;
+              height: 35px;
+              border-radius: 3px;
+              border-color: #ff5c02;
+              border-width: 10px;
+              cursor: pointer;
+              border-radius: 10px;
+              border: solid 2px;
+              margin-right: 10px;      
+           margin-left: 120px;
+  }
+  .Booknow1{
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: bold;
+    color: #ff5c02;
+    background-color: white;
+    width: 60px;
+    height: 25px;
+    margin-top: 10px;
+    border-radius: 0px;
+    border-color: #ff5c02;
+    border-width: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: solid 2px;      
+  margin-left: 90px;
+  }
+  
+  
+  .Booknow:hover,
+  .Booknow1:hover
+  {
+    background-color: #ff5c02;
+    color: #fff;
+  }
+  .btn{
+    margin-top: -35px;
+  }
+  .btn1{
+    margin-top: -20px;
+  }
+
+  /* drg code */
+  .slide-card{
+    width: 245px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    /* box-shadow: 2px 2px 2px 2px gray; */
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
+    margin-left: 10px;   
+  }
+  .slide-card:hover{
+    width: 500px;
+  }
+
+  .Traditional_Pujas_div {
+    width: 245px;
+    height: 300px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
+    background-color: #fff;
+    margin-right: 20px;
+    display: flex;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    
+  
+  }
+  .Traditional_Pujas_div:hover {
+    width: 480px;
+  }
+  .Traditional_Pujas_div:hover .puja_booknow_btn {
+    position: relative; 
+    left: 240px; 
+    background-color: #FF5F1F;
+    color: #fff;
+  }
+  .Traditional_Pujas_div:hover .puja_description {
+    display: block;
+  }
+  .Traditional_Pujas_imgs {
+    width: 225px;
+    height: 150px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }  
+  
+  .Location_pujaname_div {
+    display: flex;
+  
+  }
+  .Traditional_location_img {
+    width: 17px;
+    height: 20px;
+    margin-left: 6px;
+    margin-top: 3px;
+  }
+  .Temple_name {
+    font-size: 13px;
+    font-family: Roboto;
+    font-weight: 500;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+  .puja_time_div{
+    margin-top: 7px ;
+    margin-left: 10px;
+    display: flex;
+  }
+  .puja_time_clock{
+    width: 15px;
+    height: 15px;
+    }
+    .puja_time{
+      font-size: 14px;
+      margin-left: 5px;
+      font-family: Roboto;
+      /* font-size: 18px; */
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #000;
+    }
+    
+.puja_name {
+  color: #FF5F1F;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+  font-family: Roboto;
+}
+    .puja_up_price_button{
+      margin-top: -5px;
+      margin-left: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-family: Roboto;
+    }
+    .puja_price {
+      position: relative;
+      top: 10px;
+      font-weight: bold;
+      font-size: 24px;
+      margin-top: 4px;
+      font-family: Roboto;
+    }
+    .puja_booknow_btn {
+      background-color: white;
+      color: #ff5c02;
+      border: solid 2px #ff5c02;
+      padding-left: 12px;
+      border-radius: 5px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-right: 10px;
+      margin-top: 12px;
+      margin-left: 50px;
+      font-family: Roboto;
+    }
+    
+    .puja_booknow_btn:hover {
+    
+      background-color: #ff5c02;
+      color: #fff;
+      cursor: pointer;
+    }
+    .puja_description{
+      margin-left: 18px;
+      height: 150px;
+      width: 230px;
+      display: none;
+      
+    }
+    .puja_description_heading{
+      color: #FF5F1F;
+      font-weight: 500;
+      font-size: 12px;
+      font-family: 'Roboto';
+      text-align: left;
+      margin-top: 10px;
+    }
+    .puja_description_data{
+      font-size: 10px;
+      font-family: 'Roboto';
+    /* font-size: 14px; */
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: justify;
+    color: #000;
+    }
+    .slider-wrapper {
+      padding-top: 10px;
+      gap: 20px;
+      display: flex;
+      overflow: hidden;
+      background-color: #fff;
+  } 
+  
+  .slider-wrapper1{
+    gap: 20px;
+      display: flex;
+  }
+
+  .card1{
+    width: 170px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    border-radius: 11.1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .ujjainimage1{
+    width: 150px;
+    height: 90px;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-top: 10px; 
+  }
+  .templename{
+    font-family: Roboto;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: -5px;
+  }
+.clock{
+  font-size: 12px;
+  font-family: Roboto;
+  margin-left: 10px;
+}
+.location{
+  color: #ff5c02;
+}
+.clockicon{
+  color: #ff5c02;
+}

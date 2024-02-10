@@ -1,0 +1,176 @@
+
+.titel{
+  font-family: Roboto;
+  font-size: 17px;
+  margin-left: 0px;
+  font-weight: bold;
+  color: #000;
+}
+
+.titel1{
+  font-family: Roboto;
+  font-size: 17px;
+  margin-top: 20px;
+  margin-left: 0px;
+  font-weight: bold;
+  color: #000;
+}
+.titel3{
+  font-family: Roboto;
+  font-size: 17px;
+  margin-top: 20px;
+  margin-left: 0px;
+  font-weight: bold;
+  color: #000;
+}
+
+.aboutcard {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 1100px;
+    height: 320px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    border-radius: 14.8px;
+  }
+  .abouthistory{
+    font-family: Roboto;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-top: 10px;
+    padding-top: 10px;
+    line-height: 24px;
+  }
+
+  .about-container1{
+    position: relative;
+    max-width: 1060px;
+    width: 100%;
+    margin-left: -2px;
+    overflow: hidden;
+  }
+  .card-container1{
+    margin-left: -5px;
+  }
+ 
+  .about1{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .prev-about1, .next-about1 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+  
+  .prev-about1 {
+      left: 0;
+  
+  }
+  
+  .next-about1 {
+      right: 0;
+  
+  }
+ 
+  .prev-about1{
+  
+          width: 40px;
+          height: 45px;
+          border-radius: 30px;
+          border-style: solid;
+          border-color: #ff5c02;
+          border-width: 3px;
+          background-color: white;
+          color: #ff5c02;
+          font-size: 13px;
+      
+        }
+        .prev-about1:hover{
+          background-color: #ff5c02;
+          color: white;
+      }
+      
+        .next-about1{
+          width: 40px;
+          height: 45px;
+          border-radius: 30px;
+          border-style: solid;
+          border-color: #ff5c02;
+          border-width: 3px;
+          background-color: white;
+          color: #ff5c02;
+          font-size: 13px;
+        }
+        .next-about1:hover{
+          background-color: #ff5c02;
+          color: white;
+      }
+  
+
+  .card1{
+    width: 170px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    border-radius: 11.1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+ 
+  .ujjainimg1{
+    width: 150px;
+    height: 120px;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-top: 10px; 
+  }
+    .hotelname1{
+    font-family: Roboto;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: bold;
+    color: #ff5c02;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    height: 25px;
+  }
+
+  .slider-container {
+    max-width: 600px;
+    margin-left: 200px;
+  }
+
+  .testimonial {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .testimonial img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 80px; /* Adjust the image size as needed */
+    height: 80px; /* Adjust the image size as needed */
+  }
+  .testimonial p {
+    font-style: italic;
+    color: #555;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  
+ 
+
+  

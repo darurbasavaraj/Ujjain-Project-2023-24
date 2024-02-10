@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/viewprofile.css">
+    <script defer src="../JAVASCRIPT/viewprofile.js"></script>
+    <link rel="stylesheet" href="../CSS/ujjain-user-project.css">
+    <script src="../JAVASCRIPT/date&time.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Ujjain</title>
+</head>
+<body>
+    <div class="snb">
+    <!------------------------------------header part------------------------------------------------------->
+<header class="header" style="float: right;">
+       <a style="color: #fff;" href="../index.html"><div class="logout" ><i class="fa-solid fa-arrow-right-from-bracket"></i></a> </div>
+       
+       <div class="profile-img ">
+        <img id="otherPreviewImage" src="">
+       </div>
+        <div class="userprofile">
+            <div class="username" id="userName">Rojameenamanjappa</div>
+            
+        </div>
+        <div class="date-time" id="datetime">
+            <div class="date" id="date">   </div>
+            <div class="time" id="time">   </div>
+        </div> 
+       </header>
+
+       <script>
+        document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+       </script>
+
+
+ <!-----------------------------------------sidebar--------------------------------------------------------------->
+<nav class="side-bar">
+    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+    <ul>
+         <li><a href="../HOME/">Home</a></li>
+            <li><a href="../HotelBooking/">Hotel Booking</a></li>
+            <li><a href="../PujaBooking/">Puja Booking</a></li>
+            <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
+            <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+            <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+            <li><a href="../TaxiServices/">Taxi Services</a></li>
+            <li><a href="../AirportRides/">Airport Rides</a></li>
+            <li><a href="../Shooping/">Shopping</a></li>
+            <li><a href="../AboutUjjain/">About Ujjain</a></li>
+    </ul>
+</nav>
+<!---------------------------------------------main------------------------------------------------------------------>
+<div class="main">
+    <div class="cards">
+     <div class="profile1">
+        <div style="display: flex;"><div class="hotels">Profile</div>
+        <div class="penmark"><i class="fa-solid fa-pen"></i></div></div>
+        <div class="hotelcard1">
+            <div class="image-section">
+                 <div id="previewContainer">
+                    <input type="file" id="fileInput">
+                    <img id="previewImage" src="">     
+                  </div>                  
+            </div>
+            <div class="text-section">
+                <p id="userName1"></p>
+               <p id="mobileNumber1"><i class="fa-solid fa-square-phone"></i></p>
+            </div>
+        </div>
+        <div class="historycard">
+           <div style="display: flex;"><img class="timerimg" src="../icons/timer.JPG" alt=""><span class="history1" >History</span></div>     
+        </div>
+        </div>
+    
+        
+    <!-------------------hotels----------------------------------->
+    <div class="profile">
+        <div class="hotels" id="hotelCount" onclick="fetchHotels()">Hotels(0)</div>
+        <div class="hotel-container">
+        </div>
+    </div>
+    
+    <script>
+        function addHotelCard(hotel) {
+    var hotelCountElement = document.getElementById('hotelCount');
+    var hotelCardsContainer = document.querySelector('.hotel-container');
+
+    var newHotelCard = document.createElement('div');
+    newHotelCard.classList.add('hotelcard');
+    newHotelCard.innerHTML = `
+        <div class="image-section">
+            <img class="hotelimg" src="../icons/image 2.PNG" alt="">
+        </div>
+        <div class="text-section">
+            <p class="namehotel">${hotel.name}</p>
+            <div class="type-member" style="width: 100%; display: flex;">
+                <div class="member" style="float: left; width: 30%;">
+                    <p class="number"> <img class="memberimg" src="../icons/members.png" alt=""> ${hotel.totalMember}</p>
+                </div>
+                <div class="hoteltype" style="float: right; width: 70%;">
+                    <p class="hotelprice">₹ <p class="amount"> ${hotel.totalPrice}</p></p>
+                </div>
+            </div>
+        </div>
+    `;
+    hotelCardsContainer.insertBefore(newHotelCard, hotelCardsContainer.firstChild);
+    updateHotelCount(hotelCardsContainer, hotelCountElement);
+}
+        function updateHotelCount(hotelCardsContainer, hotelCountElement) {
+            var hotelCount = hotelCardsContainer.querySelectorAll('.hotelcard').length;
+            hotelCountElement.textContent = 'Hotels(' + hotelCount + ')';
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchHotels();
+        });
+
+        function fetchHotels() {
+        var hotelCountElement = document.getElementById('hotelCount');
+        var hotelCardsContainer = document.querySelector('.hotel-container');
+    
+    // Retrieve userId from sessionStorage
+    const userId = sessionStorage.getItem('userid');
+    
+    // Fetch user details
+    fetch(`http://13.200.156.231:8097/user/getBy/${userId}`)
+        .then(response => response.json())
+        .then(userData => {
+            if (userData.status === 'SUCCESS') {
+
+                console.log('User_Details', userData);
+                
+                // Assuming the API response contains a field like 'bookedHotels' containing the booked hotels details
+                const bookedHotels = userData.data.hotelBooking;
+                console.log('Hotels_Details',bookedHotels);
+                // Display the count of booked hotels
+                hotelCountElement.textContent = `You have booked ${bookedHotels} hotels.`;
+
+                // Now you can proceed to fetch and display the booked hotels if needed
+                 fetchBookedHotels(bookedHotels);
+            } else {
+                console.error('Error fetching user details. Response:', userData);
+            }
+        })
+        .catch(error => console.error('Error fetching user details:', error));
+}
+
+// Function to fetch and display booked hotels (if needed)
+function fetchBookedHotels(bookedHotels) {
+    // Check if bookedHotels is an array
+    if (Array.isArray(bookedHotels)) {
+        // Iterate over each booked hotel
+        bookedHotels.forEach(hotel => {
+            console.log('hotels_are', hotel.hotels);
+            
+            addHotelCard(hotel);
+
+        });
+    } else {
+        console.error('Error: bookedHotels is not an array.');
+    }
+}
+
+        // function fetchHotels() {
+        //     var hotelCountElement = document.getElementById('hotelCount');
+        //     var hotelCardsContainer = document.querySelector('.hotel-container'); 
+            
+        //     fetch('http://13.200.156.231:8097/hotels/getAllHotels')
+        //         .then(response => response.json())
+        //         .then(responseData => {
+        //             if (responseData.status === 'SUCCESS' && Array.isArray(responseData.data)) {
+        //                 hotelCardsContainer.innerHTML = '';
+        //                 responseData.data.forEach(hotel => {
+        //                     addHotelCard(hotel);
+        //                 });
+        //             } else {
+        //                 console.error('Error fetching hotels. Response:', responseData);
+        //             }
+        //         })
+        //         .catch(error => console.error('Error fetching hotels:', error));
+        // }
+    </script>
+    
+    <!---------------------------------puja--------------------------->
+           <div class="profile">
+             <div class="hotels"  id="hotelCount5">Visited Places(0)</div>
+             <div class="hotelcard5">
+                <div class="image-section">
+                   <img class="hotelimg" src="../icons/image 2.PNG" alt="">
+               </div>
+                <div class="text-section">
+                   <p class="namehotel">Ram Ghat</p>
+                   <div class="type-member" style="width: 100%; display: flex;">
+                       <div class="hoteltype" style="float: right; width: 70%; margin-left: 10px;">
+                           <p class="hotelprice">₹ <p class="amount"> 250</p></p>
+                       </div>
+                   </div>
+               </div>
+            </div>  
+            
+            <div class="hotelcard5">
+                <div class="image-section">
+                   <img class="hotelimg" src="../icons/image 2.PNG" alt="">
+               </div>
+                <div class="text-section">
+                   <p class="namehotel">Ram Ghat</p>
+                   <div class="type-member" style="width: 100%; display: flex;">
+                       <div class="hoteltype" style="float: right; width: 70%; margin-left: 10px;">
+                           <p class="hotelprice">₹ <p class="amount"> 250</p></p>
+                       </div>
+                   </div>
+               </div>
+            </div> 
+
+           </div>
+
+
+           
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the elements
+            var hotelCountElement = document.getElementById('hotelCount5');
+            var hotelCards = document.querySelectorAll('.hotelcard5');
+    
+            // Update the initial hotel count
+            updateHotelCount();
+    
+            // Function to update the hotel count
+            function updateHotelCount() {
+                var hotelCount5 = hotelCards.length;
+                hotelCountElement.textContent = 'Visited Places(' + hotelCount5 + ')';
+            }
+    
+            // Add a new hotel card (you can call this function when adding a new hotel)
+            function addHotelCard() {
+                var newHotelCard = document.createElement('div');
+                newHotelCard.classList.add('hotelcard5');
+                // Add content or customize the new hotel card as needed
+
+    
+                // Update the hotel count
+                updateHotelCount();
+            }
+    
+            // Example: Call addHotelCard when adding a new hotel
+            addHotelCard();
+        });
+    </script>
+    <!--------------------------------------Attended pujas------------------------->
+    <div class="card" style="display: flex;">
+     <div class="profile">
+         <div class="hotels"  id="hotelCount2">Attended Pujas(0)</div>
+         <div class="hotel-container">
+         <div class="hotelcard2">
+            <div class="image-section">
+               <img class="hotelimg" src="../icons/image 1.PNG" alt="">
+           </div>
+            <div class="text-section">
+               <p class="namehotel">Mahakal Puja</p>
+               <div class="type-member" style="width: 100%; display: flex;">
+                   <div class="member" style="float: left; width: 80%;">
+                       <p class="number1"> <img class="memberimg" src="../icons/Location icon.png" alt="">
+                       Mahakaleshwar Temple</p>
+                   </div>
+                   <div class="hoteltype" style="float: right; width: 40%;">
+                       <p class="hotelprice">₹ <p class="amount"> 250</p></p>
+                   </div>
+               </div>
+           </div>
+        </div> 
+        </div>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get the elements
+                var hotelCountElement = document.getElementById('hotelCount2');
+                var hotelCards = document.querySelectorAll('.hotelcard2');
+        
+                // Update the initial hotel count
+                updateHotelCount();
+        
+                // Function to update the hotel count
+                function updateHotelCount() {
+                    var hotelCount2 = hotelCards.length;
+                    hotelCountElement.textContent = 'Attended Pujas(' + hotelCount2 + ')';
+                }
+        
+                // Add a new hotel card (you can call this function when adding a new hotel)
+                function addHotelCard() {
+                    var newHotelCard = document.createElement('div');
+                    newHotelCard.classList.add('hotelcard2');
+                    // Add content or customize the new hotel card as needed
+    
+        
+                    // Update the hotel count
+                    updateHotelCount();
+                }
+        
+                // Example: Call addHotelCard when adding a new hotel
+                addHotelCard();
+            });
+        </script>
+    
+    <!---------------------------------------taxi rides---------------------------------------------------->
+        <div class="profile">
+         <div class="hotels"  id="hotelCount3">Taxi Rides(0)</div>
+         <div class="hotelcard3">
+            <div class="image-section">
+               <img class="hotelimg" src="../icons/image 1.PNG" alt="">
+           </div>
+            <div class="text-section">
+               <p class="namehotel">Rudra Abhisheka Puja</p>
+               <div class="type-member" style="width: 100%; display: flex;">
+                   <div class="member" style="float: left; width: 80%;">
+                       <p class="number1"> <img class="memberimg" src="../icons/Location icon.png" alt="">
+                       Mahakaleshwar Temple</p>
+                   </div>
+                   <div class="hoteltype" style="float: right; width: 40%;">
+                       <p class="hotelprice">₹ <p class="amount"> 250</p></p>
+                   </div>
+               </div>
+           </div>
+        </div> 
+        
+        </div> 
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get the elements
+                var hotelCountElement = document.getElementById('hotelCount3');
+                var hotelCards = document.querySelectorAll('.hotelcard3');
+        
+                // Update the initial hotel count
+                updateHotelCount();
+        
+                // Function to update the hotel count
+                function updateHotelCount() {
+                    var hotelCount3 = hotelCards.length;
+                    hotelCountElement.textContent = 'Taxi Rides(' + hotelCount3 + ')';
+                }
+        
+                // Add a new hotel card (you can call this function when adding a new hotel)
+                function addHotelCard() {
+                    var newHotelCard = document.createElement('div');
+                    newHotelCard.classList.add('hotelcard3');
+                    // Add content or customize the new hotel card as needed
+    
+        
+                    // Update the hotel count
+                    updateHotelCount();
+                }
+        
+                // Example: Call addHotelCard when adding a new hotel
+                addHotelCard();
+            });
+        </script>
+    <!-------------------------------------------------shopping-------------------------------------------------->
+           <div class="profile">
+             <div class="hotels"  id="hotelCount4">Shopping(0)</div>
+             <div class="hotelcard4">
+                <div class="image-section">
+                   <img class="hotelimg" src="../icons/image 1.PNG" alt="">
+               </div>
+                <div class="text-section">
+                   <p class="namehotel">Rudra Abhisheka Puja</p>
+                   <div class="type-member" style="width: 100%; display: flex;">
+                       <div class="member" style="float: left; width: 80%;">
+                           <p class="number1"> <img class="memberimg" src="../icons/Location icon.png" alt="">
+                           Mahakaleshwar Temple</p>
+                       </div>
+                       <div class="hoteltype" style="float: right; width: 40%;">
+                           <p class="hotelprice">₹ <p class="amount"> 250</p></p>
+                       </div>
+                   </div>
+               </div>
+            </div> 
+           </div>
+           <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get the elements
+                var hotelCountElement = document.getElementById('hotelCount4');
+                var hotelCards = document.querySelectorAll('.hotelcard4');
+        
+                // Update the initial hotel count
+                updateHotelCount();
+        
+                // Function to update the hotel count
+                function updateHotelCount() {
+                    var hotelCount4 = hotelCards.length;
+                    hotelCountElement.textContent = 'Shopping(' + hotelCount4 + ')';
+                }
+        
+                // Add a new hotel card (you can call this function when adding a new hotel)
+                function addHotelCard() {
+                    var newHotelCard = document.createElement('div');
+                    newHotelCard.classList.add('hotelcard4');
+                    // Add content or customize the new hotel card as needed
+    
+        
+                    // Update the hotel count
+                    updateHotelCount();
+                }
+        
+                // Example: Call addHotelCard when adding a new hotel
+                addHotelCard();
+            });
+        </script>
+         </div>
+    </div>
+    </body>
+    <script src="../JAVASCRIPT/SLIDER/homeslider.js"></script>
+</html>

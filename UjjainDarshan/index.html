@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/ujjain-user-project.css">
+    <link rel="stylesheet" href="../CSS/ujjaindarshan.css">
+    <script src="../JAVASCRIPT/ujjaindarshan.js"></script>
+    <script src="../JAVASCRIPT/date&time.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+        rel="stylesheet">
+    <title>Ujjain</title>
+</head>
+<body>
+    <div class="snb">
+    <!------------------------------------header part------------------------------------------------------->
+    <header class="header" style="float: right;">
+        <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+        <div class="userprofile">
+            <div class="username" id="userName">Rojameenamanjappa</div>
+            <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
+        </div>
+        <div class="date-time" id="datetime">
+            <div class="date" id="date">   </div>
+            <div class="time" id="time">   </div>
+        </div> 
+       </header>
+       <script>
+        document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+       </script>
+
+ <!-----------------------------------------sidebar--------------------------------------------------------------->
+<nav class="side-bar">
+    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+    <ul>
+        <li><a href="../HOME/">Home</a></li>
+            <li><a href="../HotelBooking/">Hotel Booking</a></li>
+            <li><a href="../PujaBooking/" >Puja Booking</a></li>
+            <li><a href="../UjjainDarshan/" class="active">Ujjain Darshan</a></li>
+            <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+            <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+            <li><a href="../TaxiServices/">Taxi Services</a></li>
+            <li><a href="../AirportRides/">Airport Rides</a></li>
+            <li><a href="../Shooping/">Shopping</a></li>
+            <li><a href="../AboutUjjain/">About Ujjain</a></li>
+    </ul>
+</nav>
+<!---------------------------------------------main------------------------------------------------------------------>
+<div class="main">
+    <div> <p class="titel">Top Visited Places</p></div>
+    <div class="slider-container">
+        <div class="slider" id="useCard">
+        <!-- Add more product cards as needed -->
+        </div>
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+    </div>
+        
+        <div> <p class="titel1">Nearby Visiting Places</p></div>
+    <div class="slider-container1">
+        <div class="slider1" id="useCard1">
+        </div>
+        <button class="prev-btn1">&lt;</button>
+        <button class="next-btn1">&gt;</button>
+    </div>
+</div>
+
+    </div>
+    </body>
+    <script src="../JAVASCRIPT/SLIDER/ujjainslider.js"></script>
+</html>

@@ -1,0 +1,242 @@
+.cards, .card{
+    display: flex;
+    width: 1100px;
+}
+
+.profile, .profile1{
+    width: 330px;
+    height: 270px;
+    margin: 10px;
+    padding: 20px 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.history{
+    width: 290px;
+  height: 80px;
+  margin: 142px 0 0;
+  padding: 16px 55px 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.hotelcard, .hotelcard2, .hotelcard3, .hotelcard4, .hotelcard5 {
+    display: flex;
+    width: 290px;
+    height: 60px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-left: 5px;
+  padding: 10px 42px 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.hotels{
+
+    width: 203px;
+    height: 28px;
+    margin: 0 231px 5px 0;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000;
+}
+.hotel-container {
+    overflow-y: auto; /* Add a vertical scrollbar if needed */
+    width: 310px;
+    padding-right: 10px;
+    height: 270px;
+    margin-left: -5px;
+    max-height: 210px; /* Set a maximum height for the container */
+}
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.hotel-container::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.hotel-container::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hotel-container {
+    scrollbar-width: thin;
+    scrollbar-color: #fff transparent;
+}
+.hotelimg{
+    width: 80px;
+    height: 50px;
+    margin-top: -5px;
+    margin-left: -5px;
+    border-radius: 5px;
+}
+.image-section {
+    flex: 1; /* Take one-third of the card's width for the image */
+}
+.text-section {
+    flex: 2; /* Take two-thirds of the card's width for the text */
+    padding-left: 10px; /* Add some padding for spacing */
+}
+.namehotel{
+    width: 208px;
+  height: 19px;
+margin-left: 10px;
+  font-family: Roboto;
+  font-size: 12.5px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ff5c02;
+}
+.amount{
+    margin-top: -14px;
+    font-size: 12px;
+    margin-left: 10px;
+    font-family: Roboto;
+}
+.memberimg{
+    width: 10px;
+    height: 10px;
+   margin-top: 5px;
+    margin-left: 10px;
+}
+.number{
+   font-family: Roboto;
+   font-size: 14px;
+   margin-top: 2px;
+   margin-left: 2px;
+}
+.number1{
+    font-size: 10px;
+    font-family: Roboto;
+}
+.hotelprice{
+    font-family: Roboto;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #ff5c02;
+}
+.penmark{
+    color: #ff5c02;
+    margin-left: -360px;
+}
+/* .profileimg{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+}
+.btn{
+    width: 80px;
+  height: 80px;
+  border: solid 2.2px #ff5c02;
+  border-radius: 50%;
+} */
+
+.dot{
+    position: absolute;
+margin-top: -30px;
+    margin-left: 58px;
+    background: #00D73C;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+.hotelcard1{
+    display: flex;
+}
+#userName1{
+    color: #ff5c02;
+  margin: 0 0 6px;
+  font-family: Roboto;
+  max-width: 280px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 28px;
+  margin-top: 25px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+#mobileNumber1{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #000;
+}
+
+
+.historycard{
+    width: 290px;
+  height: 90px;
+  margin-top: 0px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.timerimg{
+    width: 20.6px;
+    height: 18px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.history1{
+    width: 46px;
+  height: 16px;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff5c02;
+}
+.p{
+margin-left: 10px;
+}
+
+/* ------------------------------viewprofile-picture------------------------------------------------ */
+#previewContainer {
+    width: 76px;
+    height: 76px;
+    border: 2px solid #ff5c02;
+    border-color: #ff5c02;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%; /* Rounded border */
+    position: relative;
+    background: center/50% no-repeat;
+    transition: background-size 0.3s ease;  
+
+  }
+
+  #previewImage,   #otherPreviewImage  {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%; /* Rounded corners for image */
+  }
+
+  #fileInput {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
