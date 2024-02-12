@@ -78,68 +78,71 @@ function hideDescription(index) {
     description.style.display = 'none';
 }
 
-const puja1 = document.querySelector('.puja1');
-const prevBtnpuja1 = document.querySelector('.prev-puja1');
-const nextBtnpuja1 = document.querySelector('.next-puja1');
-let slideIndexpuja1 = 0;
-let autoSlideIntervalpuja1;
+
+
+
+const ujjainhome1 = document.querySelector('.slider-wrapper1');
+const prevBtnujjainhome1 = document.querySelector('.prev-puja1');
+const nextBtnujjainhome1 = document.querySelector('.next-puja1');
+let slideIndexujjainhome1 = 0;
+let autoSlideIntervalujjainhome1;
 
 // Function to move the slider to a specific index
-function moveToSlidepuja1(index) {
+function moveToSlideujjainhome1(index) {
     if (index < 0) {
-        index = puja1.children.length - 1;
-    } else if (index >= puja1.children.length) {
+        index = ujjainhome1.children.length - 1;
+    } else if (index >= ujjainhome1.children.length) {
         index = 0;
     }
 
-    const translateX = -index * 50; // Adjust the width of the product card
-    puja1.style.transform = `translateX(${translateX}px)`;
-    slideIndexpuja1 = index;
+    const translateX = -index * 60; // Adjust the width of the product card
+    ujjainhome1.style.transform = `translateX(${translateX}px)`;
+    slideIndexujjainhome1 = index;
 
     // Hide or show prevBtn and nextBtn based on slideIndex
-    prevBtnpuja1.style.display = slideIndexpuja1 === 0 ? 'none' : 'block';
-    nextBtnpuja1.style.display = slideIndexpuja1 === puja1.children.length - 1 ? 'none' : 'block';
+    prevBtnujjainhome1.style.display = slideIndexujjainhome1 === 0 ? 'none' : 'block';
+    nextBtnujjainhome1.style.display = slideIndexujjainhome1 === ujjainhome1.children.length - 1 ? 'none' : 'block';
 }
 
 // Event listeners for previous and next buttons
-prevBtnpuja1.addEventListener('click', () => {
-    moveToSlidepuja1(slideIndexpuja1 - 1);
-    resetAutoSlidepuja1(); // Reset auto-slide timer on manual interaction
+prevBtnujjainhome1.addEventListener('click', () => {
+    moveToSlideujjainhome1(slideIndexujjainhome1 - 1);
+    resetAutoSlideujjainhome1(); // Reset auto-slide timer on manual interaction
 });
 
-nextBtnpuja1.addEventListener('click', () => {
-    moveToSlidepuja1(slideIndexpuja1 + 1);
-    resetAutoSlidepuja1(); // Reset auto-slide timer on manual interaction
+nextBtnujjainhome1.addEventListener('click', () => {
+    moveToSlideujjainhome1(slideIndexujjainhome1 + 1);
+    resetAutoSlideujjainhome1(); // Reset auto-slide timer on manual interaction
 });
 
 // Function to start auto-sliding
-function startAutoSlidepuja1() {
-    autoSlideIntervalpuja1 = setInterval(() => {
-        moveToSlidepuja1(slideIndexpuja1 + 1);
+function startAutoSlideujjainhome1() {
+    autoSlideIntervalujjainhome1 = setInterval(() => {
+        moveToSlideujjainhome1(slideIndexujjainhome1 + 1);
 
         // Check if we reached the end, and if so, loop back to the start
-        if (slideIndexpuja1 === puja1.children.length - 1) {
+        if (slideIndexujjainhome1 === ujjainhome1.children.length - 1) {
             setTimeout(() => {
-                moveToSlidepuja1(0);
+                moveToSlideujjainhome1(0);
             }, 3000); // Adjust the delay if needed
         }
     }, 3000); // Adjust the interval for auto-sliding
 }
 
 // Function to stop auto-sliding
-function stopAutoSlidepuja1() {
-    clearInterval(autoSlideIntervalpuja1);
+function stopAutoSlideujjainhome1() {
+    clearInterval(autoSlideIntervalujjainhome1);
 }
 
 // Function to reset auto-slide timer
-function resetAutoSlidepuja1() {
-    stopAutoSlidepuja1();
-    startAutoSlidepuja1();
+function resetAutoSlideujjainhome1() {
+    stopAutoSlideujjainhome1();
+    startAutoSlideujjainhome1();
 }
 
 // Start auto-sliding when the page loads
-startAutoSlidepuja1();
+startAutoSlideujjainhome1();
 
 // Pause auto-sliding when the user interacts with the slider
-puja1.addEventListener('mouseenter', stopAutoSlidepuja1);
-puja1.addEventListener('mouseleave', startAutoSlidepuja1);
+ujjainhome1.addEventListener('mouseenter', stopAutoSlideujjainhome1);
+ujjainhome1.addEventListener('mouseleave', startAutoSlideujjainhome1);
