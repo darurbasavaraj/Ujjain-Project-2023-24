@@ -94,6 +94,25 @@ form.addEventListener('submit',function(e){
     var password = document.getElementById('Password').value
     var cPassword = document.getElementById('cPassword').value
 
+     
+    // Mobile number validation
+    var mobileRegex = /^[0-9]{10}$/;
+    if (!mobileRegex.test(mobile)) {
+        alert("Please enter a valid 10-digit mobile number.");
+        return;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+    }
+
+    // Confirm password validation
+    if (password !== cPassword) {
+        alert("Passwords do not match. Please re-enter the password.");
+        return;
+    }
 
     //fetch post request
 
