@@ -107,7 +107,7 @@
         </div>
     `;
     hotelCardsContainer.insertBefore(newHotelCard, hotelCardsContainer.firstChild);
-    updateHotelCount(hotelCardsContainer, hotelCountElement);
+    updateHotelCount(hotelCardsContainer, hotelCountElement); 
 }
         function updateHotelCount(hotelCardsContainer, hotelCountElement) {
             var hotelCount = hotelCardsContainer.querySelectorAll('.hotelcard').length;
@@ -133,7 +133,7 @@
                 console.log('User_Details', userData);
                 
                 // Assuming the API response contains a field like 'bookedHotels' containing the booked hotels details
-                const bookedHotels = userData.data.hotelBooking;
+                const bookedHotels = userData.data.hotelBooking
                 console.log('Hotels_Details',bookedHotels);
                 // Display the count of booked hotels
                 hotelCountElement.textContent = `You have booked ${bookedHotels} hotels.`;
@@ -148,7 +148,7 @@
 }
 
 // Function to fetch and display booked hotels (if needed)
-// Function to fetch and display booked hotels (if needed)
+
 function fetchBookedHotels(bookedHotels) {
     // Initialize a variable to store the total count of hotels
     let totalHotelCount = 0;
@@ -179,7 +179,7 @@ function fetchBookedHotels(bookedHotels) {
     // Return the total count of hotels booked
     return totalHotelCount;
 }
-
+// Function to fetch and display booked hotels (if needed)
 // function fetchBookedHotels(bookedHotels) {
 //     // Check if bookedHotels is an array
 //     if (Array.isArray(bookedHotels)) {
@@ -194,6 +194,7 @@ function fetchBookedHotels(bookedHotels) {
 //         console.error('Error: bookedHotels is not an array.');
 //     }
 // }
+
 
         // function fetchHotels() {
         //     var hotelCountElement = document.getElementById('hotelCount');
