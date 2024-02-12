@@ -72,6 +72,7 @@
         </div>
         <div class="historycard">
            <div style="display: flex;"><img class="timerimg" src="../icons/timer.JPG" alt=""><span class="history1" >History</span></div>     
+            <div id="hotelCount123">hi</div>
         </div>
         </div>
     
@@ -137,6 +138,7 @@
                 console.log('Hotels_Details',bookedHotels);
                 // Display the count of booked hotels
                 hotelCountElement.textContent = `You have booked ${bookedHotels} hotels.`;
+              
 
                 // Now you can proceed to fetch and display the booked hotels if needed
                  fetchBookedHotels(bookedHotels);
@@ -175,7 +177,8 @@ function fetchBookedHotels(bookedHotels) {
     } else {
         console.error('Error: bookedHotels is not an array.');
     }
-
+    var hotelCountElement1 = document.getElementById('hotelCount123');
+    hotelCountElement1.textContent = `${totalHotelCount}`;
     // Return the total count of hotels booked
     return totalHotelCount;
 }
