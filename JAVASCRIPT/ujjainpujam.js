@@ -61,8 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="hotelname1">${item.poojaName}</div>
               <div class="templename"> <span class="location"><i class="fa-sharp fa-solid fa-location-dot"></i></span> ${item.templeName}</div>
               <div class="clock"> <span class="clockicon"><i class="fa-regular fa-clock"></i></span>10 : 00 AM</div>
-              <div><p class="toprate1"> ₹ ${item.price}<span class="btn1"> <div class="btn"><button class="Booknow1" >Book Now</button></div></span></p></div>
-              </div>`
+              <div><p class="toprate1"> ₹ ${item.price}<span class="btn1"> <div class="btn"><button class="Booknow1" >Book Now</button></div></span></p>
+              </div>
+              </div>
+              `
                     })
                     document.getElementById('slider-wrapper1').innerHTML = row;
                 })
