@@ -1,384 +1,658 @@
 #Traditionalpujas_sec {
-    /* height: 350px; */
-    height: 590px;
-    width:100%
+  /* height: 350px; */
+  height: 590px;
+  width:100%
+
+  /* display: flex; */
   
-    /* display: flex; */
-    
-  }
-  ::-webkit-scrollbar{
-    display: none;
-  }
-  .Traditional_Pujas_divs {
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.Traditional_Pujas_divs {
+
+  width: 1080px;
+}
+.slide-card{
+  width: 245px;
+  height: 280px;
+  background-color: #fff;
+  border-radius: 8px;
+  /* box-shadow: 2px 2px 2px 2px gray; */
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
   
-    width: 1080px;
-  }
-  .slide-card{
-    width: 245px;
-    height: 280px;
-    background-color: #fff;
-    border-radius: 8px;
-    /* box-shadow: 2px 2px 2px 2px gray; */
-    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
-    margin-left: 10px;
-    
-   
-  }
-  .slide-card:hover{
-    width: 500px;
-  }
-  .puja_type{
-    margin-left: 30px;
-    margin-top: 15px;
-  }
-  .Traditional_Pujas_div {
-    width: 245px;
-    height: 280px;
-    border-radius: 8px;
-    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
-    background-color: #fff;
-    margin-right: 20px;
-    display: flex;
-    transition: width 0.3s ease;
-    overflow: hidden;
-    
+ 
+}
+.slide-card:hover{
+  width: 500px;
+}
+.puja_type{
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.Traditional_Pujas_div {
+  width: 245px;
+  height: 280px;
+  border-radius: 8px;
+  /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
+  background-color: #fff;
+  margin-right: 20px;
+  display: flex;
+  transition: width 0.3s ease;
+  overflow: hidden;
   
-  }
-  .Traditional_Pujas_div:hover {
-    width: 480px;
-  }
-  .Traditional_Pujas_div:hover .puja_booknow_btn {
-    position: relative; 
-    left: 240px; 
-    background-color: #FF5F1F;
-    color: #fff;
-  }
-  .Traditional_Pujas_div:hover .puja_description {
-    display: block;
-  }
+
+}
+.Traditional_Pujas_div:hover {
+  width: 480px;
+}
+.Traditional_Pujas_div:hover .puja_booknow_btn {
+  position: relative; 
+  left: 240px; 
+  background-color: #FF5F1F;
+  color: #fff;
+}
+.Traditional_Pujas_div:hover .puja_description {
+  display: block;
+}
+
+
+.Traditional_Pujas_imgs {
+  width: 225px;
+  height: 150px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.puja_name {
+  color: #FF5F1F;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.Location_pujaname_div {
+  display: flex;
+
+}
+
+.Traditional_location_img {
+  width: 17px;
+  height: 20px;
+  margin-left: 6px;
+  margin-top: 3px;
+}
+
+.Temple_name {
+  font-size: 13px;
+  font-family: Roboto;
+  font-weight: 500;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.puja_time_div{
+  margin-top: 7px ;
+  margin-left: 10px;
+  display: flex;
+}
+.puja_time_clock{
+width: 15px;
+height: 15px;
+}
+.puja_time{
+  font-size: 14px;
+  margin-left: 5px;
+  font-family: Roboto;
+  /* font-size: 18px; */
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000;
+}
+.puja_up_price_button{
+  margin-top: -10px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.puja_price {
+  position: relative;
+  top: 10px;
+  /* margin-left: 10px; */
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 5px;
+  /* margin-left: -10px; */
+}
+
+/* .puja_price {
+  position: relative;
+  top: 6px;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 5px;
+} */
+.puja_description{
+  margin-left: 18px;
+  height: 150px;
+  width: 230px;
+  display: none;
   
+}
+.puja_description_heading{
+  color: #FF5F1F;
+  font-weight: 500;
+  font-size: 12px;
+  font-family: 'Roboto';
+  text-align: left;
+  margin-top: 10px;
+}
+.puja_description_data{
+  font-size: 10px;
+  font-family: 'Roboto';
+/* font-size: 14px; */
+font-weight: 500;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.57;
+letter-spacing: normal;
+text-align: justify;
+color: #000;
+}
+
+.puja_booknow_btn {
+  background-color: white;
+  color: #ff5c02;
+  border: solid 2px #ff5c02;
+  padding-left: 12px;
+  border-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+  margin-top: 12px;
+  margin-left: 50px;
+
+}
+
+.puja_booknow_btn:hover {
+
+  background-color: #ff5c02;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*---------------------------- puja bottom slider--------------------------------------------- */
+
+.slide-card1{
+  width: 200px;
+  height: 212px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-left: 10px;
   
-  .Traditional_Pujas_imgs {
-    width: 225px;
-    height: 150px;
-    margin-left: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-  }
-  .puja_name {
-    color: #FF5F1F;
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  .Location_pujaname_div {
-    display: flex;
-  
-  }
-  
-  .Traditional_location_img {
-    width: 17px;
-    height: 20px;
-    margin-left: 6px;
-    margin-top: 3px;
-  }
-  
-  .Temple_name {
-    font-size: 13px;
-    font-family: Roboto;
-    font-weight: 500;
-    padding-top: 5px;
-    padding-left: 5px;
-  }
-  .puja_time_div{
-    margin-top: 7px ;
-    margin-left: 10px;
-    display: flex;
-  }
-  .puja_time_clock{
+  /* box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1); */
+}
+#ujjainFamousPujas{
+  height: 212px;
+}
+.slide-card1:hover{
+  width: 380px;
+}
+.ujjainFamous_puja{
+  /* width: 170px; */
+  height: 200px;
+
+}
+.ujjainFamous_puja:hover{
+  width: 380px;
+}
+.Ujjain_FamousPujas_divs {
+  display: flex;
+  width: 1170px;
+  height: 200px;
+}
+.Ujjain_FamousPujas_div {
+  width: 171px;
+  height: 215px;
+  border-radius: 8px;
+  /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
+
+  background-color: #fff;
+  position: relative;
+  margin-right: 0px;
+  padding: 5px 0px 5px 0px;
+  display: flex;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+.Ujjain_FamousPujas_div:hover {
+  width: 380px;
+}
+
+.Ujjain_FamousPujas_imgs {
+  width: 150px;
+  height: 95px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.Famous_puja_name {
+  color: #ff5c02;
+  margin-left: 10px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.Famous_Location_pujaname_div {
+  display: flex;
+  margin-top: -5px;
+}
+
+.Famous_location_img {
   width: 15px;
   height: 15px;
-  }
-  .puja_time{
-    font-size: 14px;
-    margin-left: 5px;
-    font-family: Roboto;
-    /* font-size: 18px; */
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #000;
-  }
-  .puja_up_price_button{
-    margin-top: -10px;
-    margin-left: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
+  margin-left: 6px;
+  margin-top: 4px;
+}
+
+.Famous_Temple_name {
+  font-size: 11px;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-left: 5px;
+  color: black
+}
+.puja_time_down_div{
+  margin-top: 4px ;
+  margin-left: 10px;
+  display: flex;
+}
+.puja_time_down_clock{
+  width: 12px;
+  height: 12px;
+}
+.puja_time_down{
+  font-size: 11px;
+  /* font-weight: lighter; */
+  margin-left: 5px;
+}
+
+.Famous_puja_price {
+
+  position: relative;
+  top: 6px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 21px;
+  margin-top: 5px;
+}
+.Famous_puja_booknow_btn {
+  background-color: white;
+  width: 60px;
+  color:  #ff5c02;
+  border: solid 1px #ff5c02;
+  margin-left: 35px;
+  border-radius: 4px;
+  margin-top: 5px;
+  font-size: 11px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.added_btn{
+  background-color: white;
+  width: 60px;
+  color:  #ff5c02;
+  border: solid 1px #ff5c02;
+  margin-left: 35px;
+  border-radius: 4px;
+  margin-top: 5px;
+  font-size: 11px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+
+}
+.added_btn:hover{
+
+  background-color: #ff5c02;
+  color: #ffffff;
+}
+.ujjainFamous_puja:hover .added_btn {
+  position: relative; 
+  left: 130%; 
+  background-color: #FF5F1F;
+  color: #fff;
+}
+.puja_description_down{
+  margin-left: 18px;
+  margin-right: 10px;
+  height: 150px;
+  width: 230px;
+  display: none;
   
-  .puja_price {
-    position: relative;
-    top: 10px;
-    /* margin-left: 10px; */
-    font-weight: bold;
-    font-size: 24px;
-    margin-top: 5px;
-    /* margin-left: -10px; */
-  }
-  
-  /* .puja_price {
-    position: relative;
-    top: 6px;
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 5px;
-  } */
-  .puja_description{
-    margin-left: 18px;
-    height: 150px;
-    width: 230px;
-    display: none;
-    
-  }
-  .puja_description_heading{
-    color: #FF5F1F;
-    font-weight: 500;
-    font-size: 12px;
-    font-family: 'Roboto';
-    text-align: left;
-    margin-top: 10px;
-  }
-  .puja_description_data{
-    font-size: 10px;
-    font-family: 'Roboto';
-  /* font-size: 14px; */
+}
+.Ujjain_FamousPujas_div:hover .puja_description_down{
+  display: block;
+
+}
+.puja_description_heading_down{
+  color: #FF5F1F;
   font-weight: 500;
+  font-size: 12px;
+  font-family: 'Roboto';
+  text-align: left;
+  margin-top: 10px;
+}
+.puja_description_data_down{
+  font-size: 10px;
+  font-family: 'Roboto';
+/* font-size: 14px; */
+font-weight: 500;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.57;
+letter-spacing: normal;
+text-align: justify;
+color: #000;
+}
+.ujjainFamous_puja:hover .Famous_puja_booknow_btn {
+  position: relative; 
+  left: 130%; 
+  background-color: #FF5F1F;
+  color: #fff;
+}
+.Famous_puja_booknow_btn:hover{
+
+  background-color: #ff5c02;
+  color: #ffffff;
+}
+
+#Ujjain_FamousPujas_sec {
+  height: 300px;
+}
+
+/*---------------------------------------- puja popup booking --------------------------------------*/
+
+
+#pujaPackageBooking_popupdiv {
+  width: 385px;
+  height: 540px;
+  padding: 20px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 100px;
+  right: 80px;
+  z-index: 5;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+
+}
+/* .puja_scroll{
+  width: 380px;
+  height: 300px;
+  overflow-y: scroll;
+
+} */
+.scrolling-container10{
+  overflow-y: scroll;
+
+}
+.fisrt_sec_popup{
+  display: flex;
+  justify-content: space-between;
+}
+/* .popup_pujabooking_h3{
+  margin-top: 20px; 
+   margin-left: 20px;
+} */
+::-webkit-scrollbar{
+  display: none;
+  }
+  .close_icon {
+    width: 36px;
+    height: 27px;
+    cursor: pointer;
+    
+}
+
+.popup_pujapackage_name {
+  color: #ff5c02;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 10px;
+  /* margin-left: 20px; */
+  margin-bottom: 8px;
+}
+
+.puja_package_divs {
+  display: flex;
+  margin-bottom: 7px;
+  margin-top: 5px;
+  margin-left: 3px;
+  width: 340px;
+  height: 62px;
+  /* margin-left: 20px; */
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 0px gray;
+  background-color: #fff;
+}
+
+/* --------------------------single puja booking popup---------------------------------------- */
+
+.singlePackage_imgs {
+  /* width: 64px;
+  height: 48px;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-left: 6px; */
+  width: 150px;
+  height: 150px;
+  margin: 0 20px 0 0;
+  border-radius: 13.3px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.singlepujaNames {
+  color: #ff5c02;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 0px;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.singlePackage_location_img {
+  width: 15px;
+  margin-top: 10px;
+  /* margin-left: 10px; */
+
+
+}
+
+.Package_templeName {
+  font-size: 10px;
+  font-weight: bold;
+  /* margin-left: 3px; */
+  margin-top: 12px;
+}
+
+
+/* ---------------------------end--------------------------------------- */
+
+#select_booking_date{
+  color:orangered
+}
+.Package_imgs {
+  width: 64px;
+  height: 48px;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-left: 6px;
+}
+
+.pujaNames {
+  color: #ff5c02;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.Package_location_img {
+  width: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+
+
+}
+
+.Package_templeName {
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 3px;
+  margin-top: 12px;
+}
+
+.id:before {
+  color: #FF5F1F;
+  font-size: 14px;
+  margin-left: 12px;
+  margin-top: 11px;
+  display: block;
+}
+.Package_puja_time_icon{
+  width: 12px;
+  height: 12px;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+.Package_puja_time{
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 3px;
+  margin-top: 12px;
+}
+
+.Package_profile_num {
+  display: block;
+  margin-top: 10px;
+  margin-left: 4px;
+  font-size: 14px;
+}
+
+.Package_pricenum {
+  display: block;
+  margin-top: 10px;
+  margin-left: 12px;
+  font-size: 10px;
+  font-weight: bold;
+
+  font-family: roboto;
+}
+
+.Package_pricenum::first-letter {
+  color: #ff5c02;
+  font-weight: bold;
+}
+
+.Package_delete_icon {
+  height: 21px;
+  width: 32px;
+ position: absolute;
+ left: 325px;
+  /* margin-left: 37px; */
+  margin-top: 20px;
+}
+.pujabooking_instructions{
+  margin-top: 30px;
+}
+.pujabooking_instructions.ol{
+  padding-left: 20px;
+}
+.pujabooking_ol {
+  margin-bottom: 10px;
+  margin-top: 5px;
+
+}
+
+.li {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-left: 15px;
+  
+}
+
+.total_fare {
+  font-size: 20px;
+  font-weight: 600;
+  /* margin-left: 20px; */
+}
+
+.popup_puja_btn{
+  width: 340px;
+  height: 41px;
+  border: solid 1px #FF5F1F;
+  background-color: #ff5c02;
+  color: #fff;
+  /* margin-left: 15px; */
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Package_totalprice {
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 150px;
+  margin-top: 10px;
+
+}
+
+/* ----------------------------New UI puja booking popup-------------------------------------- */
+#puja_booking_popup{
+  padding: 20px;
+  width: 350px;
+  height: 470px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px 0px gray;
+  position: absolute;
+  top:130px;
+  left: 800px;
+  background-color: #fff;
+}
+.puja_booking_closeIcon{
+  display: flex;
+}
+/* .close_icon{
+
+} */
+.puja_needfull_things{
+  margin-top: 10px;
+}
+.puja_need_items{
+  margin-left: 17px;
+  padding-top: 10px;
+  font-family: roboto;
+  font-size: 12px;
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.57;
+  line-height: 1.5;
   letter-spacing: normal;
-  text-align: justify;
-  color: #000;
-  }
-  
-  .puja_booknow_btn {
-    background-color: white;
-    color: #ff5c02;
-    border: solid 2px #ff5c02;
-    padding-left: 12px;
-    border-radius: 5px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-right: 10px;
-    margin-top: 12px;
-    margin-left: 50px;
-  
-  }
-  
-  .puja_booknow_btn:hover {
-  
-    background-color: #ff5c02;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  /*---------------------------- puja bottom slider--------------------------------------------- */
-  
-  .slide-card1{
-    width: 200px;
-    height: 212px;
-    background-color: #fff;
-    border-radius: 8px;
-    margin-left: 10px;
-    
-    /* box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1); */
-  }
-  #ujjainFamousPujas{
-    height: 212px;
-  }
-  .slide-card1:hover{
-    width: 380px;
-  }
-  .ujjainFamous_puja{
-    /* width: 170px; */
-    height: 200px;
-  
-  }
-  .ujjainFamous_puja:hover{
-    width: 380px;
-  }
-  .Ujjain_FamousPujas_divs {
-    display: flex;
-    width: 1170px;
-    height: 200px;
-  }
-  .Ujjain_FamousPujas_div {
-    width: 171px;
-    height: 196px;
-    border-radius: 8px;
-    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); */
-    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
-  
-    background-color: #fff;
-    position: relative;
-    margin-right: 0px;
-    padding: 5px 0px 5px 0px;
-    display: flex;
-    transition: width 0.3s ease;
-    overflow: hidden;
-  }
-  .Ujjain_FamousPujas_div:hover {
-    width: 380px;
-  }
-  
-  .Ujjain_FamousPujas_imgs {
-    width: 150px;
-    height: 95px;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-top: 2px;
-  }
-  
-  .Famous_puja_name {
-    color: #ff5c02;
-    margin-left: 10px;
-    text-align: left;
-    font-size: 13px;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  .Famous_Location_pujaname_div {
-    display: flex;
-    margin-top: -5px;
-  }
-  
-  .Famous_location_img {
-    width: 15px;
-    height: 15px;
-    margin-left: 6px;
-    margin-top: 4px;
-  }
-  
-  .Famous_Temple_name {
-    font-size: 11px;
-    font-weight: bold;
-    padding-top: 5px;
-    padding-left: 5px;
-    color: black
-  }
-  .puja_time_down_div{
-    margin-top: 4px ;
-    margin-left: 10px;
-    display: flex;
-  }
-  .puja_time_down_clock{
-    width: 12px;
-    height: 12px;
-  }
-  .puja_time_down{
-    font-size: 11px;
-    /* font-weight: lighter; */
-    margin-left: 5px;
-  }
-  
-  .Famous_puja_price {
-  
-    position: relative;
-    top: 6px;
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 21px;
-    margin-top: 5px;
-  }
-  .Famous_puja_booknow_btn {
-    background-color: white;
-    width: 60px;
-    color:  #ff5c02;
-    border: solid 1px #ff5c02;
-    margin-left: 35px;
-    border-radius: 4px;
-    margin-top: 5px;
-    font-size: 11px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    cursor: pointer;
-  }
-  .added_btn{
-    background-color: white;
-    width: 60px;
-    color:  #ff5c02;
-    border: solid 1px #ff5c02;
-    margin-left: 35px;
-    border-radius: 4px;
-    margin-top: 5px;
-    font-size: 11px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    cursor: pointer;
-  
-  }
-  .added_btn:hover{
-  
-    background-color: #ff5c02;
-    color: #ffffff;
-  }
-  .ujjainFamous_puja:hover .added_btn {
-    position: relative; 
-    left: 130%; 
-    background-color: #FF5F1F;
-    color: #fff;
-  }
-  .puja_description_down{
-    margin-left: 18px;
-    margin-right: 10px;
-    height: 150px;
-    width: 230px;
-    display: none;
-    
-  }
-  .Ujjain_FamousPujas_div:hover .puja_description_down{
-    display: block;
-  
-  }
-  .puja_description_heading_down{
-    color: #FF5F1F;
-    font-weight: 500;
-    font-size: 12px;
-    font-family: 'Roboto';
-    text-align: left;
-    margin-top: 10px;
-  }
-  .puja_description_data_down{
-    font-size: 10px;
-    font-family: 'Roboto';
-  /* font-size: 14px; */
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.57;
-  letter-spacing: normal;
-  text-align: justify;
-  color: #000;
-  }
-  .ujjainFamous_puja:hover .Famous_puja_booknow_btn {
-    position: relative; 
-    left: 130%; 
-    background-color: #FF5F1F;
-    color: #fff;
-  }
-  .Famous_puja_booknow_btn:hover{
-  
-    background-color: #ff5c02;
-    color: #ffffff;
-  }
-  
-  #Ujjain_FamousPujas_sec {
-    height: 300px;
-  }
-  
+  color: #000
+}

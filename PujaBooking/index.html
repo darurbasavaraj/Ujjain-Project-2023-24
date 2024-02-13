@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="../CSS/ujjainpuja.css">
+        <link rel="stylesheet" href="../CSS/puja.css">
         <script  src="../JAVASCRIPT/ujjainpujam.js"></script>
         <script src="../JAVASCRIPT/date&time.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,59 +15,128 @@
 </head>
 <body>
     <div class="snb">
-    <!------------------------------------header part------------------------------------------------------->
-    <header class="header" style="float: right;">
-        <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
-        <div class="userprofile">
-            <div class="username" id="userName">Rojameenamanjappa</div>
-            <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
-        </div>
-        <div class="date-time" id="datetime">
-            <div class="date" id="date">   </div>
-            <div class="time" id="time">   </div>
-        </div> 
-       </header>
-       <script>
-        document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
-       </script>
+        <!------------------------------------header part------------------------------------------------------->
+        <header class="header" style="float: right;">
+            <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+            <div class="userprofile">
+                <div class="username" id="userName">Rojameenamanjappa</div>
+                <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
+            </div>
+            <div class="date-time" id="datetime">
+                <div class="date" id="date">   </div>
+                <div class="time" id="time">   </div>
+            </div> 
+        </header>
+        <script>
+            document.getElementById("userName").innerHTML=sessionStorage.getItem("user")
+        </script>
 
  <!-----------------------------------------sidebar--------------------------------------------------------------->
-<nav class="side-bar">
-    <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
-    <ul>
-        <li><a href="../HOME/">Home</a></li>
-            <li><a href="../HotelBooking/">Hotel Booking</a></li>
-            <li><a href="../PujaBooking/" class="active">Puja Booking</a></li>
-            <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
-            <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
-            <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
-            <li><a href="../TaxiServices/">Taxi Services</a></li>
-            <li><a href="../AirportRides/">Airport Rides</a></li>
-            <li><a href="../Shooping/">Shopping</a></li>
-            <li><a href="../AboutUjjain/">About Ujjain</a></li>
-    </ul>
-</nav>
+        <nav class="side-bar">
+            <img class="img" src="../icons/ujjain-darshan@3x.png" alt="image">
+            <ul>
+                <li><a href="../HOME/">Home</a></li>
+                    <li><a href="../HotelBooking/">Hotel Booking</a></li>
+                    <li><a href="../PujaBooking/" class="active">Puja Booking</a></li>
+                    <li><a href="../UjjainDarshan/">Ujjain Darshan</a></li>
+                    <li><a href="../OmkareshwarTour/">Omkareshwar Tour</a></li>
+                    <li><a href="../MaaBaglamukhiTour/">Maa Baglamukhi Tour</a></li>
+                    <li><a href="../TaxiServices/">Taxi Services</a></li>
+                    <li><a href="../AirportRides/">Airport Rides</a></li>
+                    <li><a href="../Shooping/">Shopping</a></li>
+                    <li><a href="../AboutUjjain/">About Ujjain</a></li>
+            </ul>
+        </nav>
 <!---------------------------------------------main------------------------------------------------------------------>
-<div class="main">
+<div class="main" onload="loading()">
     <div> <p class="titel">Traditional Pujas</p></div>
     <div class="ujjainpuja-container">
-        <div class="slider-wrapper" id="slider-wrapper">                    
+        <div class="slider-wrapper" id="traditionalPuja">                    
         <!-- Add more product cards as needed -->
         </div>
         <button class="prev-ujjainpuja">&lt;</button>
         <button class="next-ujjainpuja">&gt;</button>
-        </div>
+    </div>
    
     <div class="titel1">Ujjain Famous Pujas</div>
     <div class="puja-container1">
-        <div class="slider-wrapper1" id="slider-wrapper1">
+        <div class="slider-wrapper1" id="ujjainFamousPujas">
             <!-- Add more product cards as needed -->   
         </div>
         <button class="prev-puja1">&lt;</button>
         <button class="next-puja1">&gt;</button>   
-</div>
+    </div>
 
+    <div id="PujaBooking_popup" style="display: none;" >
+      
+        <div id="pujaPackageBooking_popupdiv" >
+            <div class="fisrt_sec_popup">
+                <h3 class="popup_pujabooking_h3"></h3>
+                <img class="close_icon" src="../Images/close icon.png"
+                    onclick="pujaPackageBooking_closePopUp()" alt="" srcset="">
+            </div>
+            <h4 class="popup_pujapackage_name"></h4>
+            <div class="puja_scroll">
+                <div class="scrolling-container10" id="final">
+                    <div class="puja_package_divs" id="puja_package_divs">
 
+                    </div>
+                </div>
+            </div>
+
+            <div class="puja_needfull_things" id="puja_needfull_things" style="display: none;">
+                <h4>Needfull Things :</h4>
+                <ol class="puja_need_items">
+                    <li>Turmeric Powder <span style="margin-left: 30px;">: 100 grams</span></li>
+                    <li>Lemons <span style="margin-left: 79px;">: 3</span></li>
+                    <li>Nava Dhanya <span style="margin-left: 49px;">: 1 Packet</span></li>
+                    <li>Coconut <span style="margin-left: 78px;">: 2</span></li>
+                    <li>Flower Garland <span style="margin-left: 40px;">: 2</span></li>
+                    <li>Seperate Flowers <span style="margin-left: 27px;">: 2</span></li>
+                    <li>Red & Black cloth <span style="margin-left: 27px;">: 1 each</span></li>
+                </ol> 
+            </div>
+
+            <div class="pujabooking_instructions">
+                <h3 class="booking_ins" >Booking Instructions :</h3>
+                <ol class="pujabooking_ol">
+                    <li class="li">Cash Payment only allowed. </li>
+                    <li class="li">Concerned person will pickup you from the Airport or Bustop and Drop you
+                        at the Hotel by himself.</li>
+                    <li class="li">You can check-in to the hotel and Pay if you like the hotel.</li>
+                    <li class="li">You can change your Hotel at the same time to the best one.</li>
+                </ol>
+               
+            </div>
+
+            <div id="select_pujabooking_date" style="display:none">select puja date</div>
+            <div class="Container" id="table2" style="display:none;">
+                <div class="calendar-assets">
+                   
+                    <div class="day-assets">
+                        <button class="btn" onclick="prevMonth()" title="Dia anterior"><i class="fas fa-chevron-left"></i> </button>
+                        <button class="btn" onclick="resetDate()" title="Dia atual"><i class="fas fa-calendar-day"></i><div class="month" id="month-header"></button>
+                        <button class="btn" onclick="nextMonth()" title="Próximo dia"><i class="fas fa-chevron-right"></i> </button>
+                    </div>
+                </div>
+                <div class="calendar" id="table" >
+                   
+                </div>
+                
+                <!-- <span class="total_fare">Total Fare</span>
+                <span class="Package_totalprice puja-api-price" id="Package_totalprice" >&#8377 ${totalPrice}</span>
+                <input type="button" class = "popup_puja_btn" value="Book Puja" onclick="popup_pujaPackageBooking_btn1()"> -->
+             </div>
+
+            <div id="totalPrice_btn" style="display: none;">
+                <span class="total_fare">Total Fare</span>
+                <span class="Package_totalprice totalprices puja-api-price" id="Package_totalprice1">&#8377</span>
+                <button class="popup_puja_btn" onclick="popup_pujaPackageBooking_btn()"></button>
+                <button class="popup_puja_btn" style="display: none;" onclick="popup_pujaPackageBooking_btn1()"></button>
+            </div>
+
+        </div>
+    </div>
 </div>
 
     </div>
