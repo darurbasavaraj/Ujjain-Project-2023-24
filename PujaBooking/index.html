@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Ujjain</title>
 </head>
-<body>
+<body onload="loading()">
     <div class="snb">
         <!------------------------------------header part------------------------------------------------------->
         <header class="header" style="float: right;">
@@ -48,7 +48,7 @@
             </ul>
         </nav>
 <!---------------------------------------------main------------------------------------------------------------------>
-<div class="main" onload="loading()">
+<div class="main" >
     <div> <p class="titel">Traditional Pujas</p></div>
     <div class="ujjainpuja-container">
         <div class="slider-wrapper" id="traditionalPuja">                    
@@ -72,7 +72,7 @@
         <div id="pujaPackageBooking_popupdiv" >
             <div class="fisrt_sec_popup">
                 <h3 class="popup_pujabooking_h3"></h3>
-                <img class="close_icon" src="../Images/close icon.png"
+                <img class="close_icon" src="../icons/close icon.png"
                     onclick="pujaPackageBooking_closePopUp()" alt="" srcset="">
             </div>
             <h4 class="popup_pujapackage_name"></h4>
