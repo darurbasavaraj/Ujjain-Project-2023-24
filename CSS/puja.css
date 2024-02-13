@@ -386,6 +386,20 @@ color: #000;
 
 
 #pujaPackageBooking_popupdiv {
+
+  width: 385px;
+  position: absolute;
+  height: 540px;
+  padding: 20px;
+  overflow-y: scroll;
+  top: 100px;
+  right: 80px;
+  z-index: 5;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  /* padding: 20px;
   overflow-y: scroll;
   width: 350px;
         height: 540px;
@@ -399,6 +413,19 @@ color: #000;
     z-index: 5;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
     background-color: #fff;
+  height: 540px;
+ padding: 24px 20px 20px;
+  border-radius: 20px;
+position: absolute;
+border-radius: 10px;
+top: 30px;
+margin-top: 60px;
+margin-left: 750px;
+z-index: 5;
+box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+background-color: #fff; */
+
+
 
 }
 /* .puja_scroll{
