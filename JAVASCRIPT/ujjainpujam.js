@@ -82,21 +82,21 @@ function addDynamicStyles() {
     // Define your dynamic styles
     const dynamicStyles = `
     
-    * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+//     * {
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+//   }
   
-  body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    color: #000000;
-    -webkit-font-smoothing: antialiased;
-  }
+//   body {
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+//     font-family: "Open Sans", sans-serif;
+//     font-size: 14px;
+//     color: #000000;
+//     -webkit-font-smoothing: antialiased;
+//   }
   
   input,
   button,
@@ -263,7 +263,7 @@ function addDynamicStyles() {
     display: flex;
     
     align-items: center;
-    border-radius: 18px 18px 0px 0px;
+    // border-radius: 18px 18px 0px 0px;
     padding: 15px;
     height: 50px;
     // width: 100%;
@@ -714,12 +714,16 @@ function addDynamicStyles() {
     }
 
     function popup_pujaPackageBooking_btn1(){
+        document.getElementById('puja_needfull_things-cnf').style.display="block"
+
         document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
         document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
         document.getElementById('select_pujabooking_date').style.display = "none";
         document.getElementById('table2').style.display = "none";
 
         // post method for multiple cards
+
+        
     }
   
     const months = [
