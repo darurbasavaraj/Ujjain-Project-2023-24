@@ -259,7 +259,7 @@ function addDynamicStyles() {
     user-select: none;
   }
   
-  .header {
+  .header123 {
     display: flex;
     justify-content: space-between;
     align-items: center;
