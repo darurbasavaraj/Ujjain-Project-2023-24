@@ -472,7 +472,7 @@ function addDynamicStyles() {
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
               document.getElementById('totalPrice_btn').style.display="none"
   
-              document.getElementById('bookButton_'+data.id).innerText ="Added"
+            //   document.getElementById('bookButton_'+data.id).innerText ="Added"
               const button = document.getElementById('bookButton_'+data.id);
               button.disabled = true;
               pujaPackageDiv.innerHTML= `
@@ -685,7 +685,27 @@ function addDynamicStyles() {
   
       // document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
       // document.getElementById('puja_package_divs').style.display = "none";
-      
+
+
+    //   -------------------------post method for single puja booking--------------------------------------------
+
+      const selectedData = sessionStorage.getItem('clickedButton')
+      selectedData.forEach(obj => {
+        Object.entries(obj).forEach(([key, value]) => {
+          console.log(`Key: ${key}, Value: ${value}`);
+        });
+      });
+        console.log("forndata",selectedData[0])
+      var formdata = new FormData();
+    //   formdata.append("userId", user_id);
+    //   formdata.append("pojaId", pujaId);
+      formdata.append("pojaname",selectedData[0].poojaName)
+      var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
+ 
+      fetch(`http://13.200.156.231:8097/poja/save`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))  
+      .catch(error => console.log('error', error));
       
   
     }
