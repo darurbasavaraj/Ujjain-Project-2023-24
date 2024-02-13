@@ -82,7 +82,6 @@ function addDynamicStyles() {
     // Define your dynamic styles
     const dynamicStyles = `
     
-  
 
   
   input,
