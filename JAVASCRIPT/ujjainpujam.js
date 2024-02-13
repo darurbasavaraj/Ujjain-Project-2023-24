@@ -259,7 +259,7 @@ function addDynamicStyles() {
     user-select: none;
   }
   
-  .header {
+  .header123 {
     display: flex;
     
     align-items: center;
@@ -491,8 +491,9 @@ function addDynamicStyles() {
               button.disabled = true;
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
+              <div style="display:flex;">
                 <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.id}" alt="" srcset="">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.id}" alt="" srcset="">
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.id}" alt="" srcset=""></div>
     
                 <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
