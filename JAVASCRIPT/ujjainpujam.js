@@ -82,21 +82,8 @@ function addDynamicStyles() {
     // Define your dynamic styles
     const dynamicStyles = `
     
-    * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
   
-  body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    color: #000000;
-    -webkit-font-smoothing: antialiased;
-  }
+
   
   input,
   button,

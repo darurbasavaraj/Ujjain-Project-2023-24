@@ -387,6 +387,7 @@ color: #000;
 
 #pujaPackageBooking_popupdiv {
   width: 385px;
+  position: absolute;
   height: 540px;
   padding: 20px;
   overflow-y: scroll;
