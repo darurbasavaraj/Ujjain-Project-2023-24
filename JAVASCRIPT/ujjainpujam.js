@@ -698,6 +698,8 @@ function addDynamicStyles() {
   
       // document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
       // document.getElementById('puja_package_divs').style.display = "none";
+      
+      
   
     }
     function popup_pujaPackageBooking_btn(){
@@ -723,7 +725,7 @@ function addDynamicStyles() {
 
         // post method for multiple cards
 
-        
+
     }
   
     const months = [
