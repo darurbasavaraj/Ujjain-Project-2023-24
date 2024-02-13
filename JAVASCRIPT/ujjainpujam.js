@@ -261,12 +261,12 @@ function addDynamicStyles() {
   
   .header123 {
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
     border-radius: 18px 18px 0px 0px;
     padding: 15px;
     height: 50px;
-    width: 100%;
+    // width: 100%;
     color: #262626;
   }
   
@@ -372,11 +372,11 @@ function addDynamicStyles() {
                               alt="">
                           <p class="puja_name pujanames_oncard">${product.poojaName}</p>
                           <div class="Location_pujaname_div">
-                              <img src="../Images/Location icon.png" class="Traditional_location_img" alt="">
+                              <img src="../icons/Location icon.png" class="Traditional_location_img" alt="">
                               <span class="Temple_name">${product.templeName}</span>
                           </div>
                           <div class = "puja_time_div">
-                            <img src="../Images/time.png" alt="" class= "puja_time_clock">
+                            <img src="../icons/time.png" alt="" class= "puja_time_clock">
                             <span class="puja_time">${product.time}</span>
                           </div>
                           <div class="puja_up_price_button">
@@ -435,15 +435,15 @@ function addDynamicStyles() {
                             alt="" srcset="">
                         <p class="Famous_puja_name">${product.poojaName}</p>
                         <div class="Famous_Location_pujaname_div">
-                            <img src="../Images/Location icon.png" class="Famous_location_img" alt="">
+                            <img src="../icons/Location icon.png" class="Famous_location_img" alt="">
                             <span class="Famous_Temple_name">${product.templeName}</span>
                         </div>
                         <div class = "puja_time_down_div">
-                          <img src="../Images/time.png" alt="" class= "puja_time_down_clock">
+                          <img src="../icons/time.png" alt="" class= "puja_time_down_clock">
                           <span class="puja_time_down">${product.time}</span>
                         </div>
                         <div class="puja_price_btn">
-                          <span class="Famous_puja_price">&#8377;${product.price} </span>
+                          <span class="Famous_puja_price">₹ ${product.price} </span>
                           <input type="button" class="Famous_puja_booknow_btn" value="Book Now">
                         </div>
                       </div>
@@ -497,10 +497,10 @@ function addDynamicStyles() {
                 <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
                   <div style="display: flex;">
-                      <img class="singlePackage_location_img" src="../Images/Location icon.png" alt="" srcset="">
+                      <img class="singlePackage_location_img" src="../icons/Location icon.png" alt="" srcset="">
                       <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
                       
-                      <img class="Package_puja_time_icon" src="../Images/time.png" alt="" srcset="">
+                      <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
                       <span class="Package_puja_time">${data.time}</span>
                       <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
                   </div>
