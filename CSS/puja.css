@@ -386,7 +386,7 @@ color: #000;
 
 
 #pujaPackageBooking_popupdiv {
-<<<<<<< HEAD
+
   width: 385px;
   position: absolute;
   height: 540px;
@@ -398,8 +398,8 @@ color: #000;
   border-radius: 15px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
-=======
-  padding: 20px;
+
+  /* padding: 20px;
   overflow-y: scroll;
   width: 350px;
   height: 540px;
@@ -412,8 +412,8 @@ margin-top: 60px;
 margin-left: 750px;
 z-index: 5;
 box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-background-color: #fff;
->>>>>>> d6c48346747067922c83b140bd5f627b8888e402
+background-color: #fff; */
+
 
 
 }
