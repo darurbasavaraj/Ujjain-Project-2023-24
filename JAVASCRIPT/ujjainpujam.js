@@ -687,12 +687,12 @@ function addDynamicStyles() {
     }
   
     function popup_pujaBookingConf_btn1(){
-      document.getElementById('packagename').style.display = "none";
-      document.getElementById('table1').style.display = "none";
-      document.getElementById('puja_needfull_things').style.display="block"
-      document.getElementById('select_booking_date').style.display = "none";
-      document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
-      document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+        document.getElementById('puja_needfull_things-cnf').style.display="block"
+        document.getElementById('packagename').style.display = "none";
+        document.getElementById('table1').style.display = "none";
+        document.getElementById('select_booking_date').style.display = "none";
+        document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+        document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
       // document.getElementsByClassName('puja_scroll')[0].style.display = "block";
   
   
@@ -703,13 +703,23 @@ function addDynamicStyles() {
     function popup_pujaPackageBooking_btn(){
       // document.getElementById('packageBook').style.display = "none";
       document.getElementById('select_pujabooking_date').style.display = "block";
-      // document.getElementById('multiplePujas').style.display="none";
       document.getElementById('table2').style.display = "block";
       document.getElementsByClassName('popup_pujapackage_name')[0].innerText=""
   
       document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
       document.getElementsByClassName('puja_scroll')[0].style.display = "none";
+      document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+      document.getElementsByClassName('popup_puja_btn')[1].style.display= "block"
   
+    }
+
+    function popup_pujaPackageBooking_btn1(){
+        document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+        document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+        document.getElementById('select_pujabooking_date').style.display = "none";
+        document.getElementById('table2').style.display = "none";
+
+        // post method for multiple cards
     }
   
     const months = [
