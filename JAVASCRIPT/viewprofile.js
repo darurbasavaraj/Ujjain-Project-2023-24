@@ -6,6 +6,7 @@ if (storedMobileNumber) {
     document.getElementById("mobileNumber1").innerText = "+91 " + storedMobileNumber;
 }
 
+
 // -------------------------------upload-picture--------------------------------------
 
 window.onload = function() {
