@@ -119,9 +119,9 @@ form.addEventListener('submit',function(e){
     fetch("http://13.200.156.231:8097/user/resetPassword",{
         method:'PATCH',
         body:JSON.stringify({
-                "mobileNumber":"mobile",
-    "password":"Password",
-    "conformPassword":"Password"
+          "mobileNumber": "mobile",
+        "password": "password",
+        "conformPassword": "cPassword"
         }),
         headers:{
             "Content-Type": "application/json; charset=UTF-8"

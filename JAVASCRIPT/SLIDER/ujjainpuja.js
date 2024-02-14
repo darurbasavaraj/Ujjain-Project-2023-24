@@ -12,7 +12,7 @@ function moveToSlideujjainpuja(index) {
         index = 0;
     }
 
-    const translateX = -index * 50; // Adjust the width of the product card
+    const translateX = -index * 150; // Adjust the width of the product card
     ujjainpuja.style.transform = `translateX(${translateX}px)`;
     slideIndexujjainpuja = index;
 
