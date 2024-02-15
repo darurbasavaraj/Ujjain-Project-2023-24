@@ -419,7 +419,7 @@ function addDynamicStyles() {
                   <div class=" ujjainFamous_puja">
                     <div class="Ujjain_FamousPujas_div">
                       <div class="puja_card_left">
-                        <img src="http://13.200.156.231:8097/poja/display/custom/${product.pojaId}"  class="Ujjain_FamousPujas_imgs"
+                      <img src="http://13.200.156.231:8097/poja/display/custom/${product.pojaId}" class="Ujjain_FamousPujas_imgs"
                             alt="" srcset="">
                         <p class="Famous_puja_name">${product.poojaName}</p>
                         <div class="Famous_Location_pujaname_div">
@@ -454,10 +454,8 @@ function addDynamicStyles() {
     
     let apiData= [];
     
-    document.addEventListener('DOMContentLoaded', function () {
-
-        function renderData(pujaId){
-          console.log("id",pujaId)
+        function renderData(pojaId){
+          console.log("id",pojaId)
     
           const finalArray = JSON.parse(sessionStorage.getItem('clickedButton'));
           let arrayOfObjects = [].concat(...finalArray)
@@ -477,23 +475,14 @@ function addDynamicStyles() {
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
               document.getElementById('totalPrice_btn').style.display="none"
   
-              document.getElementById('bookButton_'+ data.pujaId).innerHTML ="Added"
-            //   const myElement = document.getElementById('bookButton_'+data.pujaId);
-            //     console.log('ids',myElement)
-            //   if (myElement) {
-            //     myElement.innerText = 'Added';
-            //   } 
-            //   else {
-            //     console.error("Element with ID 'Book button' not found.");
-            //   }
-              const button = document.getElementById('bookButton_'+data.pujaId);
-              console.log(button,'button')
+            //   document.getElementById('bookButton_'+data.id).innerText ="Added"
+              const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
               <div style="display:flex;">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pujaId}" alt="" srcset="">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pujaId}" alt="" srcset=""></div>
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset=""></div>
     
                 <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
@@ -582,13 +571,13 @@ function addDynamicStyles() {
     
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="block"
     
-            //   document.getElementById('bookButton_'+data.id).innerText ="Added"
-              const button = document.getElementById('bookButton_'+data.pujaId);
+              document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
+              const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
               // document.getElementById('added_'+data.id).style.display="block"
               pujaPackageDiv.innerHTML= `
           
-                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pujaId}" alt="" srcset="">
+                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
                 <div>
                   <span class="pujaNames puja-api-popup-name01">${data.poojaName}</span>
                   <div style="display: flex;">
@@ -614,7 +603,7 @@ function addDynamicStyles() {
             // const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
             //   return accumulator + currentValue.price;
             // },0);
-            // document.getElementById('Package_totalprice1').innerHTML='₹ '+ totalPrice
+            // document.getElementBypojaId('Package_totalprice1').innerHTML='₹ '+ totalPrice
             // console.log("totalprice",totalPrice)
             
         }
@@ -623,7 +612,7 @@ function addDynamicStyles() {
     
         function pujaCardDelete(pojaId){
     
-          const filterData = apiData.filter(each => each.pojaId !==pojaId)
+          const filterData = apiData.filter(each => each.pojaId !== pojaId)
           sessionStorage.setItem('clickedButton', JSON.stringify(filterData));
           sessionStorage.removeItem(pojaId)
           // let result= JSON.parse(sessionStorage.getItem('clickedButton'));
