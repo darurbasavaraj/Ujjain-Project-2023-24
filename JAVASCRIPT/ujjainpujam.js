@@ -475,7 +475,7 @@ function addDynamicStyles() {
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
               document.getElementById('totalPrice_btn').style.display="none"
   
-              // document.getElementById('bookButton_'+data.pujaId).innerText ="Added"
+              document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
 
@@ -597,7 +597,7 @@ function addDynamicStyles() {
                 finaDiv.appendChild(pujaPackageDiv);
               // }
             })
-            console.log('id', apiData.pojaId)
+            console.log('id Basavaraj_Darur', apiData.pojaId)
           
             // const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
             //   return accumulator + currentValue.price;
@@ -694,31 +694,24 @@ function addDynamicStyles() {
 
 
     //   -------------------------post method for single puja booking--------------------------------------------
- 
-    const selectedData = sessionStorage.getItem('clickedButton')
-    console.log("formdata",selectedData)
 
-    // for (const { pujaId, pujaName, time, price, date } of selectedData) {
-    //   console.log(`pujaId: ${pujaId}, pujaName: ${pujaName}, time: ${time},  price:${price}, date;${date}`);
-    // }
-
-   
-
-    selectedData.forEach(obj => {
-      Object.entries(obj).forEach(([key, value]) => {
-        console.log(`Key: ${key}, Value: ${value}`);
+      const selectedData = sessionStorage.getItem('clickedButton')
+      selectedData.forEach(obj => {
+        Object.entries(obj).forEach(([key, value]) => {
+          console.log(`Key: ${key}, Value: ${value}`);
+        });
       });
-    });
-    var formdata = new FormData();
-  //   formdata.append("userId", user_id);
-  //   formdata.append("pojaId", pujaId);
-    formdata.append("pojaname",selectedData[0].poojaName)
-    var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
-
-    fetch(`http://13.200.156.231:8097/poja/save`, requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))  
-    .catch(error => console.log('error', error));
+        console.log("formdata",selectedData[0])
+      var formdata = new FormData();
+    //   formdata.append("userId", user_id);
+    //   formdata.append("pojaId", pujaId);
+      formdata.append("pojaname",selectedData[0].poojaName)
+      var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
+ 
+      fetch(`http://13.200.156.231:8097/poja/save`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))  
+      .catch(error => console.log('error', error));
       
   
     }
@@ -735,18 +728,61 @@ function addDynamicStyles() {
   
     }
 
-    function popup_pujaPackageBooking_btn1(){
-        document.getElementById('puja_needfull_things-cnf').style.display="block"
+    // function popup_pujaPackageBooking_btn1(){
+    //     document.getElementById('puja_needfull_things-cnf').style.display="block"
 
-        document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
-        document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
-        document.getElementById('select_pujabooking_date').style.display = "none";
-        document.getElementById('table2').style.display = "none";
+    //     document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+    //     document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+    //     document.getElementById('select_pujabooking_date').style.display = "none";
+    //     document.getElementById('table2').style.display = "none";
 
-        // post method for multiple cards
+    //     // post method for multiple cards
 
 
-    }
+    // }
+    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate) {
+      // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
+      // Assuming data is in the format expected by the API
+      document.getElementById('puja_needfull_things-cnf').style.display="block"
+
+      document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+      document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+      document.getElementById('select_pujabooking_date').style.display = "none";
+      document.getElementById('table2').style.display = "none";
+      
+      const postData = {
+          userId: userId,
+          pojaIds: pojaIds,
+          fromDate: fromDate
+          // Add more data as needed
+      };
+
+  console.log('Post_Details',postData);
+ 
+      // Making a POST request to the API endpoint
+      fetch(`http://13.200.156.231:8097/admin/api/poja/book/${userId}`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(postData)
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      })
+      .then(data => {
+          // Handle response data if needed
+          console.log(data);
+      })
+      .catch(error => {
+          // Handle errors
+          console.error('There was a problem with the fetch operation:', error);
+      });
+  }
+  
   
     const months = [
       "January",
@@ -847,7 +883,7 @@ function addDynamicStyles() {
               let text = document.createTextNode(i);
               btn = document.createElement('button');
               btn.className = "btn-day";
-              console.log(btn)
+              btn.id="fromDate";
               btn.addEventListener('click', function () { changeDate(this) });
               week++;
   
