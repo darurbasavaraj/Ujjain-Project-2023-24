@@ -588,8 +588,6 @@ function addDynamicStyles() {
                 </div>
                  <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../Images/delete_icon.png" alt=""> 
   
-  
-              
               
                  `;
                 finaDiv.appendChild(pujaPackageDiv);
@@ -754,7 +752,7 @@ function addDynamicStyles() {
   console.log('Post_Details',postData);
  
       // Making a POST request to the API endpoint
-      fetch(`http://13.200.156.231:8097/admin/api/poja/book/${userId}`, {
+      fetch(`http://13.200.156.231:8097/admin/api/poja/book/`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
