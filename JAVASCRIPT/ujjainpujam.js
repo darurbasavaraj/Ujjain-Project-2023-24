@@ -475,9 +475,10 @@ function addDynamicStyles() {
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
               document.getElementById('totalPrice_btn').style.display="none"
   
-            //   document.getElementById('bookButton_'+data.id).innerText ="Added"
+              // document.getElementById('bookButton_'+data.pujaId).innerText ="Added"
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
+
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
               <div style="display:flex;">
@@ -572,6 +573,7 @@ function addDynamicStyles() {
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="block"
     
               document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
+
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
               // document.getElementById('added_'+data.id).style.display="block"
@@ -590,10 +592,7 @@ function addDynamicStyles() {
                   </div>
                 </div>
                  <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../icons/delete_icon.png" alt=""> 
-  
-  
-              
-              
+
                  `;
                 finaDiv.appendChild(pujaPackageDiv);
               // }
@@ -684,6 +683,9 @@ function addDynamicStyles() {
         document.getElementById('select_booking_date').style.display = "none";
         document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
         document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+        document.getElementById('puja_cnf').style.display="block"
+
+        
       // document.getElementsByClassName('puja_scroll')[0].style.display = "block";
   
   
@@ -694,12 +696,19 @@ function addDynamicStyles() {
     //   -------------------------post method for single puja booking--------------------------------------------
  
     const selectedData = sessionStorage.getItem('clickedButton')
+    console.log("formdata",selectedData)
+
+    // for (const { pujaId, pujaName, time, price, date } of selectedData) {
+    //   console.log(`pujaId: ${pujaId}, pujaName: ${pujaName}, time: ${time},  price:${price}, date;${date}`);
+    // }
+
+   
+
     selectedData.forEach(obj => {
       Object.entries(obj).forEach(([key, value]) => {
         console.log(`Key: ${key}, Value: ${value}`);
       });
     });
-      console.log("formdata",selectedData[0])
     var formdata = new FormData();
   //   formdata.append("userId", user_id);
   //   formdata.append("pojaId", pujaId);
@@ -838,6 +847,7 @@ function addDynamicStyles() {
               let text = document.createTextNode(i);
               btn = document.createElement('button');
               btn.className = "btn-day";
+              console.log(btn)
               btn.addEventListener('click', function () { changeDate(this) });
               week++;
   
