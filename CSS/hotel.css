@@ -519,6 +519,20 @@ margin-top: 5px;
       color: #000;
       font-family: Roboto;
   }
-
+  .hotelfare{
+    font-size: 22px;
+      color: #000;
+      font-family: Roboto;
+  }
+  .hotelamount{
+    font-size: 28px;
+      color: #000;
+      font-family: Roboto;
+    margin-left: 80px;
+  }
  
-  
+  .hotelfrom, .hotelto{
+    font-size: 14px;
+      color: #000;
+      font-family: Roboto;
+  }
