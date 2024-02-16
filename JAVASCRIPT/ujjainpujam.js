@@ -481,8 +481,8 @@ function addDynamicStyles() {
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
               <div style="display:flex;">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset=""></div>
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset="">
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset=""></div>
     
                 <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
@@ -577,19 +577,19 @@ function addDynamicStyles() {
               // document.getElementById('added_'+data.id).style.display="block"
               pujaPackageDiv.innerHTML= `
           
-                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
+                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset="">
                 <div>
                   <span class="pujaNames puja-api-popup-name01">${data.poojaName}</span>
                   <div style="display: flex;">
-                      <img class="Package_location_img" src="../Images/Location icon.png" alt="" srcset="">
+                      <img class="Package_location_img" src="../icons/Location icon.png" alt="" srcset="">
                       <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
                       
-                      <img class="Package_puja_time_icon" src="../Images/time.png" alt="" srcset="">
+                      <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
                       <span class="Package_puja_time">10 : 00 AM</span>
                       <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
                   </div>
                 </div>
-                 <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../Images/delete_icon.png" alt=""> 
+                 <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../icons/delete_icon.png" alt=""> 
   
   
               
@@ -608,7 +608,7 @@ function addDynamicStyles() {
             
         }
         }
-    })
+    
     
         function pujaCardDelete(pojaId){
     
@@ -692,24 +692,24 @@ function addDynamicStyles() {
 
 
     //   -------------------------post method for single puja booking--------------------------------------------
-
-      const selectedData = sessionStorage.getItem('clickedButton')
-      selectedData.forEach(obj => {
-        Object.entries(obj).forEach(([key, value]) => {
-          console.log(`Key: ${key}, Value: ${value}`);
-        });
-      });
-        console.log("formdata",selectedData[0])
-      var formdata = new FormData();
-    //   formdata.append("userId", user_id);
-    //   formdata.append("pojaId", pujaId);
-      formdata.append("pojaname",selectedData[0].poojaName)
-      var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
  
-      fetch(`http://13.200.156.231:8097/poja/save`, requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))  
-      .catch(error => console.log('error', error));
+    const selectedData = sessionStorage.getItem('clickedButton')
+    selectedData.forEach(obj => {
+      Object.entries(obj).forEach(([key, value]) => {
+        console.log(`Key: ${key}, Value: ${value}`);
+      });
+    });
+      console.log("formdata",selectedData[0])
+    var formdata = new FormData();
+  //   formdata.append("userId", user_id);
+  //   formdata.append("pojaId", pujaId);
+    formdata.append("pojaname",selectedData[0].poojaName)
+    var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
+
+    fetch(`http://13.200.156.231:8097/poja/save`, requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))  
+    .catch(error => console.log('error', error));
       
   
     }
