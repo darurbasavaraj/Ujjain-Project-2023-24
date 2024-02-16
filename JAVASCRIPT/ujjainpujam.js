@@ -367,7 +367,7 @@ function addDynamicStyles() {
                           </div>
                           <div class="puja_up_price_button">
                           <span class="puja_price" id="first_puja_price">&#8377; ${product.price}</span>
-                          <button  id="bookButton_${product.id}" class="puja_booknow_btn puja-api-button01" onclick="pujaPackageBooking(${product.id}, ${index})">Book Now</button>
+                          <button  id="bookButton_${product.pojaId}" class="puja_booknow_btn puja-api-button01" onclick="pujaPackageBooking(${product.pojaId}, ${index})">Book Now</button>
                          
                           </div>
                         </div>
@@ -452,8 +452,8 @@ function addDynamicStyles() {
     
     let apiData= [];
     
-        function renderData(id){
-          console.log("id",id)
+        function renderData(pojaId){
+          console.log("id",pojaId)
     
           const finalArray = JSON.parse(sessionStorage.getItem('clickedButton'));
           let arrayOfObjects = [].concat(...finalArray)
@@ -473,13 +473,13 @@ function addDynamicStyles() {
               document.getElementById('totalPrice_btn').style.display="none"
   
             //   document.getElementById('bookButton_'+data.id).innerText ="Added"
-              const button = document.getElementById('bookButton_'+data.id);
+              const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
               <div style="display:flex;">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.id}" alt="" srcset="">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.id}" alt="" srcset=""></div>
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset=""></div>
     
                 <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
@@ -536,7 +536,7 @@ function addDynamicStyles() {
                 finaDiv.appendChild(pujaPackageDiv);
               // }
             })
-            console.log('id', apiData.id)
+            console.log('id', apiData.pojaId)
           
             const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
               return accumulator + currentValue.price;
@@ -568,13 +568,13 @@ function addDynamicStyles() {
     
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="block"
     
-              document.getElementById('bookButton_'+data.id).innerText ="Added"
-              const button = document.getElementById('bookButton_'+data.id);
+              document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
+              const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
               // document.getElementById('added_'+data.id).style.display="block"
               pujaPackageDiv.innerHTML= `
           
-                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.id}" alt="" srcset="">
+                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
                 <div>
                   <span class="pujaNames puja-api-popup-name01">${data.poojaName}</span>
                   <div style="display: flex;">
@@ -586,7 +586,7 @@ function addDynamicStyles() {
                       <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
                   </div>
                 </div>
-                 <img class="Package_delete_icon" onclick="pujaCardDelete(${data.id})"  src="../Images/delete_icon.png" alt=""> 
+                 <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../Images/delete_icon.png" alt=""> 
   
   
               
@@ -595,27 +595,27 @@ function addDynamicStyles() {
                 finaDiv.appendChild(pujaPackageDiv);
               // }
             })
-            console.log('id', apiData.id)
+            console.log('id', apiData.pojaId)
           
             // const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
             //   return accumulator + currentValue.price;
             // },0);
-            // document.getElementById('Package_totalprice1').innerHTML='₹ '+ totalPrice
+            // document.getElementBypojaId('Package_totalprice1').innerHTML='₹ '+ totalPrice
             // console.log("totalprice",totalPrice)
             
         }
         }
     
-        function pujaCardDelete(id){
+        function pujaCardDelete(pojaId){
     
-          const filterData = apiData.filter(each => each.id !== id)
+          const filterData = apiData.filter(each => each.pojaId !== pojaId)
           sessionStorage.setItem('clickedButton', JSON.stringify(filterData));
           sessionStorage.removeItem(id)
           // let result= JSON.parse(sessionStorage.getItem('clickedButton'));
           // console.log('result', result)
           // document.getElementById('bookButton_'+id).style.display="block"
-          document.getElementById('bookButton_'+id).innerText="Book Now"
-          const button = document.getElementById('bookButton_'+id);
+          document.getElementById('bookButton_'+pojaId).innerText="Book Now"
+          const button = document.getElementById('bookButton_'+pojaId);
           button.disabled = false;
           // document.getElementById('added_'+id).style.display="none"
     
@@ -623,7 +623,7 @@ function addDynamicStyles() {
     
         }
     
-        function pujaPackageBooking(id, index) {
+        function pujaPackageBooking(pojaId, index) {
     
         // document.getElementById('puja_Book_btn').style.display= "none"
         if(!sessionStorage.getItem('clickedButton')){
@@ -634,7 +634,7 @@ function addDynamicStyles() {
           document.getElementById('pujaPackageBooking_popupdiv').style.display = "block";      
           let updatedData
           const clickedButton = JSON.parse(sessionStorage.getItem('clickedButton'))
-          fetch(`http://13.200.156.231:8097/poja/getPojaById/${id}`)
+          fetch(`http://13.200.156.231:8097/poja/getPojaById/${pojaId}`)
             .then((res) => res.json())
           .then((data) => {
             updatedData = data.data
@@ -642,7 +642,7 @@ function addDynamicStyles() {
             console.log('updateddata',updatedData)
             console.log('clicked button',clickedButton)
             sessionStorage.setItem('clickedButton', JSON.stringify(clickedButton));
-            renderData(id);
+            renderData(pojaId);
           
           }) 
         })
