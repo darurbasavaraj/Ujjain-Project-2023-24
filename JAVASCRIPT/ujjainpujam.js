@@ -351,6 +351,8 @@ function addDynamicStyles() {
               }
     
               userdata.map((product, index) => {
+
+                console.log('pojaid',product.pojaId)
                   row += `<div class="slide-card" >
                   <div class="Traditional_Pujas_div " >
                         <div class="puja_card_left">
@@ -465,6 +467,7 @@ function addDynamicStyles() {
           finaDiv.innerHTML = '';
             apiData.forEach((data)=> {
             
+                console.log('dataa',data.pojaId)
               const pujaPackageDiv = document.createElement('div');
               pujaPackageDiv.classList.add('single_puja_booking');         
               document.getElementsByClassName('popup_pujapackage_name')[0].innerText=" "
@@ -475,11 +478,12 @@ function addDynamicStyles() {
               document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
+
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
               <div style="display:flex;">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset=""></div>
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset="">
+                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset=""></div>
     
                 <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
@@ -569,26 +573,26 @@ function addDynamicStyles() {
               document.getElementsByClassName('pujabooking_instructions')[0].style.display="block"
     
               document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
+
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
               // document.getElementById('added_'+data.id).style.display="block"
               pujaPackageDiv.innerHTML= `
           
-                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom?id=${data.pojaId}" alt="" srcset="">
+                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset="">
                 <div>
                   <span class="pujaNames puja-api-popup-name01">${data.poojaName}</span>
                   <div style="display: flex;">
-                      <img class="Package_location_img" src="../Images/Location icon.png" alt="" srcset="">
+                      <img class="Package_location_img" src="../icons/Location icon.png" alt="" srcset="">
                       <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
                       
-                      <img class="Package_puja_time_icon" src="../Images/time.png" alt="" srcset="">
+                      <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
                       <span class="Package_puja_time">10 : 00 AM</span>
                       <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
                   </div>
                 </div>
-                 <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../Images/delete_icon.png" alt=""> 
-  
-              
+                 <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../icons/delete_icon.png" alt=""> 
+
                  `;
                 finaDiv.appendChild(pujaPackageDiv);
               // }
@@ -603,6 +607,7 @@ function addDynamicStyles() {
             
         }
         }
+    
     
         function pujaCardDelete(pojaId){
     
@@ -678,6 +683,9 @@ function addDynamicStyles() {
         document.getElementById('select_booking_date').style.display = "none";
         document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
         document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+        document.getElementById('puja_cnf').style.display="block"
+
+        
       // document.getElementsByClassName('puja_scroll')[0].style.display = "block";
   
   

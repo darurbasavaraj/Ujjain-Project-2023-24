@@ -17,15 +17,37 @@
     <script src="../JAVASCRIPT/hotel.js"></script>
     <title>Ujjain</title>
     <style>
-          .hotelbooking-img{
-               margin-right: 10px;
+          .hotelDetails {
+  width: 100%;
+  height: 200px; /* Adjust the height as needed */
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.hotelDetails .hotelbooking-img{
+  margin-right: 10px;
+  border-radius: 30px;
                margin-top: 10px;
             width: 300px;
-            height: 200px;
+            height: 190px;
             border-radius: 10px;
             transition: transform 2s;
             cursor: pointer;
-        }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+ .hotelbooking-img {
+  animation: slide 10s linear infinite;
+}
         .popup-hotel-img {
            margin-right: 10px;
             width: 150px;
@@ -434,7 +456,7 @@ color: #ff5c02;
     <div class="snb">
     <!------------------------------------header part------------------------------------------------------->
     <header class="header" style="float: right;">
-        <img class="profile-img" src="../icons/Bhanu-prakash.png" alt="">
+        <img class="profile-img" src="../icons/image 2.PNG" alt="">
         <div class="userprofile">
             <div class="username" id="userName"></div>
            <a href="../ViewProfile/index.html" style="text-decoration: none; color: #fff;"><div class="view"> View profile ></div></a> 
@@ -502,7 +524,7 @@ color: #ff5c02;
             const hotelImages = Array.isArray(hotelData.images) ? hotelData.images.map(image => `<img src="http://13.200.156.231:8097${image}" alt="" class="hotelbooking-img">`).join('') : '';
 
             document.getElementById('hotelDetails').innerHTML = `
-                <div>
+                <div class="hotelDetails">
                     ${hotelImages}
                 </div>
     <div class="RoomDetails">
@@ -657,8 +679,8 @@ function showNewPopup() {
                 const formattedFromDate = formatDate(fromDate);
                 const formattedToDate = formatDate(toDate);
 
-                document.getElementById('selectedDates').innerHTML = `From: ${formattedFromDate} To: ${formattedToDate}`;
-                document.getElementById('amount').innerHTML = `Total: ₹${amount}`;
+                document.getElementById('selectedDates').innerHTML = `<p class="hotelfrom">From   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ${formattedFromDate}</p>  <p class="hotelto">To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: ${formattedToDate}</p>`;
+                document.getElementById('amount').innerHTML = `<div style="display:flex;"><p class="hotelfare">Total Fare </p><p class="hotelamount">₹${amount}</p></div>`;
             } catch (error) {
                 console.error('Error fetching pricing information:', error);
             }
