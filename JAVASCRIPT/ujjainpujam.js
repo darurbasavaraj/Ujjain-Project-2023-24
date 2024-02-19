@@ -700,12 +700,17 @@ function addDynamicStyles() {
       const singlepuja = JSON.parse(selectedData);
       console.log(singlepuja[0].image)
 
-      const singlePujaDate = '2024-02-19';  
+      // const singlePujaDate = '2024-02-19';  
+      const PujaDate = sessionStorage.getItem('changedDate') 
+      const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
+      console.log('singlePujaDate', singlePujaDate)
+
       var formdata = new FormData();
 
       formdata.append("userId", userId);
       formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", singlePujaDate);
+      // date.toISOString()
 
       console.log(formdata)
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
@@ -981,6 +986,8 @@ function addDynamicStyles() {
   function changeDate(button) {
       let newDay = parseInt(button.textContent);
       date = new Date(date.getFullYear(), date.getMonth(), newDay);
+      sessionStorage.setItem('changedDate', date)
+
       console.log('changeDate',date)
       generateCalendar(date);
   }
