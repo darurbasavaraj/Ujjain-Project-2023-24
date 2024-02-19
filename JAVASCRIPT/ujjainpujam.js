@@ -700,14 +700,16 @@ function addDynamicStyles() {
       const singlepuja = JSON.parse(selectedData);
       console.log(singlepuja[0].image)
 
-      const singlePujaDate = '2024-02-19';  
+      //const singlePujaDate = '2024-02-19'; 
+      const singlePujaDate = new Date().toISOString().split('T')[0]; 
       var formdata = new FormData();
+      console.log('sdfsdfsdfsdfsfsfs',singlePujaDate);
 
       formdata.append("userId", userId);
       formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", singlePujaDate);
 
-      console.log(formdata)
+      console.log('sdfsdfsf',formdata)
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
  
       fetch(`http://13.200.156.231:8097/admin/api/poja/book`, requestOptions)
