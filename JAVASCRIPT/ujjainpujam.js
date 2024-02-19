@@ -694,33 +694,34 @@ function addDynamicStyles() {
 
 
     //   -------------------------post method for single puja booking--------------------------------------------
-
+      
+      const userId =sessionStorage.getItem('userid');
       const selectedData = sessionStorage.getItem('clickedButton')
-      selectedData.forEach(obj => {
-        Object.entries(obj).forEach(([key, value]) => {
-          console.log(`Key: ${key}, Value: ${value}`);
-        });
-      });
-        console.log("formdata",selectedData[0])
+      const singlepuja = JSON.parse(selectedData);
+      console.log(singlepuja[0].image)
+
+      const singlePujaDate = '2024-02-19';  
       var formdata = new FormData();
-    //   formdata.append("userId", user_id);
-    //   formdata.append("pojaId", pujaId);
-      formdata.append("pojaname",selectedData[0].poojaName)
+
+      formdata.append("userId", userId);
+      formdata.append("pojaIds", singlepuja[0].pojaId);
+      formdata.append("fromDate", singlePujaDate);
+
+      console.log(formdata)
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
  
-      fetch(`http://13.200.156.231:8097/poja/save`, requestOptions)
-      .then(response => response.text())
+      fetch(`http://13.200.156.231:8097/admin/api/poja/book`, requestOptions)
+      .then(response => response.json())
       .then(result => console.log(result))  
       .catch(error => console.log('error', error));
-      
-  
+    
     }
     function popup_pujaPackageBooking_btn(){
       // document.getElementById('packageBook').style.display = "none";
       document.getElementById('select_pujabooking_date').style.display = "block";
+      document.getElementById('puja_cnf').style.display="none"
       document.getElementById('table2').style.display = "block";
       document.getElementsByClassName('popup_pujapackage_name')[0].innerText=""
-  
       document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
       document.getElementsByClassName('puja_scroll')[0].style.display = "none";
       document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
@@ -740,20 +741,31 @@ function addDynamicStyles() {
 
 
     // }
-    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate) {
+    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate, date) {
       // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
       document.getElementById('puja_needfull_things-cnf').style.display = "block";
       document.getElementsByClassName('popup_puja_btn')[0].style.display = "none";
       document.getElementsByClassName('popup_puja_btn')[1].style.display = "none";
       document.getElementById('select_pujabooking_date').style.display = "none";
       document.getElementById('table2').style.display = "none";
-  
-      const userId1 =sessionStorage.getItem('userid');
-      // Prepare the data for the POST request
+      
+      const userIds =sessionStorage.getItem('userid');
+      const pojaId =sessionStorage.getItem('clickedButton');
+      const pojaIda = JSON.parse(pojaId);
+
+// Now, you can access the pojaId values and log them to the console
+
+      pojaIda.forEach(puja => {
+        const pojaId = puja.pojaId
+        console.log('pujaIds',pojaId);
+      });
+
+      console.log('postuserid', userIds)
       const postData = {
-          userId: userId1,
-          pojaIds: pojaIds,
-          fromDate: fromDate
+          userId: userIds,
+          pojaIds: pojaId,
+          fromDate: date
+          // Add more data as needed
       };
   
       // Make the POST request
@@ -778,6 +790,8 @@ function addDynamicStyles() {
           // Handle errors
           console.error('Error:', error);
       });
+
+      changeDate(date);
   }
   
   
@@ -884,6 +898,7 @@ function addDynamicStyles() {
               btn.id="fromDate";
               btn.addEventListener('click', function () { changeDate(this) });
               week++;
+              
   
   
   
@@ -956,12 +971,14 @@ function addDynamicStyles() {
   function resetDate() {
       date = new Date();
       generateCalendar(date);
+      // console.log('resetDate', date);
   }
   
   // Muda a data pelo numero do botão clicado
   function changeDate(button) {
       let newDay = parseInt(button.textContent);
       date = new Date(date.getFullYear(), date.getMonth(), newDay);
+      console.log('changeDate',date)
       generateCalendar(date);
   }
   
