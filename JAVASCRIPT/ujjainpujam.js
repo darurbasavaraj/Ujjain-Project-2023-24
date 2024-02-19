@@ -742,25 +742,22 @@ function addDynamicStyles() {
     // }
     function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate) {
       // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
-      // Assuming data is in the format expected by the API
-      document.getElementById('puja_needfull_things-cnf').style.display="block"
-
-      document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
-      document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+      document.getElementById('puja_needfull_things-cnf').style.display = "block";
+      document.getElementsByClassName('popup_puja_btn')[0].style.display = "none";
+      document.getElementsByClassName('popup_puja_btn')[1].style.display = "none";
       document.getElementById('select_pujabooking_date').style.display = "none";
       document.getElementById('table2').style.display = "none";
-      
+  
+      const userId1 =sessionStorage.getItem('userid');
+      // Prepare the data for the POST request
       const postData = {
-          userId: userId,
+          userId: userId1,
           pojaIds: pojaIds,
           fromDate: fromDate
-          // Add more data as needed
       };
-
-  console.log('Post_Details',postData);
- 
-      // Making a POST request to the API endpoint
-      fetch(`http://13.200.156.231:8097/admin/api/poja/book/`, {
+  
+      // Make the POST request
+      fetch('http://13.200.156.231:8097/admin/api/poja/book', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -775,13 +772,14 @@ function addDynamicStyles() {
       })
       .then(data => {
           // Handle response data if needed
-          console.log(data);
+          console.log('Response:', data);
       })
       .catch(error => {
           // Handle errors
-          console.error('There was a problem with the fetch operation:', error);
+          console.error('Error:', error);
       });
   }
+  
   
   
     const months = [
