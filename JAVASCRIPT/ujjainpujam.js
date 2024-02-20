@@ -698,11 +698,10 @@ function addDynamicStyles() {
       const userId =sessionStorage.getItem('userid');
       const selectedData = sessionStorage.getItem('clickedButton')
       const singlepuja = JSON.parse(selectedData);
-      console.log(singlepuja[0].image)
+      // console.log(singlepuja[0].image)
 
-      // const singlePujaDate = '2024-02-19';  
       const PujaDate = sessionStorage.getItem('changedDate') 
-      const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
+      const singlePujaDate =  new Date(PujaDate).toISOString().split('T')[0];
       console.log('singlePujaDate', singlePujaDate)
 
       var formdata = new FormData();
@@ -710,9 +709,7 @@ function addDynamicStyles() {
       formdata.append("userId", userId);
       formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", singlePujaDate);
-      // date.toISOString()
 
-      console.log(formdata)
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
  
       fetch(`http://13.200.156.231:8097/admin/api/poja/book`, requestOptions)
@@ -733,7 +730,7 @@ function addDynamicStyles() {
       document.getElementsByClassName('puja_scroll')[0].style.display = "none";
       document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
       document.getElementsByClassName('popup_puja_btn')[1].style.display= "block"
-  
+
     }
 
     // function popup_pujaPackageBooking_btn1(){
@@ -764,6 +761,10 @@ function addDynamicStyles() {
 
 // Now, you can access the pojaId values and log them to the console
 
+      const PujaDate = sessionStorage.getItem('changedDate') 
+      const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
+      console.log('singlePujaDate', singlePujaDate)
+      
       pojaIda.forEach(puja => {
         const pojaId = puja.pojaId
         console.log('pujaIds',pojaId);
@@ -773,20 +774,23 @@ function addDynamicStyles() {
       const postData = {
           userId: userIds,
           pojaIds: pojaId,
-          fromDate: date
+          fromDate: singlePujaDate
           // Add more data as needed
       };
 
   console.log('Post_Details',postData);
- 
+
+  var requestOptions = {  method: 'POST',  body: postData,  redirect: 'follow'};
+
       // Making a POST request to the API endpoint
-      fetch(`http://13.200.156.231:8097/admin/api/poja/book/`, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(postData)
-      })
+      fetch(`http://13.200.156.231:8097/admin/api/poja/book`, requestOptions)
+      // {
+      //     method: 'POST',
+      //     headers: {
+      //         'Content-Type': 'application/json'
+      //     },
+      //     body: JSON.stringify(postData)
+      // })
       .then(response => {
           if (!response.ok) {
               throw new Error('Network response was not ok');
@@ -802,7 +806,7 @@ function addDynamicStyles() {
           console.error('There was a problem with the fetch operation:', error);
       });
 
-      changeDate(date);
+      
   }
   
   
@@ -986,11 +990,25 @@ function addDynamicStyles() {
   
   // Muda a data pelo numero do botão clicado
   function changeDate(button) {
+      
       let newDay = parseInt(button.textContent);
-      date = new Date(date.getFullYear(), date.getMonth(), newDay);
-      sessionStorage.setItem('changedDate', date)
+      console.log('New Day:', newDay);
 
-      console.log('changeDate',date)
+      // Get the current month (zero-based) and year
+      let currentMonth = date.getMonth();
+      let currentYear = date.getFullYear();
+
+      // Create a new Date object with the correct month (adjusted for zero-based indexing)
+      date = new Date(currentYear, currentMonth, newDay);
+      console.log('Updated Date:', date);
+
+      // Convert the date to a string without the timezone offset
+      let dateStringWithoutTimezone = date.toISOString().split('T')[0];
+
+      // Store the selected date in sessionStorage
+      sessionStorage.setItem('changedDate', dateStringWithoutTimezone);
+      console.log('Stored in sessionStorage:', sessionStorage.getItem('changedDate'));
+  
       generateCalendar(date);
   }
   
