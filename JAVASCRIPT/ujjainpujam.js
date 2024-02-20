@@ -706,20 +706,21 @@ function addDynamicStyles() {
       console.log('singlePujaDate', singlePujaDate)
 
       var formdata = new FormData();
-      console.log('sdfsdfsdfsdfsfsfs',singlePujaDate);
 
       formdata.append("userId", userId);
       formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", singlePujaDate);
       // date.toISOString()
 
-      console.log('sdfsdfsf',formdata)
+      console.log(formdata)
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
  
       fetch(`http://13.200.156.231:8097/admin/api/poja/book`, requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))  
       .catch(error => console.log('error', error));
+
+      // sessionStorage.removeItem( 'clickedButton');
     
     }
     function popup_pujaPackageBooking_btn(){
@@ -749,9 +750,11 @@ function addDynamicStyles() {
     // }
     function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate, date) {
       // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
-      document.getElementById('puja_needfull_things-cnf').style.display = "block";
-      document.getElementsByClassName('popup_puja_btn')[0].style.display = "none";
-      document.getElementsByClassName('popup_puja_btn')[1].style.display = "none";
+      // Assuming data is in the format expected by the API
+      document.getElementById('puja_cnf').style.display="block"
+      document.getElementById('puja_needfull_things-cnf').style.display="block"
+      document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+      document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
       document.getElementById('select_pujabooking_date').style.display = "none";
       document.getElementById('table2').style.display = "none";
       
@@ -773,9 +776,11 @@ function addDynamicStyles() {
           fromDate: date
           // Add more data as needed
       };
-  
-      // Make the POST request
-      fetch('http://13.200.156.231:8097/admin/api/poja/book', {
+
+  console.log('Post_Details',postData);
+ 
+      // Making a POST request to the API endpoint
+      fetch(`http://13.200.156.231:8097/admin/api/poja/book/`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -790,16 +795,15 @@ function addDynamicStyles() {
       })
       .then(data => {
           // Handle response data if needed
-          console.log('Response:', data);
+          console.log(data);
       })
       .catch(error => {
           // Handle errors
-          console.error('Error:', error);
+          console.error('There was a problem with the fetch operation:', error);
       });
 
       changeDate(date);
   }
-  
   
   
     const months = [
