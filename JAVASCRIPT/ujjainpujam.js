@@ -1004,11 +1004,11 @@ function addDynamicStyles() {
 
       // Convert the date to a string without the timezone offset
       let dateStringWithoutTimezone = date.toISOString().split('T')[0];
-
+      
       // Store the selected date in sessionStorage
       sessionStorage.setItem('changedDate', dateStringWithoutTimezone);
       console.log('Stored in sessionStorage:', sessionStorage.getItem('changedDate'));
-  
+
       generateCalendar(date);
   }
   
