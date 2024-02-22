@@ -698,24 +698,26 @@ function addDynamicStyles() {
       const userId =sessionStorage.getItem('userid');
       const selectedData = sessionStorage.getItem('clickedButton')
       const singlepuja = JSON.parse(selectedData);
-      console.log(singlepuja[0].image)
+      // console.log(singlepuja[0].image)
 
-      //const singlePujaDate = '2024-02-19'; 
-      const singlePujaDate = new Date().toISOString().split('T')[0]; 
+      const PujaDate = sessionStorage.getItem('changedDate') 
+      const singlePujaDate =  new Date(PujaDate).toISOString().split('T')[0];
+      console.log('singlePujaDate', singlePujaDate)
+
       var formdata = new FormData();
-      console.log('sdfsdfsdfsdfsfsfs',singlePujaDate);
 
       formdata.append("userId", userId);
       formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", singlePujaDate);
 
-      console.log('sdfsdfsf',formdata)
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
  
       fetch(`http://13.200.156.231:8097/admin/api/poja/book`, requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))  
       .catch(error => console.log('error', error));
+
+      // sessionStorage.removeItem( 'clickedButton');
     
     }
     function popup_pujaPackageBooking_btn(){
@@ -728,7 +730,7 @@ function addDynamicStyles() {
       document.getElementsByClassName('puja_scroll')[0].style.display = "none";
       document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
       document.getElementsByClassName('popup_puja_btn')[1].style.display= "block"
-  
+
     }
 
     // function popup_pujaPackageBooking_btn1(){
@@ -745,9 +747,11 @@ function addDynamicStyles() {
     // }
     function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate, date) {
       // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
-      document.getElementById('puja_needfull_things-cnf').style.display = "block";
-      document.getElementsByClassName('popup_puja_btn')[0].style.display = "none";
-      document.getElementsByClassName('popup_puja_btn')[1].style.display = "none";
+      // Assuming data is in the format expected by the API
+      document.getElementById('puja_cnf').style.display="block"
+      document.getElementById('puja_needfull_things-cnf').style.display="block"
+      document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+      document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
       document.getElementById('select_pujabooking_date').style.display = "none";
       document.getElementById('table2').style.display = "none";
       
@@ -757,6 +761,10 @@ function addDynamicStyles() {
 
 // Now, you can access the pojaId values and log them to the console
 
+      const PujaDate = sessionStorage.getItem('changedDate') 
+      const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
+      console.log('singlePujaDate', singlePujaDate)
+      
       pojaIda.forEach(puja => {
         const pojaId = puja.pojaId
         console.log('pujaIds',pojaId);
@@ -766,18 +774,23 @@ function addDynamicStyles() {
       const postData = {
           userId: userIds,
           pojaIds: pojaId,
-          fromDate: date
+          fromDate: singlePujaDate
           // Add more data as needed
       };
-  
-      // Make the POST request
-      fetch('http://13.200.156.231:8097/admin/api/poja/book', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(postData)
-      })
+
+  console.log('Post_Details',postData);
+
+  var requestOptions = {  method: 'POST',  body: postData,  redirect: 'follow'};
+
+      // Making a POST request to the API endpoint
+      fetch(`http://13.200.156.231:8097/admin/api/poja/book`, requestOptions)
+      // {
+      //     method: 'POST',
+      //     headers: {
+      //         'Content-Type': 'application/json'
+      //     },
+      //     body: JSON.stringify(postData)
+      // })
       .then(response => {
           if (!response.ok) {
               throw new Error('Network response was not ok');
@@ -786,16 +799,15 @@ function addDynamicStyles() {
       })
       .then(data => {
           // Handle response data if needed
-          console.log('Response:', data);
+          console.log(data);
       })
       .catch(error => {
           // Handle errors
-          console.error('Error:', error);
+          console.error('There was a problem with the fetch operation:', error);
       });
 
-      changeDate(date);
+      
   }
-  
   
   
     const months = [
@@ -978,9 +990,25 @@ function addDynamicStyles() {
   
   // Muda a data pelo numero do botão clicado
   function changeDate(button) {
-    
-      date = new Date(date.getFullYear(), date.getMonth());
-      console.log('changeDate',date)
+      
+      let newDay = parseInt(button.textContent);
+      console.log('New Day:', newDay);
+
+      // Get the current month (zero-based) and year
+      let currentMonth = date.getMonth();
+      let currentYear = date.getFullYear();
+
+      // Create a new Date object with the correct month (adjusted for zero-based indexing)
+      date = new Date(currentYear, currentMonth, newDay);
+      console.log('Updated Date:', date);
+
+      // Convert the date to a string without the timezone offset
+      let dateStringWithoutTimezone = date.toISOString().split('T')[0];
+      
+      // Store the selected date in sessionStorage
+      sessionStorage.setItem('changedDate', dateStringWithoutTimezone);
+      console.log('Stored in sessionStorage:', sessionStorage.getItem('changedDate'));
+
       generateCalendar(date);
   }
   

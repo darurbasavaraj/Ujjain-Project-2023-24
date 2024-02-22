@@ -236,10 +236,10 @@ function fetchBookedHotels(bookedHotels) {
         // }
     </script>
     
-    <!---------------------------------puja--------------------------->
+    <!---------------------------------visited places--------------------------->
            <div class="profile">
-             <div class="hotels"  id="hotelCount5">Visited Places(0)</div>
-             <div class="hotelcard5">
+             <div class="hotels"  id="pujaCount5">Visited Places(0)</div>
+             <div class="pujacard5">
                 <div class="image-section">
                    <img class="hotelimg" src="../icons/image 2.PNG" alt="">
                </div>
@@ -278,16 +278,16 @@ function fetchBookedHotels(bookedHotels) {
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Get the elements
-            var hotelCountElement = document.getElementById('hotelCount5');
-            var hotelCards = document.querySelectorAll('.hotelcard5');
+            var hotelCountElement = document.getElementById('pujaCount5');
+            var pujaCards = document.querySelectorAll('.pujacard5');
     
             // Update the initial hotel count
             updateHotelCount();
     
             // Function to update the hotel count
             function updateHotelCount() {
-                var hotelCount5 = hotelCards.length;
-                hotelCountElement.textContent = 'Visited Places(' + hotelCount5 + ')';
+                var pujaCount5 = pujaCards.length;
+                hotelCountElement.textContent = 'Visited Places(' + pujaCount5 + ')';
             }
     
             // Add a new hotel card (you can call this function when adding a new hotel)
@@ -307,58 +307,134 @@ function fetchBookedHotels(bookedHotels) {
     </script>
     <!--------------------------------------Attended pujas------------------------->
     <div class="card" style="display: flex;">
-     <div class="profile">
-         <div class="hotels"  id="hotelCount2">Attended Pujas(0)</div>
-         <div class="hotel-container">
-         <div class="hotelcard2">
-            <div class="image-section">
-               <img class="hotelimg" src="../icons/image 1.PNG" alt="">
-           </div>
-            <div class="text-section">
-               <p class="namehotel">Mahakal Puja</p>
-               <div class="type-member" style="width: 100%; display: flex;">
-                   <div class="member" style="float: left; width: 80%;">
-                       <p class="number1"> <img class="memberimg" src="../icons/Location icon.png" alt="">
-                       Mahakaleshwar Temple</p>
-                   </div>
-                   <div class="hoteltype" style="float: right; width: 40%;">
-                       <p class="hotelprice">₹ <p class="amount"> 250</p></p>
-                   </div>
-               </div>
-           </div>
-        </div> 
-        </div>
+        <div class="profile">
+        <div class="hotels"  id="pujaCount2" >Attended Pujas(0)</div>
+            <div class="hotel-container">
+                <!-- <div class="hotelcard2">
+                    <div class="image-section">
+                        <img class="hotelimg" src="../icons/image 1.PNG" alt="">
+                    </div>
+                    <div class="text-section">
+                        <p class="namehotel">Mahakal Puja</p>
+                        <div class="type-member" style="width: 100%; display: flex;">
+                            <div class="member" style="float: left; width: 80%;">
+                                <p class="number1"> <img class="memberimg" src="../icons/Location icon.png" alt="">
+                                Mahakaleshwar Temple</p>
+                            </div>
+                            <div class="hoteltype" style="float: right; width: 40%;">
+                                <p class="hotelprice">₹ <p class="amount"> 250</p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>  -->
+            </div>
         </div>
         
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                // Get the elements
-                var hotelCountElement = document.getElementById('hotelCount2');
-                var hotelCards = document.querySelectorAll('.hotelcard2');
-        
-                // Update the initial hotel count
-                updateHotelCount();
-        
-                // Function to update the hotel count
-                function updateHotelCount() {
-                    var hotelCount2 = hotelCards.length;
-                    hotelCountElement.textContent = 'Attended Pujas(' + hotelCount2 + ')';
-                }
-        
+
                 // Add a new hotel card (you can call this function when adding a new hotel)
-                function addHotelCard() {
+                function addPujaCard() {
+                    var pujaCountElement = document.getElementById('pujaCount2')
+                    var pujaCardsContainer = document.querySelector('.hotel-container');
+
                     var newHotelCard = document.createElement('div');
-                    newHotelCard.classList.add('hotelcard2');
-                    // Add content or customize the new hotel card as needed
-    
-        
-                    // Update the hotel count
-                    updateHotelCount();
+                    newHotelCard.classList.add('pujacard2');
+                    newHotelCard.innerHTML = `
+                        <div class="image-section">
+                            <img class="hotelimg" src="../icons/image 2.PNG" alt="">
+                        </div>
+                        <div class="text-section">
+                            <p class="namehotel">${hotel.hotelName}</p>
+                            <div class="type-member" style="width: 100%; display: flex;">
+                                <div class="member" style="float: left; width: 30%;">
+                                    <p class="number"> <img class="memberimg" src="../icons/members.png" alt=""> ${hotel.occupancy}</p>
+                                </div>
+                                <div class="hoteltype" style="float: right; width: 70%;">
+                                    <p class="hotelprice">₹ <p class="amount"> ${hotel.pricing}</p></p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    hotelCardsContainer.insertBefore(newHotelCard, hotelCardsContainer.firstChild);
+                    updatePujaCount(pujaCardsContainer, pujaCountElement); 
+
                 }
-        
-                // Example: Call addHotelCard when adding a new hotel
-                addHotelCard();
+
+                function updatePujaCount(pujaCardsContainer, pujaCountElement) {
+                    var pujaCount2 = pujaCardsContainer.querySelectorAll('.pujacard2').length;
+                    pujaCountElement.textContent = 'Attended Pujas(' + pujaCount2 + ')';
+
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    fetchHotels();
+                });
+
+                function fetchHotels() {
+                    var hotelCountElement = document.getElementById('hotelCount');
+                    var hotelCardsContainer = document.querySelector('.hotel-container');
+                
+                // Retrieve userId from sessionStorage
+                const userId = sessionStorage.getItem('userid');
+                
+                // Fetch user details
+                fetch(`http://13.200.156.231:8097/user/getBy/${userId}`)
+                    .then(response => response.json())
+                    .then(userData => {
+                        if (userData.status === 'SUCCESS') {
+            
+                            console.log('User_Details', userData);
+                            
+                            // Assuming the API response contains a field like 'bookedHotels' containing the booked hotels details
+                            const bookedPujas = userData.data.pojaBookings
+                            console.log('puja_Details',bookedPujas);
+                            // Display the count of booked hotels
+                            hotelCountElement.textContent = `You have booked ${bookedPujas} hotels.`;
+
+                            // Now you can proceed to fetch and display the booked hotels if needed
+                             fetchBookedPujas(bookedPujas);
+                        } else {
+                            console.error('Error fetching user details. Response:', userData);
+                        }
+                    })
+                    .catch(error => console.error('Error fetching user details:', error));
+            }
+
+            function fetchBookedPujas(bookedHotels) {
+                // Initialize a variable to store the total count of hotels
+                let totalPujaCount = 0;
+            
+                // Check if bookedHotels is an array
+                if (Array.isArray(bookedPujas)) {
+                    // Iterate over each booked hotel
+                    bookedPujas.forEach(booking => {
+                        // Check if the booking contains an array of hotels
+                        if (Array.isArray(booking.pujas)) {
+                            // Add the count of hotels in this booking to the total count
+                            totalPujaCount += booking.pujas.length;
+            
+                            // Iterate over each hotel in the booking
+                            booking.pujas.forEach(puja => {
+                                console.log('Puja:', puja);
+                                // Call a function to add the hotel card
+                                addPujaCard(puja);
+                            });
+                        } else {
+                            console.error('Error: "hotels" property is not an array in the booking.');
+                        }
+                    });
+                } else {
+                    console.error('Error: bookedHotels is not an array.');
+                }
+                var pujaCountElement1 = document.getElementById('hotelCount123');
+                pujaCountElement1.textContent = `${totalPujaCount}`;
+                // Return the total count of hotels booked
+                return totalPujaCount;
+            }
+                
             });
+            
         </script>
     
     <!---------------------------------------taxi rides---------------------------------------------------->
