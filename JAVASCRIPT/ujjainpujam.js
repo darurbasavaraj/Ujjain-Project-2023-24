@@ -611,7 +611,15 @@ function addDynamicStyles() {
         }
           document.getElementsByClassName("puja-api-button01")[index].addEventListener("click",function() {
           document.getElementById('PujaBooking_popup').style.display = "block";
-          document.getElementById('pujaPackageBooking_popupdiv').style.display = "block";      
+          document.getElementById('pujaPackageBooking_popupdiv').style.display = "block";
+          
+          document.getElementsByClassName('puja_scroll')[0].style.display = "block";
+          document.getElementById('select_pujabooking_date').style.display = "none";
+          document.getElementById('puja_cnf').style.display="none"
+          document.getElementById('table2').style.display = "none";
+          document.getElementsByClassName('popup_puja_btn')[0].style.display= "block"
+          document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
+
           let updatedData
           const clickedButton = JSON.parse(sessionStorage.getItem('clickedButton'))
           fetch(`http://13.200.156.231:8097/poja/getPojaById/${pojaId}`)
@@ -642,7 +650,7 @@ function addDynamicStyles() {
       document.getElementById('table1').style.display = "block";
       document.getElementById('packagename').style.display = "none";
       document.getElementById('select_booking_date').style.display = "block";
-      // document.getElementsByClassName('pujabooking_instructions')[0].style.display= "none"
+      document.getElementsByClassName('pujabooking_instructions')[0].style.display= "none"
       document.getElementById('totalPrice_btn').style.display="none";
       document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
       document.getElementsByClassName('popup_puja_btn')[1].style.display= "block"
@@ -678,13 +686,18 @@ function addDynamicStyles() {
       // console.log(singlepuja[0].image)
 
       const PujaDate = sessionStorage.getItem('changedDate') 
-      const singlePujaDate =  new Date(PujaDate).toISOString().split('T')[0];
-      console.log('singlePujaDate', singlePujaDate)
+      console.log('PujaDate', PujaDate)
+
+      // const singlePujaDate =  new Date(PujaDate).toISOString().split('T')[0];
+      // let options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      // const singlePujaDate =  new Date(PujaDate).toLocaleDateString({ year: 'numeric', month: '2-digit', day: '2-digit' }).split('T')[0];
+      // const singlePujaDate =  new Date(PujaDate);
+      // console.log('singlePujaDate', singlePujaDate)
 
       var formdata = new FormData();
 
       formdata.append("userId", userId);
-      formdata.append("pojaId", singlepuja[0].pojaId);
+      formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", PujaDate);
 
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
@@ -700,6 +713,7 @@ function addDynamicStyles() {
     function popup_pujaPackageBooking_btn(){
       // document.getElementById('packageBook').style.display = "none";
       document.getElementById('select_pujabooking_date').style.display = "block";
+      document.getElementsByClassName('puja_scroll')[0].style.display = "none";
       document.getElementById('puja_cnf').style.display="none"
       document.getElementById('table2').style.display = "block";
       document.getElementsByClassName('popup_pujapackage_name')[0].innerText=""
@@ -728,30 +742,44 @@ function addDynamicStyles() {
       document.getElementById('puja_cnf').style.display="block"
       document.getElementById('puja_needfull_things-cnf').style.display="block"
       document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+      document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
       document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
       document.getElementById('select_pujabooking_date').style.display = "none";
       document.getElementById('table2').style.display = "none";
       
       const userIds =sessionStorage.getItem('userid');
-      const pojaId =sessionStorage.getItem('clickedButton');
-      const pojaIda = JSON.parse(pojaId);
+      console.log('postuserid', userIds)
+
+      const multiPojas =sessionStorage.getItem('clickedButton');
+      const selectedMultiPojas = JSON.parse(multiPojas);
 
 // Now, you can access the pojaId values and log them to the console
 
-      const PujaDate = sessionStorage.getItem('changedDate') 
-      const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
-      console.log('singlePujaDate', singlePujaDate)
+      // const PujaDate = sessionStorage.getItem('changedDate') 
+      // console.log('PujaDate', PujaDate)
       
-      pojaIda.forEach(puja => {
-        const pojaId = puja.pojaId
-        console.log('pujaIds',pojaId);
-      });
+      const multiPujaDate = sessionStorage.getItem('changedDate') 
+      console.log('multiPujaDate', multiPujaDate)
 
-      console.log('postuserid', userIds)
+      // const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
+      // const singlePujaDate =  new Date(PujaDate).toLocaleDateString('en-US',{timeZone:'UTC'});
+
+      // toLocaleDateString('en-US')
+      
+      // const multiPojaIds= selectedMultiPojas.forEach(puja => {
+      //   const pojaId = puja.pojaId
+      //   console.log('pujaIds',pojaId);
+      // });
+
+      const multiPojaIds= selectedMultiPojas.map(puja => puja.pojaId)
+        // console.log('pujaIds',pojaId);
+      
+      console.log('multiPojaIds',multiPojaIds)
+
       const postData = {
           userId: userIds,
-          pojaIds: pojaId,
-          fromDate: singlePujaDate
+          pojaIds: multiPojaIds,
+          fromDate: multiPujaDate
           // Add more data as needed
       };
 
@@ -980,10 +1008,31 @@ function addDynamicStyles() {
       console.log('Updated Date:', date);
 
       // Convert the date to a string without the timezone offset
-      let dateStringWithoutTimezone = date.toISOString().split('T')[0];
+      // let dateStringWithoutTimezone = date.toISOString().split('T')[0];
+
+      // let dateStringWithoutTimezone = date.toLocaleDateString('en-US',{ year: 'numeric', month: '2-digit', day: '2-digit' });
+
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      const formatter = new Intl.DateTimeFormat('en-US', options);
+      const dateStringWithoutTimezone = formatter.format(date);
+      console.log("dateStringWithoutTimezone",dateStringWithoutTimezone);
+
+
+      // Input date string in 'MM/DD/YYYY' format
+      const inputDateString = dateStringWithoutTimezone;
+
+      // Split the date components
+      const [month, day, year] = inputDateString.split('/');
+
+      // Create a new Date object with the components
+      const dateObject = new Date(`${year}-${month}-${day}`);
+      console.log("dateObject",dateObject);
+      const outputDateString = dateObject.toISOString().split('T')[0];
+      console.log('outputDateString',outputDateString);
+
       
       // Store the selected date in sessionStorage
-      sessionStorage.setItem('changedDate', dateStringWithoutTimezone);
+      sessionStorage.setItem('changedDate', outputDateString);
       console.log('Stored in sessionStorage:', sessionStorage.getItem('changedDate'));
       generateCalendar(date);
   }
