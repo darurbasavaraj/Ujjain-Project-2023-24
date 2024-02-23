@@ -1008,7 +1008,6 @@ function addDynamicStyles() {
       // Store the selected date in sessionStorage
       sessionStorage.setItem('changedDate', dateStringWithoutTimezone);
       console.log('Stored in sessionStorage:', sessionStorage.getItem('changedDate'));
-
       generateCalendar(date);
   }
   
@@ -1035,10 +1034,4 @@ function addDynamicStyles() {
   }
   
   document.onload = generateCalendar(date);
-  
-  
-  
-  
-  
-    
     
