@@ -697,7 +697,7 @@ function addDynamicStyles() {
       var formdata = new FormData();
 
       formdata.append("userId", userId);
-      formdata.append("poojaIds", singlepuja[0].pojaId);
+      formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", PujaDate);
 
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
@@ -742,13 +742,16 @@ function addDynamicStyles() {
       document.getElementById('puja_cnf').style.display="block"
       document.getElementById('puja_needfull_things-cnf').style.display="block"
       document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
+      document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
       document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
       document.getElementById('select_pujabooking_date').style.display = "none";
       document.getElementById('table2').style.display = "none";
       
       const userIds =sessionStorage.getItem('userid');
-      const pojaId =sessionStorage.getItem('clickedButton');
-      const pojaIda = JSON.parse(pojaId);
+      console.log('postuserid', userIds)
+
+      const multiPojas =sessionStorage.getItem('clickedButton');
+      const selectedMultiPojas = JSON.parse(multiPojas);
 
 // Now, you can access the pojaId values and log them to the console
 
