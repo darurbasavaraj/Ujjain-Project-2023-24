@@ -701,7 +701,13 @@ function addDynamicStyles() {
       // console.log(singlepuja[0].image)
 
       const PujaDate = sessionStorage.getItem('changedDate') 
-      const singlePujaDate =  new Date(PujaDate).toISOString().split('T')[0];
+      console.log('PujaDate', PujaDate)
+
+      // const singlePujaDate =  new Date(PujaDate).toISOString().split('T')[0];
+      // let options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+
+      const singlePujaDate =  new Date(PujaDate).toLocaleDateString('en-US',{ year: 'numeric', month: '2-digit', day: '2-digit' }).split('T')[0];
+
       console.log('singlePujaDate', singlePujaDate)
 
       var formdata = new FormData();
@@ -762,7 +768,14 @@ function addDynamicStyles() {
 // Now, you can access the pojaId values and log them to the console
 
       const PujaDate = sessionStorage.getItem('changedDate') 
-      const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
+      console.log('PujaDate', PujaDate)
+      
+      const singlePujaDate = sessionStorage.getItem('changedDate') 
+
+      // const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
+      // const singlePujaDate =  new Date(PujaDate).toLocaleDateString('en-US',{timeZone:'UTC'});
+
+      // toLocaleDateString('en-US')
       console.log('singlePujaDate', singlePujaDate)
       
       pojaIda.forEach(puja => {
@@ -1003,11 +1016,14 @@ function addDynamicStyles() {
       console.log('Updated Date:', date);
 
       // Convert the date to a string without the timezone offset
-      let dateStringWithoutTimezone = date.toISOString().split('T')[0];
+      // let dateStringWithoutTimezone = date.toISOString().split('T')[0];
+
+      let dateStringWithoutTimezone = date.toLocaleDateString('en-US',{ year: 'numeric', month: '2-digit', day: '2-digit' });
       
       // Store the selected date in sessionStorage
       sessionStorage.setItem('changedDate', dateStringWithoutTimezone);
       console.log('Stored in sessionStorage:', sessionStorage.getItem('changedDate'));
+      
 
       generateCalendar(date);
   }
