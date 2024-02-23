@@ -351,12 +351,13 @@ function addDynamicStyles() {
               }
     
               userdata.map((product, index) => {
+                const imageUrl1 = Array.isArray(product.images) && product.images.length > 0 ? `http://13.200.156.231:8097${product.images[0]}` : ''; 
 
                 console.log('pojaid',product.pojaId)
                   row += `<div class="slide-card" >
                   <div class="Traditional_Pujas_div " >
                         <div class="puja_card_left">
-                          <img src="http://13.200.156.231:8097/poja/display/custom/${product.pojaId}" class="Traditional_Pujas_imgs"
+                          <img src="${imageUrl1}" class="Traditional_Pujas_imgs"
                               alt="">
                           <p class="puja_name pujanames_oncard">${product.poojaName}</p>
                           <div class="Location_pujaname_div">
@@ -415,11 +416,12 @@ function addDynamicStyles() {
     
               userdata.map((product, index) => {
                 console.log("product",product)
+                const imageUrl1 = Array.isArray(product.images) && product.images.length > 0 ? `http://13.200.156.231:8097${product.images[0]}` : ''; 
                   row += `<div class="slide-card" style="width:180;" onmouseover="this.style.width='380px'" onmouseout="this.style.width='170px'">
                   <div class=" ujjainFamous_puja">
                     <div class="Ujjain_FamousPujas_div">
                       <div class="puja_card_left">
-                      <img src="http://13.200.156.231:8097/poja/display/custom/${product.pojaId}" class="Ujjain_FamousPujas_imgs"
+                      <img src="${imageUrl1}" class="Ujjain_FamousPujas_imgs"
                             alt="" srcset="">
                         <p class="Famous_puja_name">${product.poojaName}</p>
                         <div class="Famous_Location_pujaname_div">
@@ -1052,9 +1054,3 @@ function addDynamicStyles() {
   
   document.onload = generateCalendar(date);
   
-  
-  
-  
-  
-    
-    
