@@ -480,62 +480,36 @@ function addDynamicStyles() {
               document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
+              const productImages = Array.isArray(data.images) ? data.images.map(image => `<img class="singlePackage_imgs" src="${image}" alt="" srcset="">`).join('') : '';
 
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
               <div style="display:flex;">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset="">
-                <img class="singlePackage_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset=""></div>
-    
-                <div>
+                  ${productImages}
+              </div>
+              <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
                   <div style="display: flex;">
                       <img class="singlePackage_location_img" src="../icons/Location icon.png" alt="" srcset="">
                       <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
-                      
                       <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
                       <span class="Package_puja_time">${data.time}</span>
                       <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
                   </div>
-                </div>
-                 
-                 
-                <div class="puja_needfull_things" id="puja_needfull_things">
-                    <h4>Needfull Things :</h4>
-                    <ol class="puja_need_items">
-                        <li>Turmeric Powder <span style="margin-left: 30px;">: 100 grams</span></li>
-                        <li>Lemons <span style="margin-left: 79px;">: 3</span></li>
-                        <li>Nava Dhanya <span style="margin-left: 49px;">: 1 Packet</span></li>
-                        <li>Coconut <span style="margin-left: 78px;">: 2</span></li>
-                        <li>Flower Garland <span style="margin-left: 40px;">: 2</span></li>
-                        <li>Seperate Flowers <span style="margin-left: 27px;">: 2</span></li>
-                        <li>Red & Black cloth <span style="margin-left: 27px;">: 1 each</span></li>
-                    </ol> 
-                </div>
               </div>
-  
-                  <div id="select_booking_date" style="display:none">Select Booking Date</div>
-  
-                    <div class="Container" id="table1" style="display:none;">
-                      <div class="calendar-assets">
-                       
-                       
-                        <div class="day-assets">
-                            <button class="btn" onclick="prevMonth()" title="Dia anterior"><i class="fas fa-chevron-left"></i> </button>
-                            <button class="btn" onclick="resetDate()" title="Dia atual"><i class="fas fa-calendar-day"></i><div class="month" id="month-header"></button>
-                            <button class="btn" onclick="nextMonth()" title="Próximo dia"><i class="fas fa-chevron-right"></i> </button>
-                        </div>
-                    </div>
-                    <div class="calendar" id="table" >
-                       
-                    </div>
-                    
-                </div>
-                <span class="total_fare">Total Fare</span>
-                <span class="Package_totalprice puja-api-price" id="Package_totalprice">&#8377;</span>
-                <input type="button" class="popup_puja_btn" value="Book Puja" onclick="popup_pujaBooking_btn()">
-                <input type="button" class="popup_puja_btn" value="Book Puja" onclick="popup_pujaBookingConf_btn1()" style="display:none;">
-                
+              <div class="puja_needfull_things" id="puja_needfull_things">
+                  <h4>Needful Things :</h4>
+                  <ol class="puja_need_items">
+                      <li>Turmeric Powder <span style="margin-left: 30px;">: 100 grams</span></li>
+                      <li>Lemons <span style="margin-left: 79px;">: 3</span></li>
+                      <li>Nava Dhanya <span style="margin-left: 49px;">: 1 Packet</span></li>
+                      <li>Coconut <span style="margin-left: 78px;">: 2</span></li>
+                      <li>Flower Garland <span style="margin-left: 40px;">: 2</span></li>
+                      <li>Separate Flowers <span style="margin-left: 27px;">: 2</span></li>
+                      <li>Red & Black cloth <span style="margin-left: 27px;">: 1 each</span></li>
+                  </ol> 
+              </div>
+          </div>
                   `;
                  
                  
