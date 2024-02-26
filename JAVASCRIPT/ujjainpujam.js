@@ -378,9 +378,8 @@ function loading(){
                         <p class="puja_description_heading">Description</p>
                         <p class="puja_description_data">Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
   
-<<<<<<< HEAD
                         <p class="puja_description_data"> Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
-   
+
                       </div> 
                     </div> 
             </div>`;
@@ -442,26 +441,6 @@ function loading(){
                         <p class="puja_description_heading_down">Description</p>
                         <p class="puja_description_data_down">Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
                      </div> 
-=======
-              document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
-              const button = document.getElementById('bookButton_'+data.pojaId);
-              button.disabled = true;
-              
-
-              pujaPackageDiv.innerHTML= `
-              <div id="packagename">
-              <div style="display:flex;">
-            
-              </div>
-              <div>
-                  <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
-                  <div style="display: flex;">
-                      <img class="singlePackage_location_img" src="../icons/Location icon.png" alt="" srcset="">
-                      <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
-                      <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
-                      <span class="Package_puja_time">${data.time}</span>
-                      <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
->>>>>>> 2455bf03870e1caa2a34333926e83ba682ab9f8b
                   </div>
               </div>  
             </div> `;
@@ -544,107 +523,6 @@ function loading(){
           },0);
           document.getElementById('Package_totalprice').innerText='₹ '+ totalPrice
           console.log("totalprice",totalPrice)
-<<<<<<< HEAD
-=======
-  
-          const finaDiv = document.getElementById('final')
-          finaDiv.innerHTML = '';
-            apiData.forEach((data)=> {
-              // if (isduplicate) {
-              const pujaPackageDiv = document.createElement('div');
-              pujaPackageDiv.classList.add('puja_package_divs');
-              // document.getElementById('bookButton_'+data.id).style.display="none"
-              // document.getElementById('bookButton_'+data.id).disable = true
-              document.getElementById('totalPrice_btn').style.display="block"
-              document.getElementsByClassName('popup_puja_btn')[0].innerText="Book Puja Package"
-    
-              document.getElementsByClassName('popup_pujapackage_name')[0].innerText="Selected Pujas"
-    
-              document.getElementsByClassName('popup_pujabooking_h3')[0].innerText="Puja Package Booking"
-    
-              document.getElementsByClassName('pujabooking_instructions')[0].style.display="block"
-    
-              document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
-
-              const button = document.getElementById('bookButton_'+data.pojaId);
-              button.disabled = true;
-              // document.getElementById('added_'+data.id).style.display="block"
-              pujaPackageDiv.innerHTML= `
-          
-                <img class="Package_imgs" src="http://13.200.156.231:8097/poja/display/custom/${data.pojaId}" alt="" srcset="">
-                <div>
-                  <span class="pujaNames puja-api-popup-name01">${data.poojaName}</span>
-                  <div style="display: flex;">
-                      <img class="Package_location_img" src="../icons/Location icon.png" alt="" srcset="">
-                      <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
-                      
-                      <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
-                      <span class="Package_puja_time">10 : 00 AM</span>
-                      <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
-                  </div>
-                </div>
-                 <img class="Package_delete_icon" onclick="pujaCardDelete(${data.pojaId})"  src="../icons/delete_icon.png" alt=""> 
-
-                 `;
-                finaDiv.appendChild(pujaPackageDiv);
-              // }
-            })
-            console.log('id Basavaraj_Darur', apiData.pojaId)
-          
-            // const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
-            //   return accumulator + currentValue.price;
-            // },0);
-            // document.getElementBypojaId('Package_totalprice1').innerHTML='₹ '+ totalPrice
-            // console.log("totalprice",totalPrice)
-            
-        }
-        }
-    
-    
-        function pujaCardDelete(pojaId){
-    
-          const filterData = apiData.filter(each => each.pojaId !== pojaId)
-          sessionStorage.setItem('clickedButton', JSON.stringify(filterData));
-          sessionStorage.removeItem(pojaId)
-          // let result= JSON.parse(sessionStorage.getItem('clickedButton'));
-          // console.log('result', result)
-          // document.getElementById('bookButton_'+id).style.display="block"
-          document.getElementById('bookButton_'+pojaId).innerText="Book Now"
-          const button = document.getElementById('bookButton_'+pojaId);
-          button.disabled = false;
-          // document.getElementById('added_'+id).style.display="none"
-          //hi
-    
-          renderData();
-    
-        }
-    
-        function pujaPackageBooking(pojaId, index) {
-    
-        // document.getElementById('puja_Book_btn').style.display= "none"
-        if(!sessionStorage.getItem('clickedButton')){
-          sessionStorage.setItem('clickedButton',JSON.stringify([]));
-        }
-          document.getElementsByClassName("puja-api-button01")[index].addEventListener("click",function() {
-          document.getElementById('PujaBooking_popup').style.display = "block";
-          document.getElementById('pujaPackageBooking_popupdiv').style.display = "block";      
-          let updatedData
-          const clickedButton = JSON.parse(sessionStorage.getItem('clickedButton'))
-          fetch(`http://13.200.156.231:8097/poja/getPojaById/${pojaId}`)
-            .then((res) => res.json())
-          .then((data) => {
-            updatedData = data.data
-            clickedButton.push(updatedData)
-            console.log('updateddata',updatedData)
-            console.log('clicked button',clickedButton)
-            sessionStorage.setItem('clickedButton', JSON.stringify(clickedButton));
-            renderData(pojaId);
-          
-          }) 
-        })
-       
-         
->>>>>>> 2455bf03870e1caa2a34333926e83ba682ab9f8b
       }
       else{
         const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
