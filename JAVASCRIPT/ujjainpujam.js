@@ -353,202 +353,202 @@ function addDynamicStyles() {
               userdata.map((product, index) => {
                 const imageUrl1 = Array.isArray(product.images) && product.images.length > 0 ? `http://13.200.156.231:8097${product.images[0]}` : ''; 
 
-                console.log('pojaid',product.pojaId)
-                  row += `<div class="slide-card" >
-                  <div class="Traditional_Pujas_div " >
-                        <div class="puja_card_left">
-                          <img src="${imageUrl1}" class="Traditional_Pujas_imgs"
-                              alt="">
-                          <p class="puja_name pujanames_oncard">${product.poojaName}</p>
-                          <div class="Location_pujaname_div">
-                              <img src="../icons/Location icon.png" class="Traditional_location_img" alt="">
-                              <span class="Temple_name">${product.templeName}</span>
-                          </div>
-                          <div class = "puja_time_div">
-                            <img src="../icons/time.png" alt="" class= "puja_time_clock">
-                            <span class="puja_time">${product.time}</span>
-                          </div>
-                          <div class="puja_up_price_button">
-                          <span class="puja_price" id="first_puja_price">&#8377; ${product.price}</span>
-                          <button  id="bookButton_${product.pojaId}" class="puja_booknow_btn puja-api-button01" onclick="pujaPackageBooking(${product.pojaId}, ${index})">Book Now</button>
-                         
-                          </div>
-                        </div>
-                        <div class="puja_description">
-                          <p class="puja_description_heading">Description</p>
-                          <p class="puja_description_data">Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
-    
-                          <p class="puja_description_data"> Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
-     
-                        </div> 
-                      </div> 
-              </div>`;
-              });
-    
-              document.getElementById('traditionalPuja').innerHTML = row;
-          })
-          .catch(error => {
-              console.error("Error fetching or processing data:", error);
-          });
-    });
-    
-    
-    
-    document.addEventListener("DOMContentLoaded", async function () {
-      const apiUrl = `http://13.200.156.231:8097/poja/getAllPoja`;
-      let row = '';
-    
-      // Fetch data from the API
-      await fetch(apiUrl)
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error(`HTTP error! Status: ${response.status}`);
-              }
-              return response.json();
-          })
-          .then(data => {
-              let userdata = data.data;
-    
-              if (!Array.isArray(userdata)) {
-                  console.error("Data is not an array:", userdata);
-                  return;
-              }
-    
-              userdata.map((product, index) => {
-                console.log("product",product)
-                const imageUrl1 = Array.isArray(product.images) && product.images.length > 0 ? `http://13.200.156.231:8097${product.images[0]}` : ''; 
-                  row += `<div class="slide-card" style="width:180;" onmouseover="this.style.width='380px'" onmouseout="this.style.width='170px'">
-                  <div class=" ujjainFamous_puja">
-                    <div class="Ujjain_FamousPujas_div">
+              console.log('pojaid',product.pojaId)
+                row += `<div class="slide-card" >
+                <div class="Traditional_Pujas_div " >
                       <div class="puja_card_left">
-                      <img src="${imageUrl1}" class="Ujjain_FamousPujas_imgs"
-                            alt="" srcset="">
-                        <p class="Famous_puja_name">${product.poojaName}</p>
-                        <div class="Famous_Location_pujaname_div">
-                            <img src="../icons/Location icon.png" class="Famous_location_img" alt="">
-                            <span class="Famous_Temple_name">${product.templeName}</span>
+                        <img src="${imageUrl1}" class="Traditional_Pujas_imgs"
+                            alt="">
+                        <p class="puja_name pujanames_oncard">${product.poojaName}</p>
+                        <div class="Location_pujaname_div">
+                            <img src="../icons/Location icon.png" class="Traditional_location_img" alt="">
+                            <span class="Temple_name">${product.templeName}</span>
                         </div>
-                        <div class = "puja_time_down_div">
-                          <img src="../icons/time.png" alt="" class= "puja_time_down_clock">
-                          <span class="puja_time_down">${product.time}</span>
+                        <div class = "puja_time_div">
+                          <img src="../icons/time.png" alt="" class= "puja_time_clock">
+                          <span class="puja_time">${product.time}</span>
                         </div>
-                        <div class="puja_price_btn">
-                          <span class="Famous_puja_price">₹ ${product.price} </span>
-                          <input type="button" class="Famous_puja_booknow_btn" value="Book Now">
+                        <div class="puja_up_price_button">
+                        <span class="puja_price" id="first_puja_price">&#8377; ${product.price}</span>
+                        <button  id="bookButton_${product.pojaId}" class="puja_booknow_btn puja-api-button01" onclick="pujaPackageBooking(${product.pojaId}, ${index})">Book Now</button>
+                       
                         </div>
                       </div>
-                        <div class="puja_description_down">
-                          <p class="puja_description_heading_down">Description</p>
-                          <p class="puja_description_data_down">Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
-                       </div> 
-                    </div>
-                </div>  
-              </div> `;
-              });
-              // generateCalendar();
-              document.getElementById('ujjainFamousPujas').innerHTML = row;
-          })
-          .catch(error => {
-              console.error("Error fetching or processing data:", error);
-          });
-    });
-    
-    
-    let apiData= [];
-    
-        function renderData(pojaId){
-          console.log("id",pojaId)
-    
-          const finalArray = JSON.parse(sessionStorage.getItem('clickedButton'));
-          let arrayOfObjects = [].concat(...finalArray)
-          console.log('arrayofobjects',arrayOfObjects)
-          apiData=arrayOfObjects
-    
-          if(apiData.length==1){
-          const finaDiv = document.getElementById('final')
-          finaDiv.innerHTML = '';
-            apiData.forEach((data)=> {
-            
-                console.log('dataa',data.pojaId)
-              const pujaPackageDiv = document.createElement('div');
-              pujaPackageDiv.classList.add('single_puja_booking');         
-              document.getElementsByClassName('popup_pujapackage_name')[0].innerText=" "
-              document.getElementsByClassName('popup_pujabooking_h3')[0].innerText="Puja Booking"
-              document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
-              document.getElementById('totalPrice_btn').style.display="none"
+                      <div class="puja_description">
+                        <p class="puja_description_heading">Description</p>
+                        <p class="puja_description_data">Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
   
-              document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
-              const button = document.getElementById('bookButton_'+data.pojaId);
-              button.disabled = true;
-              const productImages = Array.isArray(data.images) ? data.images.map(image => `<img class="singlePackage_imgs" src="${image}" alt="" srcset="">`).join('') : '';
+                        <p class="puja_description_data"> Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
 
-              pujaPackageDiv.innerHTML= `
-              <div id="packagename">
-              <div style="display:flex;">
-                  ${productImages}
-              </div>
-              <div>
-                  <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
-                  <div style="display: flex;">
-                      <img class="singlePackage_location_img" src="../icons/Location icon.png" alt="" srcset="">
-                      <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
-                      <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
-                      <span class="Package_puja_time">${data.time}</span>
-                      <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
+                      </div> 
+                    </div> 
+            </div>`;
+            });
+  
+            document.getElementById('traditionalPuja').innerHTML = row;
+        })
+        .catch(error => {
+            console.error("Error fetching or processing data:", error);
+        });
+  });
+  
+  
+  
+  document.addEventListener("DOMContentLoaded", async function () {
+    const apiUrl = `http://13.200.156.231:8097/poja/getAllPoja`;
+    let row = '';
+  
+    // Fetch data from the API
+    await fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            let userdata = data.data;
+  
+            if (!Array.isArray(userdata)) {
+                console.error("Data is not an array:", userdata);
+                return;
+            }
+  
+            userdata.map((product, index) => {
+              console.log("product",product)
+              const imageUrl1 = Array.isArray(product.images) && product.images.length > 0 ? `http://13.200.156.231:8097${product.images[0]}` : ''; 
+                row += `<div class="slide-card" style="width:180;" onmouseover="this.style.width='380px'" onmouseout="this.style.width='170px'">
+                <div class=" ujjainFamous_puja">
+                  <div class="Ujjain_FamousPujas_div">
+                    <div class="puja_card_left">
+                    <img src="${imageUrl1}" class="Ujjain_FamousPujas_imgs"
+                          alt="" srcset="">
+                      <p class="Famous_puja_name">${product.poojaName}</p>
+                      <div class="Famous_Location_pujaname_div">
+                          <img src="../icons/Location icon.png" class="Famous_location_img" alt="">
+                          <span class="Famous_Temple_name">${product.templeName}</span>
+                      </div>
+                      <div class = "puja_time_down_div">
+                        <img src="../icons/time.png" alt="" class= "puja_time_down_clock">
+                        <span class="puja_time_down">${product.time}</span>
+                      </div>
+                      <div class="puja_price_btn">
+                        <span class="Famous_puja_price">₹ ${product.price} </span>
+                        <input type="button" class="Famous_puja_booknow_btn" value="Book Now">
+                      </div>
+                    </div>
+                      <div class="puja_description_down">
+                        <p class="puja_description_heading_down">Description</p>
+                        <p class="puja_description_data_down">Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data. Some content will be here in the live data.</p>
+                     </div> 
                   </div>
-              </div>
-              <div class="puja_needfull_things" id="puja_needfull_things">
-                  <h4>Needful Things :</h4>
-                  <ol class="puja_need_items">
-                      <li>Turmeric Powder <span style="margin-left: 30px;">: 100 grams</span></li>
-                      <li>Lemons <span style="margin-left: 79px;">: 3</span></li>
-                      <li>Nava Dhanya <span style="margin-left: 49px;">: 1 Packet</span></li>
-                      <li>Coconut <span style="margin-left: 78px;">: 2</span></li>
-                      <li>Flower Garland <span style="margin-left: 40px;">: 2</span></li>
-                      <li>Separate Flowers <span style="margin-left: 27px;">: 2</span></li>
-                      <li>Red & Black cloth <span style="margin-left: 27px;">: 1 each</span></li>
-                  </ol> 
-              </div>
-          </div>
-                  `;
-                 
-                 
-                finaDiv.appendChild(pujaPackageDiv);
-              // }
-            })
-            console.log('id', apiData.pojaId)
+              </div>  
+            </div> `;
+            });
+            // generateCalendar();
+            document.getElementById('ujjainFamousPujas').innerHTML = row;
+        })
+        .catch(error => {
+            console.error("Error fetching or processing data:", error);
+        });
+  });
+  
+  
+  let apiData= [];
+  
+      function renderData(pojaId){
+        console.log("id",pojaId)
+  
+        const finalArray = JSON.parse(sessionStorage.getItem('clickedButton'));
+        let arrayOfObjects = [].concat(...finalArray)
+        console.log('arrayofobjects',arrayOfObjects)
+        apiData=arrayOfObjects
+  
+        if(apiData.length==1){
+        const finaDiv = document.getElementById('final')
+        finaDiv.innerHTML = '';
+          apiData.forEach((data)=> {
           
-            const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
-              return accumulator + currentValue.price;
-            },0);
-            document.getElementById('Package_totalprice').innerText='₹ '+ totalPrice
-            console.log("totalprice",totalPrice)
-        }
-        else{
+              console.log('dataa',data.pojaId)
+            const pujaPackageDiv = document.createElement('div');
+            pujaPackageDiv.classList.add('single_puja_booking');         
+            document.getElementsByClassName('popup_pujapackage_name')[0].innerText=" "
+            document.getElementsByClassName('popup_pujabooking_h3')[0].innerText="Puja Booking"
+            document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
+            document.getElementById('totalPrice_btn').style.display="none"
+
+            document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
+            const button = document.getElementById('bookButton_'+data.pojaId);
+            button.disabled = true;
+            const productImages = Array.isArray(data.images) ? data.images.map(image => `<img class="singlePackage_imgs" src="${image}" alt="" srcset="">`).join('') : '';
+
+            pujaPackageDiv.innerHTML= `
+            <div id="packagename">
+            <div style="display:flex;">
+                ${productImages}
+            </div>
+            <div>
+                <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
+                <div style="display: flex;">
+                    <img class="singlePackage_location_img" src="../icons/Location icon.png" alt="" srcset="">
+                    <span class="Package_templeName puja-api-popup-name02">${data.templeName}</span>
+                    <img class="Package_puja_time_icon" src="../icons/time.png" alt="" srcset="">
+                    <span class="Package_puja_time">${data.time}</span>
+                    <span class="Package_pricenum puja-api-popup-name04">&#8377; ${data.price}</span>
+                </div>
+            </div>
+            <div class="puja_needfull_things" id="puja_needfull_things">
+                <h4>Needful Things :</h4>
+                <ol class="puja_need_items">
+                    <li>Turmeric Powder <span style="margin-left: 30px;">: 100 grams</span></li>
+                    <li>Lemons <span style="margin-left: 79px;">: 3</span></li>
+                    <li>Nava Dhanya <span style="margin-left: 49px;">: 1 Packet</span></li>
+                    <li>Coconut <span style="margin-left: 78px;">: 2</span></li>
+                    <li>Flower Garland <span style="margin-left: 40px;">: 2</span></li>
+                    <li>Separate Flowers <span style="margin-left: 27px;">: 2</span></li>
+                    <li>Red & Black cloth <span style="margin-left: 27px;">: 1 each</span></li>
+                </ol> 
+            </div>
+        </div>
+                `;
+               
+               
+              finaDiv.appendChild(pujaPackageDiv);
+            // }
+          })
+          console.log('id', apiData.pojaId)
+        
           const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
             return accumulator + currentValue.price;
           },0);
-          document.getElementById('Package_totalprice1').innerHTML='₹ '+ totalPrice
+          document.getElementById('Package_totalprice').innerText='₹ '+ totalPrice
           console.log("totalprice",totalPrice)
+      }
+      else{
+        const totalPrice = arrayOfObjects.reduce((accumulator,currentValue) => {
+          return accumulator + currentValue.price;
+        },0);
+        document.getElementById('Package_totalprice1').innerHTML='₹ '+ totalPrice
+        console.log("totalprice",totalPrice)
+
+        const finaDiv = document.getElementById('final')
+        finaDiv.innerHTML = '';
+          apiData.forEach((data)=> {
+            // if (isduplicate) {
+            const pujaPackageDiv = document.createElement('div');
+            pujaPackageDiv.classList.add('puja_package_divs');
+            // document.getElementById('bookButton_'+data.id).style.display="none"
+            // document.getElementById('bookButton_'+data.id).disable = true
+            document.getElementById('totalPrice_btn').style.display="block"
+            document.getElementsByClassName('popup_puja_btn')[0].innerText="Book Puja Package"
   
-          const finaDiv = document.getElementById('final')
-          finaDiv.innerHTML = '';
-            apiData.forEach((data)=> {
-              // if (isduplicate) {
-              const pujaPackageDiv = document.createElement('div');
-              pujaPackageDiv.classList.add('puja_package_divs');
-              // document.getElementById('bookButton_'+data.id).style.display="none"
-              // document.getElementById('bookButton_'+data.id).disable = true
-              document.getElementById('totalPrice_btn').style.display="block"
-              document.getElementsByClassName('popup_puja_btn')[0].innerText="Book Puja Package"
-    
-              document.getElementsByClassName('popup_pujapackage_name')[0].innerText="Selected Pujas"
-    
-              document.getElementsByClassName('popup_pujabooking_h3')[0].innerText="Puja Package Booking"
-    
-              document.getElementsByClassName('pujabooking_instructions')[0].style.display="block"
-    
-              document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
+            document.getElementsByClassName('popup_pujapackage_name')[0].innerText="Selected Pujas"
+  
+            document.getElementsByClassName('popup_pujabooking_h3')[0].innerText="Puja Package Booking"
+  
+            document.getElementsByClassName('pujabooking_instructions')[0].style.display="block"
+  
+            document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
 
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
@@ -697,7 +697,7 @@ function addDynamicStyles() {
       var formdata = new FormData();
 
       formdata.append("userId", userId);
-      formdata.append("pojaIds", singlepuja[0].pojaId);
+      formdata.append("poojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", PujaDate);
 
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
@@ -736,22 +736,19 @@ function addDynamicStyles() {
 
 
     // }
-    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate, date) {
+    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate) {
       // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
       // Assuming data is in the format expected by the API
       document.getElementById('puja_cnf').style.display="block"
       document.getElementById('puja_needfull_things-cnf').style.display="block"
       document.getElementsByClassName('popup_puja_btn')[0].style.display= "none"
-      document.getElementsByClassName('pujabooking_instructions')[0].style.display="none"
       document.getElementsByClassName('popup_puja_btn')[1].style.display= "none"
       document.getElementById('select_pujabooking_date').style.display = "none";
       document.getElementById('table2').style.display = "none";
       
       const userIds =sessionStorage.getItem('userid');
-      console.log('postuserid', userIds)
-
-      const multiPojas =sessionStorage.getItem('clickedButton');
-      const selectedMultiPojas = JSON.parse(multiPojas);
+      const pojaId =sessionStorage.getItem('clickedButton');
+      const pojaIda = JSON.parse(pojaId);
 
 // Now, you can access the pojaId values and log them to the console
 
