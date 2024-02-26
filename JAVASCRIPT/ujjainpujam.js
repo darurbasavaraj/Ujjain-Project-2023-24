@@ -597,6 +597,7 @@ function addDynamicStyles() {
           const button = document.getElementById('bookButton_'+pojaId);
           button.disabled = false;
           // document.getElementById('added_'+id).style.display="none"
+          //hi
     
           renderData();
     
