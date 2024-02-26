@@ -778,7 +778,7 @@ function addDynamicStyles() {
       const multiPojas =sessionStorage.getItem('clickedButton');
       const selectedMultiPojas = JSON.parse(multiPojas);
 
-// Now, you can access the pojaId values and log them to the console
+     // Now, you can access the pojaId values and log them to the console
 
       // const PujaDate = sessionStorage.getItem('changedDate') 
       // console.log('PujaDate', PujaDate)
