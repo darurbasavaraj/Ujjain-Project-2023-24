@@ -683,7 +683,7 @@ function addDynamicStyles() {
       var formdata = new FormData();
 
       formdata.append("userId", userId);
-      formdata.append("pojaId", singlepuja[0].pojaId);
+      formdata.append("pojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", PujaDate);
 
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
