@@ -683,7 +683,7 @@ function addDynamicStyles() {
       var formdata = new FormData();
 
       formdata.append("userId", userId);
-      formdata.append("pojaIds", singlepuja[0].pojaId);
+      formdata.append("poojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", PujaDate);
 
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
@@ -721,7 +721,7 @@ function addDynamicStyles() {
 
 
     // }
-    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate, date) {
+    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate) {
       // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
       // Assuming data is in the format expected by the API
       document.getElementById('puja_cnf').style.display="block"
