@@ -722,7 +722,7 @@ function addDynamicStyles() {
       var formdata = new FormData();
 
       formdata.append("userId", userId);
-      formdata.append("pojaIds", singlepuja[0].pojaId);
+      formdata.append("poojaIds", singlepuja[0].pojaId);
       formdata.append("fromDate", PujaDate);
 
       var requestOptions = {  method: 'POST',  body: formdata,  redirect: 'follow'};
@@ -761,7 +761,7 @@ function addDynamicStyles() {
 
 
     // }
-    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate, date) {
+    function popup_pujaPackageBooking_btn1(userId, pojaIds, fromDate) {
       // Assuming userId, pojaIds, and fromDate are provided as arguments to the function
       // Assuming data is in the format expected by the API
       document.getElementById('puja_cnf').style.display="block"
@@ -775,35 +775,25 @@ function addDynamicStyles() {
       const userIds =sessionStorage.getItem('userid');
       console.log('postuserid', userIds)
 
-      const multiPojas =sessionStorage.getItem('clickedButton');
-      const selectedMultiPojas = JSON.parse(multiPojas);
-
-     // Now, you can access the pojaId values and log them to the console
-
-      // const PujaDate = sessionStorage.getItem('changedDate') 
-      // console.log('PujaDate', PujaDate)
-      
       const multiPujaDate = sessionStorage.getItem('changedDate') 
       console.log('multiPujaDate', multiPujaDate)
 
-      // const singlePujaDate =  new Date(PujaDate).toISOString().substr(0,10);
-      // const singlePujaDate =  new Date(PujaDate).toLocaleDateString('en-US',{timeZone:'UTC'});
+      const multiPojas =sessionStorage.getItem('clickedButton');
+      const selectedMultiPojas = JSON.parse(multiPojas);
 
-      // toLocaleDateString('en-US')
-      
+      // Now, you can access the pojaId values and log them to the console
+   
       // const multiPojaIds= selectedMultiPojas.forEach(puja => {
       //   const pojaId = puja.pojaId
       //   console.log('pujaIds',pojaId);
       // });
 
-      const multiPojaIds= selectedMultiPojas.map(puja => puja.pojaId)
-        // console.log('pujaIds',pojaId);
-      
+      const multiPojaIds= selectedMultiPojas.map(puja => puja.pojaId)     
       console.log('multiPojaIds',multiPojaIds)
 
       const postData = {
           userId: userIds,
-          pojaIds: multiPojaIds,
+          poojaIds: multiPojaIds,
           fromDate: multiPujaDate
           // Add more data as needed
       };
