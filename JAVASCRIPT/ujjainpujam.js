@@ -480,12 +480,12 @@ function addDynamicStyles() {
               document.getElementById('bookButton_'+data.pojaId).innerText ="Added"
               const button = document.getElementById('bookButton_'+data.pojaId);
               button.disabled = true;
-              const productImages = Array.isArray(data.images) ? data.images.map(image => `<img class="singlePackage_imgs" src="${image}" alt="" srcset="">`).join('') : '';
+              
 
               pujaPackageDiv.innerHTML= `
               <div id="packagename">
               <div style="display:flex;">
-                  ${productImages}
+            
               </div>
               <div>
                   <span class="singlepujaNames puja-api-popup-name01">${data.poojaName}</span>
